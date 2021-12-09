@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="18px" viewBox="0 0 14 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 8 Copy</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.431373 0 0 0 0 0.431373 0 0 0 0 0.431373 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.431373 0 0 0 0 0.431373 0 0 0 0 0.431373 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Adquirencia-Móvil---Flujo-Principal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Adquirencia-Móvil-|-Soluciones-Venta---008O" transform="translate(-325.000000, -1331.000000)">
+            <g id="Simulación-Bottom" transform="translate(0.000000, 1304.000000)">
+                <g id="Texto-1" transform="translate(16.500000, 16.000000)">
+                    <g id="Mask" transform="translate(308.500000, 11.000000)" filter="url(#filter-1)">
+                        <g transform="translate(-0.000000, -0.000000)" filter="url(#filter-2)" id="Group-8-Copy">
+                            <g transform="translate(0.000000, 0.000000)">
+                                <path d="M1,16 C1,17.1000004 1.9000001,18 3,18 L11,18 C12.1000004,18 13,17.1000004 13,16 L13,4 L1,4 L1,16 Z" id="C58D2829-78E5-482C-B1DE-4CA7D2273B8E" fill="#FF5846" fill-rule="nonzero"></path>
+                                <path d="M14,1 L10.5,1 L9.5,0 L4.5,0 L3.5,1 L0,1 L0,3 L14,3 L14,1 Z" id="7C1FCED1-0BA8-4CA6-A45F-FB4A298CABE3" fill="#FF5846" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!--  back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region ContentBox -->
+        <div class="contentBox--typeD mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Tarifas</h2>
+            <p class="contentBox__text">
+                De acuerdo a la información de su negocio, estas son las tarifas para ventas con 
+                <strong class="fw-medium">DaviPlata y tarjetas débito y crédito</strong> de cualquier
+                banco:
+            </p>
+            <!-- Tarifas de transaccion e iconos -->
+            <div class="logoGrid--auto wh-80 mxw-300px">
+                <h3 class="logoGrid__title">Tarifa por transacción</h3>
+                <div class="logoGrid__container" id="logoGrid">
+                    <!-- Tarifa daviplata -->
+                    <div class="logoGrid__item">
+                        <div class="logoContainer">
+                            <img src="../media/extraIcons/icon-daviplata.svg" alt="">
+                        </div>
+                        <span class="logoText">1.74%</span>
+                    </div>
+                    <!-- Tarifa diner club -->
+                    <div class="logoGrid__item">
+                        <div class="logoContainer">
+                            <img src="../media/extraIcons/icon-dinerclub.svg" alt="">
+                        </div>
+                        <span class="logoText">1.83%</span>
+                    </div>
+                    <!-- Tarifa mastercard -->
+                    <div class="logoGrid__item">
+                        <div class="logoContainer">
+                            <img src="../media/extraIcons/icon-mastercard.svg" alt="">
+                        </div>
+                        <span class="logoText">1.93%</span>
+                    </div>
+                    <!-- Tarifa visa -->
+                    <div class="logoGrid__item">
+                        <div class="logoContainer">
+                            <img src="../media/extraIcons/icon-visa.svg" alt="">
+                        </div>
+                        <span class="logoText">1.93%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarifa preferencial -->
+        <div class="contentBox pV-16px mxw-550px">
+            <div class="input">
+                <label for="" class="input__label">Obtenga una tarifa preferencial fijando un  
+                    tiempo mínimo de permanencia de su negocio con nosotros</label>
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                    <div class="options">
+                        <div class="option">
+                            <label class="clickDropdown checked disabled">
+                                <input type="radio" name="permanencia" value="0" checked="" disabled=""> Sin permanencia mínima
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label class="clickDropdown" onclick="showHiddenInput2(this,'opt1')">
+                                <input type="radio" name="permanencia" value="opt1" disabled=""> Permanencia mínima de 1 año
+                            </label>
+                        </div>
+                        <div class="option">
+                            <label class="clickDropdown" onclick="showHiddenInput2(this,'opt1')">
+                                <input type="radio" name="permanencia" value="opt2" disabled=""> Permanencia mínima de 2 años
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #region Helper -->
+            <div id="opt1" class="boxHelper--typeB mt-16px mb-0px hidden">
+                <div class="boxHelper__header" onclick="showboxHelper(this)">
+                    <div class="boxHelper__title">
+                        <p>Su nueva tarifa por transacción</p>
+                    </div>
+                    <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="">
+                </div>
+                <!-- Helper -->
+                <div class="boxHelper__content hidden">
+                    <div class="helper--type3 mt-12px mb-0px">
+                        <p class="helper__text">
+                            Esta tarifa no incluye: Retención en la fuente, ReteIVA, ReteICA (De acuerdo al municipio donde se encuentre).
+                        </p>
+                    </div>
+                </div>
+                <!-- Tarifa preferencia e icono -->
+                <div class="logoGrid--auto wh-90 mxw-300px">
+                    <div class="logoGrid__container">
+                        <!-- Tarifa daviplata-->
+                        <div class="logoGrid__item">
+                            <div class="logoContainer">
+                                <img src="../media/extraIcons/icon-daviplata.svg" alt="">
+                            </div>
+                            <span class="logoText">1.74%</span>
+                        </div>
+                        <!-- Tarifa diner club-->
+                        <div class="logoGrid__item">
+                            <div class="logoContainer">
+                                <img src="../media/extraIcons/icon-dinerclub.svg" alt="">
+                            </div>
+                            <span class="logoText">1.83%</span>
+                        </div>
+                        <!-- Tarifa mastercard-->
+                        <div class="logoGrid__item">
+                            <div class="logoContainer">
+                                <img src="../media/extraIcons/icon-mastercard.svg" alt="">
+                            </div>
+                            <span class="logoText">1.93%</span>
+                        </div>
+                        <!-- Tarifa visa-->
+                        <div class="logoGrid__item">
+                            <div class="logoContainer">
+                                <img src="../media/extraIcons/icon-visa.svg" alt="">
+                            </div>
+                            <span class="logoText">1.93%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #region Helper -->
+            <div class="contentBox--typeB wh-100 mt-16px">
+                <p class="wh-100 ta-left">
+                    Al aceptar este beneficio se está comprometiendo a que durante el tiempo acordado, los <strong class="fw-medium">abonos de las ventas realizadas serán exclusivamente en el Banco Davivienda</strong>.
+                </p>
+            </div>
+        </div>
+        <!-- #endregion ContentBox -->
+
+        <div class="contentBox--typeB mxw-550px">
+            <p>Conozca un ejemplo de cuánto recibiría por una venta con la tarifa seleccionada. <a href="">Ver ejemplo</a>.</p>
+        </div>
+
+        <!--  Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary" >Afiliar mi negocio</button>
+        </div>
+    </section>
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+</body>
+
+</html>

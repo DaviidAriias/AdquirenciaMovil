@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- Back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <div class="contentBox mxw-550px">
+            <!-- Tracking -->
+            <div class="trackingMain ">
+                <h2 tabindex="0" class="trackingMain__title">Mis Datos</h2>
+                <ul class="trackingMain__dataNav">
+                    <li class="complete"></li>
+                    <li class="complete"></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+
+            <h2 class="contentBox__title">Declaraciones</h2>
+
+            <!-- Formulario contenedor -->
+            <form class="formApp">
+                <div class="input mb-0px">
+                    <p class="input__label">
+                        ¿Es usted una persona expuesta políticamente nacional o extranjera, ejerce funciones directivas
+                        en una organización internacional o es familiar de una persona con las anteriores
+                        características?
+                    </p>
+                    <div class="contRadio">
+                        <label class="radio" onclick="showHiddenInput(this, 'cargoPolitico')">
+                            Sí
+                            <input type="radio" value="cargoPolitico" name="cargoPolitico" onclick=" checkRadioBtn('cargoPolitico','nextButton')">
+                            <div class="radio__indicator"></div>
+                        </label>
+                        <label class="radio" onclick="showHiddenInput(this, 'cargoPolitico')">
+                            No
+                            <input type="radio" value="" name="cargoPolitico" onclick=" checkRadioBtn('cargoPolitico','nextButton')">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+                </div>
+                <div id="cargoPolitico" class="hidden mt-16px">
+                    <div class="input">
+                        <p class="input__label">
+                            ¿Tiene o ha tenido en los dos últimos años un cargo político de alto nivel en otro país?
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio">
+                                Sí
+                                <input type="radio" value="" name="historial">
+                                <div class="radio__indicator"></div>
+                            </label>
+                            <label class="radio">
+                                No
+                                <input type="radio" value="" name="historial">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                        <div class="helper--longDesktop ml-4px">
+                            <p class="helper__text">
+                                PEP Extranjero: jefes de Estado, jefes de Gobierno, ministros, subsecretarios o secretarios de Estado; congresistas o
+                                parlamentarios; miembros de tribunales supremos, tribunales constitucionales u otras altas instancias judiciales cuyas
+                                decisiones no admitan normalmente recurso, salvo en circunstancias excepcionales; miembros de tribunales o de las juntas
+                                directivas de bancos centrales; embajadores, encargados de negocios y altos funcionarios de las fuerzas armadas, y
+                                miembros de los órganos administrativos, de gestión o de supervisión de empresas de propiedad estatal.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <p class="input__label">
+                            ¿Es usted actualmente o ha sido durante los últimos dos años director, subdirector, miembro
+                            de
+                            una junta directiva o ejerce una función equivalente en una organización internacional?
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio">
+                                Sí
+                                <input type="radio" value="" name="organizacion">
+                                <div class="radio__indicator"></div>
+                            </label>
+                            <label class="radio">
+                                No
+                                <input type="radio" value="" name="organizacion">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <p class="input__label">
+                            ¿Es una persona políticamente expuesta?
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio" onclick="showHiddenInput(this, 'exposicion')">
+                                Sí
+                                <input type="radio" value="exposicion" name="exposicion">
+                                <div class="radio__indicator"></div>
+                            </label>
+
+                            <label class="radio" onclick="showHiddenInput(this, 'exposicion')">
+                                No
+                                <input type="radio" value="" name="exposicion">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- #region Seccion oculta por radio button anterior-->
+                    <div id="exposicion" class="hidden">
+                        <div class="input">
+                            <label for="" class="input__label">¿Qué cargo tiene?</label>
+                            <div class="dropdown">
+                                <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                <div class="options">
+                                    <div class="option">
+                                        <label class="clickDropdown checked disabled">
+                                            <input type="radio" name="cargo" value="0" checked="" disabled="">
+                                            Seleccione su cargo
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="cargo" value="opt1" disabled="">
+                                            Alcalde Local
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">Fecha de vinculación al cargo</label>
+                            <input type="date" class="input__textBoxDate" value="" placeholder="Placeholder del campo">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">
+                                Fecha de desvinculación al cargo <span class="optField">(Sí aplica)</span>
+                            </label>
+                            <input type="date" class="input__textBoxDate" value="" placeholder="Placeholder del campo">
+                        </div>
+                    </div>
+                    <!-- #endregion Seccion oculta por radio button anterior-->
+                    <div class="input mb-0px">
+                        <p class="input__label">
+                            ¿Es familiar de una persona que tenga las anteriores características?
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio" onclick="showHiddenInput(this, 'familiar')">
+                                Sí
+                                <input type="radio" value="familiar" name="familiar"
+                                    onclick="checkRadioBtn('familiar', 'nextButton')">
+                                <div class=" radio__indicator"></div>
+                            </label>
+                            <label class="radio" onclick="showHiddenInput(this, 'familiar')">
+                                No
+                                <input type="radio" value="" name="familiar"
+                                    onclick="checkRadioBtn('familiar', 'nextButton')">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="familiar" class="hidden mt-16px">
+                        <div class="input">
+                            <label for="" class="input__label">Parentesco</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Escriba el parentesco">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">Nombre</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Escriba el nombre">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">Primer Apellido</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Escriba el primer apellido">
+                        </div>
+                        <div class="input mb-0px">
+                            <label for="" class="input__label">Segundo Apellido</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Escriba el segundo apellido"
+                                onkeyup="buttonCheck(this,'nextButton')">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button type="button" id="nextButton" class="button--primary button--disabled" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

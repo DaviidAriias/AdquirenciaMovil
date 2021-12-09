@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- Back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <div class="contentBox mxw-550px">
+            <!-- Tracking -->
+            <div class="trackingMain mb-24px">
+                <h2 tabindex="0" class="trackingMain__title">Mis Datos</h2>
+                <ul class="trackingMain__dataNav">
+                    <li class="complete"></li>
+                    <li class="complete"></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+            <!-- Nombre usuario-->
+            <h2 class="profileName mb-16px">
+                Daniela Gómez
+            </h2>
+            <!-- Formulario detalle cedula-->
+            <form class="formApp">
+                
+                <div class="input">
+                    <label for="" class="input__label">Fecha de expedición de su cédula</label>
+                    <input type="date" class="input__textBoxDate" value="2016-12-20" disabled="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="changeInput(this)">
+                        <img src="../media/_defaultIcons/icon-edit.svg" alt="">
+                    </a>
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">País de expedición de su cédula</label>
+                    <input type="text" class="input__textBox" value="Colombia" placeholder="Ingrese el país" disabled="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="changeInput(this)">
+                        <img src="../media/_defaultIcons/icon-edit.svg" alt="">
+                    </a>
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">Ciudad de expedición de su cédula</label>
+                    <input type="text"  class="input__textBox" value="" placeholder="Escriba la ciudad" >
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">País de nacimiento</label>
+                    <input type="text" class="input__textBox" value="Colombia" placeholder="Ingrese el país" disabled="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="changeInput(this)">
+                        <img src="../media/_defaultIcons/icon-edit.svg" alt="">
+                    </a>
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">Cuidad de nacimiento</label>
+                    <input type="text" class="input__textBox" value="Bogotá D.C" placeholder="Ingrese la ciudad" disabled="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="changeInput(this)">
+                        <img src="../media/_defaultIcons/icon-edit.svg" alt="">
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button type="button" id="nextButton" class="button--primary">Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

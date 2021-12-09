@@ -1,0 +1,161 @@
+//Properties - Propiedades generales para todos los componentes
+
+//-------------------- tamanios Porcentuales
+$listWhidth: 100, 90, 82, 80, 65, 60, 50, 40, 35, 20;
+$operador: '%';
+@each $whidth in $listWhidth {
+    //----- tamanios
+    .wh-#{$whidth}{
+        width: $whidth+0%            !important;
+    }
+}
+
+.wh-auto{
+    width: auto            !important;
+}
+
+//-------------------- Max widths general
+$listMaxWidths: 180px, 210px, 250px, 300px, 335px, 550px, 650px, 750px;
+@each $widths in $listMaxWidths {
+    //----- Max width
+    .mxw-#{$widths}{
+        max-width: $widths              !important;
+    }   
+}
+ 
+
+
+//-------------------- Margins
+$listMargins: 0px, 4px, 8px, 12px, 14px, 16px, 20px, 24px, 30px, 32px, auto;
+@each $margins in $listMargins {
+    //----- Margin top
+    .mt-#{$margins}{
+        margin-top: $margins            !important;
+    }
+    //----- Margin bottom
+    .mb-#{$margins}{
+        margin-bottom: $margins         !important;
+    }
+    //----- Margin left
+    .ml-#{$margins}{
+        margin-left: $margins         !important;
+    }
+    //----- Margin right
+    .mr-#{$margins}{
+        margin-right: $margins         !important;
+    }
+    //----- Margin vertical
+    .mV-#{$margins}{
+        margin-top: $margins            !important;
+        margin-bottom: $margins         !important;
+    }
+    //----- Margin Horizontal
+    .mH-#{$margins}{
+        margin-left: $margins           !important;
+        margin-right: $margins          !important;
+    }
+}
+
+
+//-------------------- Paddings
+$listPaddings: 0px, 4px, 6px, 8px, 10px, 14px, 16px, 20px, 24px, 28px, 32px;
+@each $paddings in $listPaddings {
+    //----- Padding top
+    .pt-#{$paddings}{
+        padding-top: $paddings           !important;
+    }
+    //----- Padding bottom
+    .pb-#{$paddings}{
+        padding-bottom: $paddings        !important;
+    }
+    //----- Padding left
+    .pl-#{$paddings}{
+        padding-left: $paddings        !important;
+    }
+    //----- Padding right
+    .pr-#{$paddings}{
+        padding-right: $paddings        !important;
+    }
+    //----- Padding vertical
+    .pV-#{$paddings}{
+        padding-top: $paddings           !important;
+        padding-bottom: $paddings        !important;
+    }
+    //----- Padding horizontal
+    .pH-#{$paddings}{
+        padding-left: $paddings          !important;
+        padding-right: $paddings         !important;
+    }
+}
+
+//-------------------- z-index
+$listZindex: 1, 2, 4, 6, 8, 10;
+$operador: '%';
+@each $zindex in $listZindex {
+    //----- tamanios
+    .zi-#{$zindex}{
+        z-index: $zindex            !important;
+    }
+}
+
+
+//-------------------- Text align general
+$alignsTexts: left, center, right, justify;
+@each $aligns in $alignsTexts {
+    //----- Text align
+    .ta-#{$aligns}{
+        text-align: $aligns             !important;
+    } 
+}
+
+
+//-------------------- Font sizes general
+$fontSizes: $font-p - 4, $font-p - 3, $font-p - 2, $font-p, $font-p + 2, $font-p + 4, $font-h, $font-p + 6, 24px;
+@each $sizes in $fontSizes {
+    //----- Font size
+    .fz-#{$sizes}{
+        font-size: $sizes                !important;
+    } 
+}
+
+//-------------------- Font weight general
+// el mapa esta creado en _variables.scss
+@each $namefw, $valuefw in $mapFW {
+    //----- font weight
+    .fw-#{$namefw}{
+        font-weight: $valuefw       !important;
+    }
+}
+
+
+//-------------------- Text transforms general
+$textTransforms: uppercase, lowercase, capitalize;
+@each $transforms in $textTransforms {
+    //----- Text transforms
+    .tt-#{$transforms}{
+        text-transform: $transforms       !important;
+    } 
+}
+
+
+//-------------------- Text Color
+// el mapa esta creado en _variables.scss
+@each $nameCt, $valueCt in $mapCTexto {
+    //----- font weight
+    .#{$nameCt}{
+        color: $valueCt       !important;
+    }
+}
+
+
+//-------------------- Bloquear scroll - modales
+.is--scrollLocked{
+    overflow-y: hidden;
+}
+
+
+//-------------------- Ocultar elementos
+.hidden{
+    display: none !important;
+    pointer-events: none !important;
+}

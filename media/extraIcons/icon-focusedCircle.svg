@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="004---Validación-identifad-clientes---0016K" transform="translate(-32.000000, -298.000000)" fill="#E1111C" fill-rule="nonzero">
+            <g id="Card" transform="translate(16.000000, 152.000000)">
+                <g id="Text-2" transform="translate(16.000000, 144.000000)">
+                    <g id="Capa_6" transform="translate(0.000000, 2.000000)">
+                        <path d="M10,1 C14.9705628,1 19,5.02943727 19,10 C19,14.9705628 14.9705628,19 10,19 C5.02943727,19 1,14.9705628 1,10 C1,5.02943727 5.02943727,1 10,1 M10,0 C4.47715252,0 0,4.47715252 0,10 C0,15.5228476 4.47715252,20 10,20 C15.5228476,20 20,15.5228476 20,10 C20,7.34783513 18.9464317,4.80429599 17.0710679,2.9289322 C15.1957041,1.05356841 12.652165,0 10,0 L10,0 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

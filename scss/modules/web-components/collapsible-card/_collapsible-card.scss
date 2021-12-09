@@ -1,0 +1,100 @@
+.cardContainer{
+    @extend %neoShadow;
+    width: calc(100% - 32px);
+    max-width: 550px;
+    margin: 8px auto 0;
+    border-radius: 10px;
+    background-color: $background-contextBox;
+
+
+    .cardHeader{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px 10px 0px 0px;
+        padding: 16px;
+        background-color: #FAFAFC;
+        cursor: pointer;
+        &__icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 24px;
+            width: 24px;
+            .rotate{
+                transform: rotate(0deg);
+            }
+        }
+        p{
+            @include defaultFont(1, $c: $titles-color, $fw: medium)
+        }
+
+        //Estados
+        &--incomplete{
+            p{
+                position: relative;
+                padding-left: 24px;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+    
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+    
+                    background-image: url(../media/_defaultIcons/icon-validationIncomplete.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+    
+        &--success{
+            p{
+                position: relative;
+                padding-left: 24px;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+    
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+    
+                    background-image: url(../media/_defaultIcons/icon-validationSuccess.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+
+    .cardContent{
+        padding: 16px 16px 24px
+    }
+
+    &--inactive{
+        @extend .cardContainer;
+        box-shadow: none;
+        border: 1px solid #E5E3E3;
+        .cardHeader{
+            border-radius: 10px;
+            &__icon{
+                .rotate{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

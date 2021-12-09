@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Tracking -->
+            <div class="trackingMain">
+                <h2 tabindex="0" class="trackingMain__title">Asignación de clave</h2>
+                <ul class="trackingMain__dataNav">
+                    <li class="complete"></li>
+                    <li class="complete"></li>
+                    <li class="complete"></li>
+                </ul>
+            </div>
+
+            <h2 class="contentBox__title fw-bold ta-center">
+                Clave Virtual
+            </h2>
+            <p class="contentBox__text mb-16px">
+                Asigne su Clave Virtual para ingresar a nuestros Canales Virtuales y realizar sus consultas y transacciones.
+            </p>
+
+            <!-- Formulario contenedor-->
+            <form action="" class="formApp">
+                <div class="input">
+                    <label for="" class="input__label">Ingrese su Clave Virtual</label>
+                    <input type="password" maxlength="8" class="input__textBoxPassword ta-left" value="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="viewPassword(this)">
+                        <img src="../media/_defaultIcons/icon-view-pass.svg" alt="verClave">
+                    </a>
+                    <div class="helper">
+                        <p class="helper__text">
+                            Debe asignar una clave de 4 a 8 digitos númericos que no sean repetidos ni consecutivos.
+                        </p>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">Confirme su Clave Virtual</label>
+                    <input type="password" maxlength="8" class="input__textBoxPassword ta-left" value="" onkeyup="buttonCheck(this,'nextButton')">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="viewPassword(this)">
+                        <img src="../media/_defaultIcons/icon-view-pass.svg" alt="verClave">
+                    </a>
+                    <div class="helper">
+                        <p class="helper__text">
+                            Debe asignar una clave de 4 a 8 digitos númericos que no sean repetidos ni consecutivos.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button type="button" id="nextButton" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

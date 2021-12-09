@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Soluciones de venta</h2>
+            <p class="contentBox__text fw-medium">
+                Conozca las soluciones que tendrá habilitadas para realizar ventas en
+                su negocio:
+            </p>
+            <!-- #region Seccion de Tabs -->
+            <div class="iconTabs">
+                <div class="tabsContainer">
+                    <!-- Tab Button -->
+                    <div class="tabsContainer__item" onclick="changeTab(this), changeContainer('codigoTab')">
+                        <span class="dv-icon-benefitQR fz-20px active"></span>
+                        <div class="divisor"></div>
+                    </div>
+                     <!-- Tab Button -->
+                    <div class="tabsContainer__item--inactive" onclick="changeTab(this), changeContainer('linkTab')">
+                        <span class="dv-icon-link fz-20px"></span>
+                        <div class="divisor"></div>
+                    </div>
+                     <!-- Tab Button -->
+                    <div class="tabsContainer__item--inactive" onclick="changeTab(this), changeContainer('phoneTab')">
+                        <span class="dv-icon-phone fz-20px"></span>
+                        <div class="divisor"></div>
+                    </div>
+                     <!-- Tab Button -->
+                    <div class="tabsContainer__item--inactive" onclick="changeTab(this), changeContainer('paymentTab')">
+                        <span class="dv-icon-world fz-20px"></span>
+                        <div class="divisor"></div>
+                    </div>
+                     <!-- Tab Button -->
+                    <div class="tabsContainer__item--inactive" onclick="changeTab(this), changeContainer('shoppingTab')">
+                        <span class="dv-icon-shoppingCart fz-20px"></span>
+                        <div class="divisor"></div>
+                    </div>
+                </div>
+
+                <!-- Contenido Tab QR-->
+                <div id="codigoTab" class="tabContent">
+                    <h2 class="tabContent__title">QR</h2>
+                    <p class="tabContent__text ct3">
+                        Genere de inmediato un código QR para que sus clientes le <strong class="fw-medium">paguen desde
+                        billeteras digitales</strong>.
+                    </p>
+                    <p class="tabContent__text ct3 fw-medium">De forma fácil y segura desde su App Davivienda Móvil:</p>
+                    <div class="gifContainer mb-0px mt-16px wh-100">
+                        <img src="../media/GIFs/QR.gif" alt="">
+                    </div>
+                </div>
+
+                <!-- Contenido Tab Link de pago -->
+                <div id="linkTab" class="tabContent--inactive">
+                    <div class="result">
+                        <div class="resultItem--helperA" onclick="actionHelper(this)">
+                            <p class="resultItem__title fz-16px ct2 fw-medium">Link de pago
+                            <div class="helper--type3 hidden">
+                                <p class="helper__text">
+                                    Tendrá acceso inmediato a nuestra pasarela de pagos aliada, para que realice cobros
+                                    sin costo adicional, bajo el modelo gateway.
+                                    <br><br>
+                                    Si desea usar otra pasarela de pagos podrá hacerlo, en ese caso deberá revisar con
+                                    ellos los costos adicionales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tabContent__text ct3">
+                        Genere un link de pago y compártalo a sus clientes por email, redes sociales y SMS.
+                    </p>
+                    <p class="tabContent__text ct3 fw-medium">De forma fácil y segura desde su App Davivienda Móvil:</p>
+                    <div class="gifContainer mb-0px mt-16px wh-100">
+                        <img src="../media/GIFs/LinkPago.gif" alt="">
+                    </div>
+                </div>
+
+                <!-- Contenido Tab Datafonos -->
+                <div id="phoneTab" class="tabContent--inactive">
+                    <h2 class="tabContent__title">Datáfonos</h2>
+                    <p class="tabContent__text ct3">
+                        Podrá solicitar datáfonos para recibir pagos en sus puntos de venta o a domicilio, aceptando
+                        tarjetas débito y crédito. También generará QR para pagos desde billeteras digitales.
+                    </p>
+                    <p class="tabContent__text ct3 fw-medium">
+                        De forma fácil y segura desde su App Davivienda Móvil
+                        podrá gestionar sus datáfonos.
+                    </p>
+                    <div class="gifContainer mb-0px mt-16px wh-100">
+                        <img src="../media/GIFs/Datafonos.gif" alt="">
+                    </div>
+                </div>
+
+                <!-- Contenido Tab Boton de pago -->
+                <div id="paymentTab" class="tabContent--inactive">
+                    <h2 class="tabContent__title">Botón de pago</h2>
+                    <p class="tabContent__text ct3">
+                        Integre fácilmente botones de pago en su página web para el pago de sus ventas.
+                    </p>
+                    <p class="tabContent__text ct3 fw-medium">
+                        De forma fácil y segura desde su App Davivienda Móvil:
+                    </p>
+                    <div class="gifContainer mb-0px mt-16px wh-100">
+                        <img src="../media/GIFs/BotonPago.gif" alt="">
+                    </div>
+                </div>
+
+                <!-- Contenido Tab Shopping -->
+                <div id="shoppingTab" class="tabContent--inactive">
+                    <h2 class="tabContent__title">Carritos de compra y Web checkout</h2>
+                    <p class="tabContent__text ct3">
+                        Integre fácilmente la pasarela de pagos al carrito de compras o checkout de su página web.
+                    </p>
+                    <p class="tabContent__text ct3">
+                        Quedará vinculado automáticamente a nuestra pasarela de pagos aliada, sin más trámites, ni
+                        costos adicionales.
+                    </p>
+                    <p class="tabContent__text ct3 fw-medium">
+                        Consulte más información en su App Davivienda Móvil:
+                    </p>
+                    <div class="gifContainer mb-0px mt-16px wh-100">
+                        <img src="../media/GIFs/WebCheckout.gif" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- #endregion Seccion de Tabs -->
+        </div>
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary">Continuar</button>
+        </div>
+
+    </section>
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

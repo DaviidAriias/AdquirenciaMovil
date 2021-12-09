@@ -1,0 +1,106 @@
+//Radio Buttons
+.contRadio{
+    display: flex;
+    margin-left: 16px;
+    &--column{
+        @extend .contRadio;
+        flex-direction: column;
+        .radio{
+            margin-right: 0; margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #cacaca;
+            &:last-of-type{
+                border-bottom: 0px;
+            }
+        }
+    }
+}
+
+.radio{
+    position: relative;
+    display: flex;
+    padding-left: 32px;
+    width: auto;
+    margin-right: 10%;
+
+    @include defaultFont(1, $lh: 20px);
+
+    padding-top: 3px;
+    margin-bottom: 0;
+    cursor: pointer;
+
+    &:last-of-type{
+        margin-left: 0px;
+    }
+    
+    input{
+        display: none;
+        &:checked~.radio__indicator {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__text{
+        .primary{
+            @include defaultFont(1, $fz: $font-p + 2, $fw: bold);
+            margin-bottom:2px;
+        }
+        .secondary{
+            @include defaultFont(1, $fz: $font-p - 2, $c: $text-enable);
+        }
+    }
+
+    //Radio Button
+    .radio__indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background: transparent;
+
+        @include prefix((
+            border: 1px solid #b8b5b5,
+            appearance: none
+        ), webkit moz ms o);
+        
+        background-color: #fefeff;
+        border-radius: 50%;
+
+        transition-duration: .2s;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+
+            width: 14px;
+            height: 14px;
+            background-color: $red-primary;
+            border-radius: 50%;
+            border: 1px solid #d20a0a;
+            box-sizing: border-box;
+
+            @include prefix((
+                box-shadow: 0px 2px 4px rgba(122, 120, 120, 0.5)
+            ), webkit moz ms);
+
+            opacity: 0;
+            transition-duration: .2s;
+        }
+    }
+    &--typeB{
+        @extend .radio;
+        padding-top: 0;
+
+        .radio__indicator{
+            top: 3px;
+        }
+    }
+}

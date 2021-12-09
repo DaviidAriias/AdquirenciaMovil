@@ -1,0 +1,38 @@
+//Titulos genericos para todos los elementos
+%h {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    @include defaultFont(1, $fz: $font-h, $fw: bold, $ta: center, $c: $titles-color);
+}
+
+//Clase específica títulos del contentBox
+.contentBox__title{
+    @extend %h;
+    @include defaultFont(0, $lh: 20px);
+    width: 80%;
+    margin-bottom: 16px;
+    //titulo o texto descriptivo por lo general va despues de un traking
+    &--small{
+        @extend .contentBox__title;
+        @include defaultFont(0, $fw: medium, $fz: $font-p, $ta: left, $lh: 16px);
+        width: 100%;
+    }
+    &--large{
+        @extend .contentBox__title;
+        @include defaultFont(0, $fz: $font-p + 6px, $lh: 24px);
+    }
+}
+
+//Clase específica de titulos para Beneficios y características
+.titleBenefits{
+    @extend %h;
+    margin: 16px 0 7px;
+    @include defaultFont(0, $fz: 20px, $lh: 24px) 
+}
+
+.profileName{
+    @extend %h;
+    margin-bottom: 12px;
+    @include defaultFont(0, $c: $text-color, $fw: bold, $lh:20px)
+}

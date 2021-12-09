@@ -1,0 +1,117 @@
+.checkList{
+
+    &__item{
+        display: flex;
+        align-items: center;
+        padding: 16px 0px;
+        border-bottom: 1px solid #CACACA;
+
+        &:nth-child(1){
+            span{
+                &::after{
+                    content: "1";
+                }
+            }
+        }
+
+        &:nth-child(2){
+            span{
+                &::after{
+                    content: "2";
+                }
+            }
+        }
+
+        &:nth-child(3){
+            span{
+                &::after{
+                    content: "3";
+                }
+            }
+        }
+
+        span{
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: relative;
+
+            &::after{
+                content: "1";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+
+                font-size: $font-p - 4;
+                color: #6E6E6E;
+
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                margin: auto;
+            }
+        }
+
+        &:first-child{
+            padding-top: 0px;
+        }
+
+        &:last-child{
+            border-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+        .checkedItem{
+            min-height: 20px;
+            min-width: 20px;
+            margin-right: 10px;
+            background: url(../media/extraIcons/icon-check-red.svg);
+            &::after{
+                visibility: hidden;
+                color: $red-primary;
+            }
+        }
+
+        .focusedItem{ 
+            min-height: 20px;
+            min-width: 20px;
+            margin-right: 10px;
+            background: url(../media/extraIcons/icon-focusedCircle.svg);
+            &::after{
+                //display: none;
+                color: $red-primary;
+            }
+        }
+
+        .inactiveItem{
+            min-height: 20px;
+            min-width: 20px;
+            margin-right: 10px;
+            background: url(../media/extraIcons/icon-inactiveCircle.svg);
+            &::after{
+                //display: none;
+                color: #6E6E6E;
+            }
+        }
+
+        .failedItem{
+            min-height: 20px;
+            min-width: 20px;
+            margin-right: 10px;
+            background: url(../media/extraIcons/icon-failedCircle.svg);
+            &::after{
+                visibility: hidden;
+            }
+        }
+
+        .itemText{
+            @include defaultFont(1, $fz: $font-p, $ta: left, $c: #676565, $fw: medium);
+            &--checked{
+                @include defaultFont(1, $fz: $font-p, $ta: left, $fw: medium)
+            }
+        }
+    }
+}

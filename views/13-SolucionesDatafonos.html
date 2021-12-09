@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <!-- #region Main Region -->
+    <section class="container pb-0px">
+        <!-- back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region Seccion Datafonos -->
+        <div class="contentBox--typeB mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Soluciones de venta</h2>
+            <h3 class="contentBox__title  ta-left wh-100 pH-16px mb-0px">
+                Ingrese la cantidad de datáfonos que necesita
+            </h3>
+            <!-- Lista de datafonos -->
+            <form action="" class="formApp">
+                <!-- Datafono recomendado -->
+                <div class="dataphone--wLabel">
+                    <h3 class="dataphone__label">Davivienda le recomienda</h3>
+                    <div class="dataphone__card--wLabel">
+                        <div class="dataphone__image">
+                            <img src="../media/images/image-dataphone-1.png" alt="">
+                        </div>
+                        <div class="dataphone__info">
+                            <p class="title">Datáfono portátil</p>
+                            <p class="description">
+                                Ideal para cobros a domicilio. Debe tener un Smartphone con internet que se conectará
+                                vía Bluetooth al datáfono.
+                            </p>
+                            <div class="dataphone__input mt-16px">
+                                <label class="label">Número de datáfonos</label>
+                                <input type="text" class="input__dataphoneCard" value="0" onclick="selectContent(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Otras opciones datafonos -->
+                <div class="dataphone">
+                    <h3 class="dataphone__title">Otras opciones de datáfonos:</h3>
+                    <!-- Datafono Opcion 1 -->
+                    <div class="dataphone__card">
+                        <div class="dataphone__image">
+                            <img src="../media/images/image-dataphone-2.png" alt="">
+                        </div>
+                        <div class="dataphone__info">
+                            <p class="title">Datáfono con conexión a internet</p>
+                            <p class="description">
+                                Ideal cuando se tiene un punto de pago fijo. Debe contar con un punto de conexión a
+                                internet para el datáfono.
+                            </p>
+                            <div class="dataphone__input mt-16px">
+                                <label class="label">Número de datáfonos</label>
+                                <input type="text" class="input__dataphoneCard" value="0" onclick="selectContent(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Datafono Opcion 2 -->
+                    <div class="dataphone__card">
+                        <div class="dataphone__image">
+                            <img src="../media/illustrations/image-dataphone.svg" alt="">
+                        </div>
+                        <div class="dataphone__info">
+                            <p class="title">Datáfono Inalámbrico</p>
+                            <p class="description">
+                                Ideal para cobros en puntos de venta o a domicilio. Cuenta con su propia conexión a
+                                internet.
+                            </p>
+                            <div class="dataphone__input mt-16px">
+                                <label class="label">Número de datáfonos</label>
+                                <input type="text" class="input__dataphoneCard" value="0" onclick="selectContent(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boton "Ver mas" -->
+                    <div class="seeMoreBtn mt-16px" onclick="showAndRemove(this,'datafonos')">
+                        <p class="fw-medium pH-0px">Ver más opciones de datáfonos</p>
+                        <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="">
+                    </div>
+                    <!-- Datafonos ocultos -->
+                    <div id="datafonos" class="hidden">
+                        <!-- Datafono oculto 1 -->
+                        <div class="dataphone__card">
+                            <div class="dataphone__image">
+                                <img src="../media/illustrations/image-dataphone.svg" alt="">
+                            </div>
+                            <div class="dataphone__info">
+                                <p class="title">Datáfono inalámbrico pantalla touch</p>
+                                <p class="description">
+                                    Ideal para cobros en puntos de venta o a domicilio. Cuenta con su propia conexión a
+                                    internet.
+                                </p>
+                                <div class="dataphone__input mt-16px">
+                                    <label class="label">Número de datáfonos</label>
+                                    <input type="text" class="input__dataphoneCard" value="0" onclick="selectContent(this)">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Datafono oculto 2 -->
+                        <div class="dataphone__card">
+                            <div class="dataphone__image">
+                                <img src="../media/illustrations/image-dataphone.svg" alt="">
+                            </div>
+                            <div class="dataphone__info">
+                                <p class="title">Datáfono inalámbrico</p>
+                                <p class="description">
+                                    Ideal para cobros en puntos de venta o a domicilio. Cuenta con su propia conexión a
+                                    internet.
+                                </p>
+                                <div class="dataphone__input mt-16px">
+                                    <label class="label">Número de datáfonos</label>
+                                    <input type="text" class="input__dataphoneCard" value="0" onclick="selectContent(this)">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Datafono oculto 3 -->
+                        <div class="dataphone__card">
+                            <div class="dataphone__image">
+                                <img src="../media/illustrations/image-dataphone.svg" alt="">
+                            </div>
+                            <div class="dataphone__info">
+                                <p class="title">Datáfono con conexión a internet</p>
+                                <p class="description">
+                                    Ideal cuando se tiene un punto de pago fijo. Debe contar con un punto de conexión a
+                                    internet para el datáfono.
+                                </p>
+                                <div class="dataphone__input mt-16px">
+                                    <label class="label">Número de datáfonos</label>
+                                    <input type="text" class="input__dataphoneCard" value="0" onclick="selectContent(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- #endregion Seccion Datafonos -->
+
+        <!-- #region Informacion entrega datafonos -->
+        <div class="contentBox mxw-550px">
+            <h3 class="contentBox__title--small">Información de entrega de datáfonos</h3>
+            <p class="contentBox__text">
+                Un asesor de <strong>“red aliada”</strong> se comunicará con usted para agendar
+                la entrega de sus datáfonos a los siguientes datos:
+            </p>
+            <!-- Formulario -->
+            <form class="formApp">
+                <div class="input">
+                    <label for="" class="input__label">Número de celular</label>
+                    <input type="text" class="input__textBox" value="3118006712" disabled="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction" onclick="changeInput(this)">
+                        <img src="../media/_defaultIcons/icon-edit.svg" alt="">
+                    </a>
+                </div>
+
+                <fieldset class="input">
+                    <label for="" class="input__label">Dirección de entrega</label>
+                    <input type="text" class="input__textBox" value="Calle 151 # 13A-50"
+                        placeholder="Ingrese su dirección" disabled="">
+                    <a href="javascript:void(0)" title="Editar" class="input__buttonAction"
+                        onclick="changeAddress(this)"><img src="../media/_defaultIcons/icon-edit.svg" alt=""></a>
+                    <div class="hidden">
+                        <div class="input--fluidBigger">
+                            <div class="dropdown">
+                                <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                <div class="options">
+                                    <!-- Si un option tendría que ir disabled, este se nombra en la clase del el label -->
+                                    <div class="option">
+                                        <label class="clickDropdown  checked">
+                                            <input type="radio" name="radioDir" value="opt1" disabled=""> Sel. opción
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt1" disabled=""> Autopista
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt2" disabled=""> Avenida
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt3" disabled=""> Avenida
+                                            Cll
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt4" disabled=""> Avenida
+                                            Cra
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown ">
+                                            <input type="radio" name="radioDir" value="opt5" disabled=""> Calle
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt6" disabled=""> Carrera
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="input__textBox" value="">
+                            <span>#</span>
+                            <input type="text" class="input__textBox" value="">
+                            <span>-</span>
+                            <input type="text" class="input__textBox" value="">
+                        </div>
+
+                        <div class="input">
+                            <label for="" class="input__label">Torre / Piso / Apartamento / Otro</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Complemente su dirección">
+                        </div>
+
+                        <div class="input mb-0px">
+                            <label for="" class="input__label">Ciudad</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Ingrese la ciudad">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- #endregion Informacion entrega datafonos -->
+
+        <!--  Buttons -->
+        <div class="contButtons mb-24px mxw-550px">
+            <button id="nextButton" type="button" class="button--primary">Continuar</button>
+        </div>
+
+        <!-- Menu inferior (footer) -->
+        <div class="footer">
+            <div class="footer__info">
+                <p class="title">Cantidad de datáfonos que va a solicitar</p>
+                <p class="description">0</p>
+            </div>
+            <div class="footer__icon">
+                <img src="../media/extraIcons/icon-trash.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- #endregion Main Region -->
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+</body>
+
+</html>

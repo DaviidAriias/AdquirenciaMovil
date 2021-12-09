@@ -1,0 +1,48 @@
+.headerWebMain{
+    @include prefix((
+        display: flex,
+        align-items: center,
+        justify-content: space-between
+    ), webkit moz ms o);
+
+    background-color: transparent;
+    width: 100%;
+    padding: 0 24px;
+    margin-top: 20px;
+    text-align: center;
+
+    .headerWebMain__title{
+        display: inline-block;
+        width: 50%;
+        @include defaultFont(1, $fz: $font-h + 10px, $fw: bold, $c: #000);
+    }
+
+    nav{
+        ul{
+            @include prefix((
+                display: flex,
+                align-items: center,
+                justify-content: flex-end,
+                flex-direction: arrow
+            ), webkit moz ms o);
+            width: auto;
+            li{
+                display: inline-block;
+                text-align: center;
+                margin: 0 16px;
+                &:last-of-type{
+                    margin-right: 0px;
+                }
+                a{
+                    img{
+                        display: block;
+                        margin: 0 auto 8px;
+                        width: 100%;
+                        max-width: 24px;
+                    }
+                    @include defaultFont(1, $c: $text-enable, $fz: $font-p);
+                }
+            }
+        }
+    }
+} 

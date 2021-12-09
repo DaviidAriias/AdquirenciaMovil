@@ -1,0 +1,30 @@
+.logoGrid{
+    &--auto{
+        margin: 0 auto;
+    }
+    &__title{
+        @include defaultFont(1, $ta:center, $fw: bold, $c: #000000);
+        margin-top: 16px;
+    }
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+    }
+    &__item{
+        display: grid;
+        /* flex: 1; */
+        justify-items: center;
+        .logoContainer{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            max-width: 48px;
+            height: 32px;
+        }
+        .logoText{
+            @include defaultFont(1, $fz: 11px, $fw: medium, $ta: center);
+            margin-top: 8px;
+        }
+    }
+}

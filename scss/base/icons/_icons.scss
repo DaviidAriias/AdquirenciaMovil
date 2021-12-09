@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "fontIcons";
+    src: url("../fonts/icons.eot");
+    src:
+    url("../fonts/icons.woff") format("woff"),
+    url("../fonts/icons.ttf") format("truetype"),
+    url("../fonts/icons.svg") format("svg");
+}
+
+[class^="dv-icon-"], [class*=" dv-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'fontIcons' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.dv-icon-link:before {
+    content: "\e902";
+    color: #6e6e6e;
+}
+
+.dv-icon-benefitQR:before {
+    content: "\e901";
+    color: #717171;
+}
+
+.dv-icon-shoppingCart:before {
+    content: "\e903";
+    color: #717171;
+}
+
+.dv-icon-world:before {
+    content: "\e904";
+    color: #717171;
+  }
+
+.dv-icon-phone:before {
+    content: "\e900";
+    color: #717171;
+}
+
+//Importante dejar esta clase al final del archivo
+.active:before{
+    color: #E1111C
+}

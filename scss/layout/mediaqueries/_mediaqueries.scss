@@ -1,0 +1,141 @@
+//----------- Mobile
+@media (min-width: 45em) {
+
+}
+
+//----------- Phablet
+@media (min-width: 50em) {
+    .helper{
+        &--long{
+            .helper__text{
+                -webkit-line-clamp: initial;
+            }
+        }
+    }
+    
+    .listBenefits__itemB{
+        @include prefix((
+            align-items: center
+        ), webkit mox ms o);
+    }
+
+    .ContainerMainTyC{
+        &__canvas{
+            //Scroll
+            &::-webkit-scrollbar {
+                width: 10px;
+                height: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgb(194, 194, 194);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+//----------- Tablet
+@media (min-width: 64em) {
+
+}
+
+//----------- laptop
+@media (min-width: 70em) {
+
+}
+
+//----------- PC
+@media (min-width: 91em) {
+
+}
+
+@media (min-width: 515px) {
+    .listBenefits__itemCenter{
+        align-items: center;
+    }
+}
+
+@media (max-width: 320px){
+    .headerEcardFallida{
+        --height:152px;
+    }
+}
+
+@media (max-width: 350px){
+    .result{
+        .resultItem{
+            &--helperB{
+                &::after{
+                    top:21px
+                }
+            }
+        }
+    }
+
+    .headerTarifa1{
+        --height:135px;
+    }
+    .headerTarifa2{
+        --height:135px;
+    }
+}
+
+@media (min-width: 450px){
+    .headerEcard{
+        &::before{
+            background-size: 88%;
+            background-position-x: 0, 0px;
+            background-position-y: 0, 38%;
+        }
+    }
+    .headerEcardFallida{
+        &::before{
+            background-position-x: 0, -34px;
+            background-position-y: 0, 33%;
+        }
+    }
+}
+
+@media (min-width: 530px){
+    .headerNegocio{
+        &::before{
+            background-position: 0 0, 0 20%;
+        }
+    }
+}
+
+
+
+// ------------------------------------------------------------------ Mediaqueries specific iPhones
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2){
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2){
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3){
+    
+}
+
+/* ----------- iPhone X ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3){
+    
+}

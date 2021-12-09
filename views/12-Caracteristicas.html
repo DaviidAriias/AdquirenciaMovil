@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!--  back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region ContentBox -->
+        <div class="contentBox">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Soluciones de venta</h2>
+            <p class="contentBox__text">
+                Queremos recordarle que las siguientes soluciones de venta las podrá solicitar en el módulo de negocio:
+            </p>
+            <!-- Caracteristicas en grid -->
+            <div class="boxGrid">
+                <div class="boxGrid__item">
+                    <img src="../media/extraIcons/icon-benefitQR.svg" alt="">
+                    <p>Código QR</p>
+                </div>
+                <div class="boxGrid__item">
+                    <img src="../media/extraIcons/icon-link.svg" alt="">
+                    <p>Link de pago</p>
+                </div>
+                <div class="boxGrid__item">
+                    <img src="../media/extraIcons/icon-phone.svg" alt="">
+                    <p>Datáfonos</p>
+                </div>
+                <div class="boxGrid__item">
+                    <img src="../media/extraIcons/icon-world.svg" alt="">
+                    <p>Botón de pago</p>
+                </div>
+                <div class="boxGrid__item">
+                    <img src="../media/extraIcons/icon-shoppingCart.svg" alt="">
+                    <p>Carritos de compra y Web checkout</p>
+                </div>
+            </div>
+            <p class="contentBox__text">
+                Si lo desea puede iniciar con la solicitud de los datáfonos para recibirlos en su negocio.
+            <form class="formApp">
+                <div class="input">
+                    <p class="input__label">¿Quiere solicitarlos?</p>
+                    <div class="contRadio">
+                        <label class="radio">
+                            Sí
+                            <input type="radio" value="rut" name="rut" onclick="checkBullet(this, 'nextButton')">
+                            <div class="radio__indicator"></div>
+                        </label>
+
+                        <label class="radio" >
+                            No
+                            <input type="radio" value="noRut" name="rut" onclick="checkBullet(this, 'nextButton')">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+        <!--  Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

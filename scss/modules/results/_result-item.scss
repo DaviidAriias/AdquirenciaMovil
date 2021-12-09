@@ -1,0 +1,188 @@
+.result{
+    margin-bottom: 16px;
+    .resultItem{
+        position: relative;
+        border-bottom: 1px solid #cacaca;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        &:last-of-type{
+            border-bottom: none;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        &__title{
+            @include defaultFont(1);
+        }
+        &__info{
+            @include defaultFont(1, $c: $titles-color, $fw: medium);
+        }
+        
+        p{
+            margin-bottom: 8px;
+            &:last-of-type{
+                margin-bottom: 0px;
+            }
+        }
+
+        &--bt{
+            @extend .resultItem;    
+            border-top: 1px solid #cacaca;
+            margin-top: 8px;
+            padding-top: 8px;
+        }
+        &--bb{
+            @extend .resultItem;
+            &:last-of-type{
+                border-bottom: 1px solid #cacaca;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+            }
+        }
+        
+
+        &--typeB{
+            @extend .resultItem;
+            .resultItem__title{
+                @include defaultFont(1, $c: $titles-color, $fw: medium);
+            }
+            .resultItem__info{
+                @include defaultFont(1);
+            }
+            p{
+                margin-bottom: 0px;
+            }
+        }
+
+        &--arrow{
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+
+            
+            .text {
+                @include defaultFont(1);
+                width: calc(100% - 16px);
+                padding-left: 8px;
+            }
+            .imgContainer{
+                min-width: 16px;
+                height: 16px;
+                margin-left: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    margin-bottom: 2px;
+                    max-width: 16px;
+                    max-height: 16px;
+                    display: block;
+                }
+                
+            }
+            &:last-of-type{
+                margin-bottom: 0px
+            }
+        }
+
+        &--helper{
+            @extend .resultItem;
+            cursor: pointer;
+            &::after{
+                content: "";
+                background-image: url(../media/_defaultIcons/icon-arrowDown.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 14px;
+                height: 14px;
+                position: absolute;
+                top: 13px;
+                right: 9px;
+                pointer-events: none;
+                transition: all 0.2s ease-out;
+                opacity: 1;
+                pointer-events: none;
+            }
+        }
+
+        &--wHelper{
+            @extend .resultItem;
+            cursor: pointer;
+            
+        }
+
+        &--helperA{
+            @extend .resultItem--helper;
+            &::after{
+                top: 1px;
+            }
+        }
+
+        &--helperB{
+            @extend .resultItem;
+            cursor: pointer;
+            &::after{
+                content: "";
+                background-image: url(../media/_defaultIcons/icon-arrowDown.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 14px;
+                height: 14px;
+                position: absolute;
+                /* top: 13px; */
+                top: calc(50% - 8px);
+                right: 9px;
+                pointer-events: none;
+                transition: all 0.2s ease-out;
+                opacity: 1;
+                pointer-events: none;
+            }
+        }
+
+        &__header{
+            position: relative;
+            padding-right: 24px;
+            &::after{
+                content: "";
+                background-image: url(../media/_defaultIcons/icon-arrowDown.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 14px;
+                height: 14px;
+                position: absolute;
+                top: calc(50% - 8px);
+                right: 9px;
+                pointer-events: none;
+                transition: all 0.2s ease-out;
+                opacity: 1;
+                pointer-events: none;
+            }
+            &.show{
+                &::after{
+                    transform: rotate( -180deg);
+                }
+            }  
+        }
+        
+
+        &.show{
+            &::after{
+                transform: rotate( -180deg);
+            }
+        }
+    }
+
+    .resultItemNoBorder{
+        border: 0px;
+    }
+
+    .borderBottom{
+        border-bottom: 1px solid #cacaca !important
+    }
+
+    &__listTitle{
+        @include defaultFont(1, $fw: medium);
+        margin-bottom: 8px;
+    }
+}
+
+

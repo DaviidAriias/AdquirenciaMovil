@@ -1,0 +1,20 @@
+.swiperRed{
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    position: relative;
+    .swiper-pagination-bullet{
+        width: 6px;
+        height: 6px;
+        background-color: #D8D8D8;
+        opacity: 100%;
+        margin: 0 3px;
+        border-radius: 30px;
+
+        transition-duration: .3s;
+        &-active{
+            width: 16px;
+            background-color: $red-primary;
+        }
+    }
+}

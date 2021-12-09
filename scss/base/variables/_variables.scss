@@ -1,0 +1,70 @@
+//-------------------------------- Variables
+
+//Charset
+@charset "UTF-8";
+
+//Fuentes from Google fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700);
+
+// funete para pasword
+@font-face {
+	font-family: 'fontello';
+	src: url('../fonts/fontello.eot?0000');
+	src: url('../fonts/fontello.eot?0000#iefix') format('embedded-opentype'),
+	     url('../fonts/fontello.woff2?0000') format('woff2'),
+	     url('../fonts/fontello.woff?0000') format('woff'),
+	     url('../fonts/fontello.ttf?0000') format('truetype'),
+	     url('../fonts/fontello.svg?0000#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+// colores
+$background-body: #ebecf0;
+$background-contextBox: #f0f0f3;
+$disabled-object: #939393;
+$blancoFF:#ffffff;
+$gris97:#979797;
+
+
+
+$red-primary: #e1111c;
+$red-secondary: #d20a0a;
+
+$text-color: #404040;
+$text-enable: #676565;
+$titles-color: #000000;
+
+// mapa para Color
+$mapCTexto: (
+    ct1: $text-color,
+    ct2: $titles-color,
+    ct3: $text-enable
+);
+
+// mapa para font-weight
+$mapFW: (
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900
+);
+
+
+$input-background: #fafafc;
+
+
+
+//Fonts
+$roboto: 'Roboto', sans-serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
+$fontPassword: 'fontello','Roboto';
+
+
+//Size Fonts
+$font-p: 14px;
+$font-h: 16px;

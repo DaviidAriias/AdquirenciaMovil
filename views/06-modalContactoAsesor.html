@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+<body>
+
+    <!-- #region Modal -->
+    <section class="contModal contModal--isShow" id="modal1">
+        <div class="modal--medium">
+            <!-- el header del modal queda fuera del scroll -->
+            <div class="modalHeader">
+                <div class="modalIcon mt-8px">
+                    <img class="modalIcon__img--large" src="../media/_defaultIcons/Icon-popUp-info.svg" alt="icono modal">
+                </div>
+            </div>
+            <!-- el body del molda posee scroll -->
+            <div class="modalBody mt-8px">
+                <div class="modalInfo">
+                    <p class="modalInfo__description">
+                        Si desea revisar una negociación diferente en el valor de su comisión, dé clic en <strong>Aceptar</strong> y uno de nuestros asesores lo contactará.
+                    </p>
+                </div>
+                <!-- button modal -->
+                <div class="contButtons mt-16px">
+                    <button type="button" class="button--primary" onclick="hideModal('modal1')">Aceptar</button>
+                    <button type="button" class="button--secondary" onclick="hideModal('modal1')">Omitir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- #endregion Modal -->
+
+    <!--  Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4223 @@
+@charset "UTF-8";
+/*---------------------------------------------------
+
+============ Main - SASS ============
+* Nombre del proyecto: Styles V2020
+* Nombre del archivo: styles.scss | styles.css
+* Descripción: Hoja de estilos principal App Davivienda 2020
+* Autor: Movilidad y Canales Banco Davivienda
+
+---------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700);
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?0000");
+  src: url("../fonts/fontello.eot?0000#iefix") format("embedded-opentype"), url("../fonts/fontello.woff2?0000") format("woff2"), url("../fonts/fontello.woff?0000") format("woff"), url("../fonts/fontello.ttf?0000") format("truetype"), url("../fonts/fontello.svg?0000#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*
+@include prefix((
+    display: flex,
+    align-items: center,
+    justify-content: flex-start
+), webkit moz ms o);
+*/
+/*
+  Ejemplo pendiente
+*/
+/*
+  @include keyframes([animation_name]){
+    0%{
+      properties
+    }
+    100%{
+      properties
+    }
+  }
+
+  Se pueden adjuntar más porcentajes si se requiere, en este caso solo hay dos, inicio y fin.
+*/
+/*
+  p{
+      @include text-shorten();
+  }
+*/
+/*
+  color: darken([color],[porcentaje])
+  p{
+      color: darken($text-color, 50%);
+  }
+*/
+/*
+  color: lighten([color],[porcentaje])
+  p{
+      color: lighten($text-color, 50%);
+  }
+*/
+/*
+  p{  
+      @include defaultFont([Se pueden incluir variables o dejar vacio]);
+
+      @include defaultFont($fz: 16px, $fw: medium, $lh: 18px, $ta: center);
+
+      $fz: -> [Property] -> font-size
+      $fw: -> [Property] -> font-weight
+      $lh: -> [Property] -> line-height
+      $ta: -> [Property] -> text-align
+      $c:  -> [Property] -> color
+  }
+*/
+.contentBox, .contentBox--optCredito, .contentBox--typeB, .contentBox--typeC, .contentBox--typeD, .contentBox--darkBackground, .contentBox--header, .contentBox--headerB, .contentBox--headerC, .contentBox--white, .contentBox__cardImg img, .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide, .cardContainer, .cardContainer--inactive, .dataphone__card, .dataphone__card--wLabel {
+  box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48), -5px -5px 10px #fafbff; }
+
+@font-face {
+  font-family: "fontIcons";
+  src: url("../fonts/icons.eot");
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg") format("svg"); }
+[class^="dv-icon-"], [class*=" dv-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'fontIcons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.dv-icon-link:before {
+  content: "\e902";
+  color: #6e6e6e; }
+
+.dv-icon-benefitQR:before {
+  content: "\e901";
+  color: #717171; }
+
+.dv-icon-shoppingCart:before {
+  content: "\e903";
+  color: #717171; }
+
+.dv-icon-world:before {
+  content: "\e904";
+  color: #717171; }
+
+.dv-icon-phone:before {
+  content: "\e900";
+  color: #717171; }
+
+.active:before {
+  color: #E1111C; }
+
+/* Main Styles - Generic Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+  border-width: 0;
+  font-family: "Roboto", sans-serif;
+  vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+  *::selection {
+    background: #d7d7d7; }
+
+/* html{
+    height: 100%;
+} */
+body {
+  max-width: 100%;
+  /* height: 100%; */
+  position: relative;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  background-color: #ebecf0;
+  scroll-behavior: smooth; }
+
+button, select {
+  text-transform: none; }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none; }
+
+textarea,
+input:matches([type="email"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"]
+) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 0; }
+
+input[type="password"] {
+  text-align: center; }
+
+span {
+  font-size: 1em; }
+
+label {
+  display: inline-block;
+  width: auto;
+  position: relative; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+ol, ul {
+  list-style: none; }
+
+img {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.contentBox__title, .contentBox__title--small, .contentBox__title--large, .titleBenefits, .profileName, .contentBoxTyc h1, .contentBoxTyc h2, .contentBoxTyc h3, .contentBoxTyc h4, .trackingMain__title, .contModal .modal .modalHeader .modalInfo__title, .contModal--loaderLight .modal .modalHeader .modalInfo__title, .contModal .modal--medium .modalHeader .modalInfo__title, .contModal--loaderLight .modal--medium .modalHeader .modalInfo__title, .contModal .modal .modalBody .modalInfo__title, .contModal--loaderLight .modal .modalBody .modalInfo__title, .contModal .modal--medium .modalBody .modalInfo__title, .contModal--loaderLight .modal--medium .modalBody .modalInfo__title {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #000000; }
+
+.contentBox__title, .contentBox__title--small, .contentBox__title--large {
+  line-height: 20px;
+  width: 80%;
+  margin-bottom: 16px; }
+  .contentBox__title--small {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    text-align: left;
+    width: 100%; }
+  .contentBox__title--large {
+    font-size: 20px;
+    line-height: 24px; }
+
+.titleBenefits {
+  margin: 16px 0 7px;
+  font-size: 20px;
+  line-height: 24px; }
+
+.profileName {
+  margin-bottom: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #404040; }
+
+/* Textos de ayuda helpers 10px - 14px | Generalmemnte van fuera de los boxes o
+en algunos casos dentro de los mismos */
+.contentBox__p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: initial;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040; }
+.contentBox__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040;
+  margin-bottom: 16px; }
+  .contentBox__text--small {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040; }
+
+.contButtons__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+  text-align: left;
+  font-style: normal;
+  color: #404040;
+  margin-bottom: 16px; }
+
+.paragraph {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040; }
+
+.hyperlink {
+  display: inline-block;
+  width: auto;
+  text-decoration: underline;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: left;
+  font-style: normal;
+  color: #404040; }
+  .hyperlink:hover {
+    text-decoration: underline; }
+
+.link {
+  text-decoration: underline;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040;
+  margin-bottom: 16px; }
+  .link:visited {
+    text-decoration: underline; }
+  .link:focus {
+    text-decoration: underline; }
+
+.optField {
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #676565; }
+
+.txtTimer {
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  line-height: 36px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #000000;
+  margin-bottom: 16px; }
+
+.contentBoxTyc {
+    /*.formFlex{
+        display: flex;
+        margin-bottom: 16px;
+        align-items: flex-end;
+
+        & > p{
+            white-space: nowrap;
+        }
+        &> *{
+            margin: 0px;
+            margin-right: 2%;
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+        & > .input__textBox{
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .input__textBox{
+            padding-right: 10px;
+        }
+
+
+        .input__label{
+            white-space: nowrap;
+            margin-right: 14px;
+        }
+    }*/ }
+  .contentBoxTyc h1, .contentBoxTyc h2, .contentBoxTyc h3, .contentBoxTyc h4 {
+    line-height: 20px;
+    margin-bottom: 16px; }
+  .contentBoxTyc .largeTitle {
+    font-size: 20px;
+    line-height: 24px; }
+  .contentBoxTyc p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    margin-bottom: 24px; }
+  .contentBoxTyc .smallText {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    margin-bottom: 16px; }
+    .contentBoxTyc .smallText--short {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 400;
+      text-align: center;
+      font-style: normal;
+      color: #404040;
+      margin-bottom: 16px; }
+  .contentBoxTyc ul, .contentBoxTyc ol {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    list-style-type: disc;
+    padding-left: 32px;
+    margin-top: 8px;
+    margin-bottom: 16px; }
+    .contentBoxTyc ul li, .contentBoxTyc ol li {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+  .contentBoxTyc ol {
+    list-style-type: initial; }
+    .contentBoxTyc ol.roman {
+      list-style: lower-roman; }
+  .contentBoxTyc hr {
+    height: 1px;
+    width: 100%;
+    background-color: #adadad;
+    margin: 24px 0px; }
+  .contentBoxTyc .wordBreak {
+    overflow-wrap: break-word;
+    word-break: break-all; }
+  .contentBoxTyc .linkBreak {
+    overflow-wrap: break-word; }
+
+.backButton {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 70px;
+  margin-top: 16px;
+  margin-left: 16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040; }
+  .backButton span {
+    font-size: 24px;
+    margin-right: 5px; }
+
+.contentBox, .contentBox--optCredito, .contentBox--typeB, .contentBox--typeC, .contentBox--typeD, .contentBox--darkBackground, .contentBox--header, .contentBox--headerB, .contentBox--headerC, .contentBox--white, .contentBoxTyc, .headerNegocio, .headerConfirmacion {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 32px);
+  margin: 16px auto 0;
+  transition-duration: .2s; }
+
+.contentBox, .contentBox--optCredito, .contentBox--typeB, .contentBox--typeC, .contentBox--typeD, .contentBox--darkBackground, .contentBox--header, .contentBox--headerB, .contentBox--headerC, .contentBox--white {
+  border-radius: 10px;
+  padding: 24px 16px;
+  background-color: #f0f0f3; }
+  .contentBox:first-of-type, .contentBox--optCredito:first-of-type, .contentBox--typeB:first-of-type, .contentBox--typeC:first-of-type, .contentBox--typeD:first-of-type, .contentBox--darkBackground:first-of-type, .contentBox--header:first-of-type, .contentBox--headerB:first-of-type, .contentBox--headerC:first-of-type, .contentBox--white:first-of-type {
+    margin-top: 16px; }
+  .contentBox > *:last-child, .contentBox--optCredito > *:last-child, .contentBox--typeB > *:last-child, .contentBox--typeC > *:last-child, .contentBox--typeD > *:last-child, .contentBox--darkBackground > *:last-child, .contentBox--header > *:last-child, .contentBox--headerB > *:last-child, .contentBox--headerC > *:last-child, .contentBox--white > *:last-child {
+    margin-bottom: 0px; }
+  .contentBox--optCredito {
+    margin: 0px auto;
+    margin-top: 16px;
+    box-shadow: none;
+    background-color: transparent;
+    padding: initial; }
+  .contentBox__img, .contentBox__img--small {
+    margin: 0 auto 16px;
+    max-width: 450px; }
+    .contentBox__img img, .contentBox__img--small img {
+      width: 100%; }
+    .contentBox__img--small img {
+      width: calc(100% - 94px);
+      min-width: 232px;
+      max-width: 300px; }
+  .contentBox__cardImg {
+    display: block;
+    width: 61%;
+    min-width: 180px;
+    max-width: 250px;
+    margin: 0 auto 24px; }
+    .contentBox__cardImg img {
+      display: block;
+      width: 100%;
+      border-radius: 25px; }
+  .contentBox__gifContainer {
+    width: calc(100% - 16px);
+    max-width: 300px;
+    margin: 0 auto 16px;
+    border-radius: 10px;
+    overflow: hidden; }
+    .contentBox__gifContainer img {
+      display: block;
+      width: 100%; }
+  .contentBox--typeB {
+    margin: 0px auto;
+    margin-top: 16px;
+    box-shadow: none;
+    background-color: transparent;
+    padding: initial; }
+    .contentBox--typeB p {
+      padding: 0px 16px;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 400;
+      text-align: center;
+      font-style: normal;
+      color: #404040; }
+      .contentBox--typeB p a {
+        font-weight: bold;
+        text-decoration: underline; }
+  .contentBox--typeC {
+    margin-top: 0px;
+    width: 100%;
+    padding: 16px;
+    box-shadow: none;
+    border-radius: 0px; }
+  .contentBox--typeD {
+    background-color: #FBFBFC; }
+  .contentBox--darkBackground {
+    background-color: #E1E1E5; }
+  .contentBox--header {
+    padding: 0px;
+    z-index: 2;
+    overflow: hidden;
+    padding-bottom: 24px;
+    box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48), 0px 0px 3px #fafbff; }
+  .contentBox--headerB {
+    margin-top: -73px;
+    z-index: 2;
+    box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48), 0px 0px 3px #fafbff; }
+  .contentBox--headerC {
+    margin-top: -32px;
+    z-index: 2;
+    box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48), 0px 0px 3px #fafbff; }
+  .contentBox--white {
+    background-color: #ffffff; }
+
+.contextInfo, .contextInfo--typeB, .contextInfo--typeC {
+  margin-top: 24px;
+  margin: 24px auto 0; }
+  .contextInfo p, .contextInfo--typeB p, .contextInfo--typeC p {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-style: normal;
+    color: #404040; }
+  .contextInfo a, .contextInfo--typeB a, .contextInfo--typeC a {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-style: normal;
+    color: #404040;
+    font-weight: 500;
+    text-decoration: underline; }
+  .contextInfo--typeB {
+    margin-top: 16px;
+    padding: 0 16px; }
+    .contextInfo--typeB p {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: initial;
+      font-weight: 400;
+      text-align: center;
+      font-style: normal;
+      color: #676565; }
+  .contextInfo--typeC {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    padding: 0 16px; }
+    .contextInfo--typeC p {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: center;
+      font-style: normal;
+      color: #676565; }
+
+.userIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96px;
+  height: 96px;
+  margin: 24px auto 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(228, 228, 228, 0.32);
+  box-shadow: 5px 5px 10px rgba(198, 198, 198, 0.37), -5px -5px 10px #fafbff;
+  background-color: #FFFFFF; }
+  .userIconContainer img {
+    max-width: 44px;
+    max-height: 50px; }
+
+.contentBoxTyc {
+  padding: 0;
+  background-color: initial; }
+  .contentBoxTyc:first-of-type {
+    margin-top: 16px; }
+  .contentBoxTyc > *:last-child {
+    margin-bottom: 0px; }
+
+.ContainerMainTyC {
+  width: calc(100% - 32px);
+  margin: 16px auto 0;
+  align-self: center;
+  overflow: hidden;
+  position: relative;
+  flex-basis: 100%; }
+  .ContainerMainTyC__canvas {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 0;
+    background-color: #fff; }
+    .ContainerMainTyC__canvas::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+      border-radius: 10px; }
+    .ContainerMainTyC__canvas::-webkit-scrollbar-track {
+      background: transparent; }
+    .ContainerMainTyC__canvas::-webkit-scrollbar-thumb {
+      background: #d4d4d4; }
+    .ContainerMainTyC__canvas::-webkit-scrollbar-thumb:hover {
+      background: #c2c2c2; }
+    .ContainerMainTyC__canvas canvas {
+      display: inline-block;
+      width: 100%;
+      transform: scale(1);
+      transform-origin: 0 0;
+      transition-duration: .2s; }
+  .ContainerMainTyC__buttonsZoom {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-evenly;
+    -moz-justify-content: space-evenly;
+    -ms-justify-content: space-evenly;
+    -o-justify-content: space-evenly;
+    justify-content: space-evenly;
+    width: 100px;
+    height: auto;
+    gap: 16px;
+    padding: 8px;
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50px; }
+    .ContainerMainTyC__buttonsZoom button {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-color: #fff;
+      border: 1px solid #E5E3E3;
+      border-radius: 50px;
+      position: relative;
+      transition-duration: .2s;
+      cursor: pointer;
+      -webkit-box-shadow: 4px 4px 8px 0 rgba(187, 187, 187, 0.34);
+      -moz-box-shadow: 4px 4px 8px 0 rgba(187, 187, 187, 0.34);
+      -ms-box-shadow: 4px 4px 8px 0 rgba(187, 187, 187, 0.34);
+      -o-box-shadow: 4px 4px 8px 0 rgba(187, 187, 187, 0.34);
+      box-shadow: 4px 4px 8px 0 rgba(187, 187, 187, 0.34); }
+      .ContainerMainTyC__buttonsZoom button img {
+        display: inline-block;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
+
+.boxGrid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  gap: 16px 0; }
+  .boxGrid__item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    grid-gap: 8px;
+    width: 50%;
+    min-height: 24px; }
+    .boxGrid__item img {
+      justify-self: center; }
+    .boxGrid__item p {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #676565; }
+    .boxGrid__item:last-child {
+      flex: 100%; }
+
+.trackingMain {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  text-align: center; }
+  .trackingMain__title {
+    line-height: 20px;
+    margin-bottom: 8px; }
+  .trackingMain__dataNav {
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    counter-reset: step;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .trackingMain__dataNav li {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      background-color: #fff;
+      border-radius: 50%;
+      margin-right: 16px;
+      transition-duration: .3s;
+      /* box-shadow: inset 0px 3px 2px rgba(166, 171, 189, 0.48),
+          inset -5px -3px 9px rgba(250, 251, 255, 1); */
+      counter-increment: step; }
+      .trackingMain__dataNav li:last-of-type {
+        margin-right: 0; }
+      .trackingMain__dataNav li:before {
+        content: counter(step);
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 700;
+        text-align: center;
+        font-style: normal;
+        color: #e1111c;
+        display: inline-block;
+        position: absolute;
+        height: auto;
+        transition-duration: .2s;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+      .trackingMain__dataNav li.complete {
+        background-color: #e1111c;
+        border-color: #e1111c;
+        opacity: inherit;
+        box-shadow: none; }
+        .trackingMain__dataNav li.complete:before {
+          content: counter(step);
+          font-family: "Roboto", sans-serif;
+          font-size: 16px;
+          line-height: 25px;
+          font-weight: 700;
+          text-align: center;
+          font-style: normal;
+          color: #fff; }
+
+.contentBenefits {
+  display: inline-block;
+  width: 100%;
+  max-width: 550px; }
+  .contentBenefits .swiperBenefits {
+    padding: 16px; }
+    .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide {
+      display: inline-block;
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      transition-duration: .3s; }
+      .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide-prev, .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide-next {
+        transform: scale(0.9); }
+      .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .imageBenefits {
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: flex;
+        -webkit-align-items: flex-end;
+        -moz-align-items: flex-end;
+        -ms-align-items: flex-end;
+        -o-align-items: flex-end;
+        align-items: flex-end;
+        -webkit-align-content: center;
+        -moz-align-content: center;
+        -ms-align-content: center;
+        -o-align-content: center;
+        align-content: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 224px;
+        text-align: center;
+        background-color: #fff; }
+        .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .imageBenefits img {
+          display: inline-block;
+          height: 90%; }
+      .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .textBenefits {
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: flex;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+        -webkit-align-content: center;
+        -moz-align-content: center;
+        -ms-align-content: center;
+        -o-align-content: center;
+        align-content: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        justify-content: center;
+        height: 96px;
+        padding: 24px 20px; }
+        .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .textBenefits__p {
+          font-family: "Roboto", sans-serif;
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 400;
+          text-align: center;
+          font-style: normal;
+          color: #000000; }
+          .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .textBenefits__p a {
+            font-weight: bold;
+            text-decoration: underline; }
+        .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .textBenefits--slider {
+          height: auto;
+          padding: 16px 17px; }
+          .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .textBenefits--slider__p {
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+            text-align: left;
+            font-style: normal;
+            color: #404040; }
+            .contentBenefits .swiperBenefits .swiper-wrapper .swiper-slide .textBenefits--slider__p a {
+              font-weight: bold;
+              text-decoration: underline; }
+  .contentBenefits .swiperBenefits--pagination {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    position: relative; }
+    .contentBenefits .swiperBenefits--pagination .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background-color: #D8D8D8;
+      opacity: 100%;
+      margin: 0 3px;
+      border-radius: 30px;
+      transition-duration: .3s; }
+      .contentBenefits .swiperBenefits--pagination .swiper-pagination-bullet-active {
+        width: 16px;
+        background-color: #e1111c; }
+
+.listBenefits {
+  display: inline-block;
+  width: 100%; }
+  .listBenefits__item, .listBenefits__itemCenter, .listBenefits__oneLineItem {
+    -webkit-display: flex;
+    -mox-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -mox-align-items: flex-start;
+    -ms-align-items: flex-start;
+    -o-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-justify-content: flex-start;
+    -mox-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 30px 0; }
+    .listBenefits__item:first-of-type, .listBenefits__itemCenter:first-of-type, .listBenefits__oneLineItem:first-of-type, .listBenefits__item:last-of-type, .listBenefits__itemCenter:last-of-type, .listBenefits__oneLineItem:last-of-type {
+      margin: 0 0; }
+    .listBenefits__item img, .listBenefits__itemCenter img, .listBenefits__oneLineItem img {
+      display: inline-block;
+      max-width: 24px; }
+    .listBenefits__item p, .listBenefits__itemCenter p, .listBenefits__oneLineItem p {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #404040;
+      padding-left: 15px;
+      flex-basis: calc(100% - 24px);
+      flex-grow: 1; }
+      .listBenefits__item p a, .listBenefits__itemCenter p a, .listBenefits__oneLineItem p a {
+        font-weight: 700;
+        text-decoration: underline; }
+  .listBenefits__itemCenter, .listBenefits__oneLineItem {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    margin: 16px 0; }
+    .listBenefits__itemCenter img, .listBenefits__oneLineItem img {
+      justify-self: center;
+      margin-top: 2px; }
+    .listBenefits__itemCenter p, .listBenefits__oneLineItem p {
+      padding-left: 10px; }
+  .listBenefits__oneLineItem {
+    align-items: center; }
+
+.orderedList {
+  counter-reset: number;
+  margin-bottom: 16px; }
+  .orderedList li {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    padding-left: 24px;
+    counter-increment: number;
+    position: relative;
+    margin-bottom: 16px; }
+    .orderedList li::before {
+      content: counter(number) ".";
+      left: 0;
+      position: absolute;
+      font-family: "Roboto", sans-serif;
+      font-size: 1em;
+      line-height: initial;
+      font-weight: 700;
+      text-align: left;
+      font-style: normal;
+      color: inherit; }
+    .orderedList li:last-of-type {
+      margin-bottom: 0px; }
+
+.detailsList {
+  margin-top: 20px; }
+  .detailsList:only-child {
+    margin-top: 0px; }
+  .detailsList__item, .detailsList__item--aligned {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 12px;
+    border-bottom: 1px solid #D9D9D9; }
+    .detailsList__item--aligned {
+      align-items: center; }
+    .detailsList__item .itemTitle, .detailsList__item--aligned .itemTitle {
+      font-family: 12px;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #676565; }
+    .detailsList__item .itemDetail, .detailsList__item--aligned .itemDetail {
+      font-family: 12px;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 700;
+      text-align: left;
+      font-style: normal;
+      color: #404040;
+      font-family: "Roboto Condensed", sans-serif;
+      margin-left: 24px; }
+    .detailsList__item:first-of-type, .detailsList__item--aligned:first-of-type {
+      padding-top: 0px; }
+    .detailsList__item:last-of-type, .detailsList__item--aligned:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0px; }
+    .detailsList__item:only-of-type, .detailsList__item--aligned:only-of-type {
+      border: none; }
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: #cacaca;
+  margin: 0 auto;
+  margin-bottom: 16px; }
+
+.helper, .helper--type2, .helper--type3, .helper--type4, .helper--long, .helper--longDesktop {
+  position: relative;
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 31px; }
+  .helper__icon {
+    margin-left: 9px;
+    margin-right: 7px; }
+  .helper__text {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #676565; }
+  .helper::before, .helper--type2::before, .helper--type3::before, .helper--type4::before, .helper--long::before, .helper--longDesktop::before {
+    content: "";
+    background-image: url(../media/_defaultIcons/icon-helper.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: -2px;
+    left: 9px;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    opacity: 1;
+    pointer-events: none; }
+  .helper--type2, .helper--type3, .helper--type4 {
+    padding: 8px;
+    padding-left: 31px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    margin-top: 16px; }
+    .helper--type2 .helper__text, .helper--type3 .helper__text, .helper--type4 .helper__text {
+      color: #404040; }
+      .helper--type2 .helper__text a, .helper--type3 .helper__text a, .helper--type4 .helper__text a {
+        font-weight: 700;
+        text-decoration: underline; }
+    .helper--type2::before, .helper--type3::before, .helper--type4::before {
+      top: 8px;
+      background-image: url(../media/_defaultIcons/icon-helperRed.svg); }
+    .helper--type2::after, .helper--type3::after, .helper--type4::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 8px solid #fafafa;
+      top: -8px; }
+  .helper--type3 {
+    margin-top: 8px;
+    min-height: 32px;
+    align-items: center; }
+    .helper--type3::after {
+      content: none; }
+  .helper--type4 {
+    margin-top: 12px;
+    background-color: #FAFAFA; }
+  .helper--long, .helper--longDesktop {
+    flex-direction: column; }
+    .helper--long .helper__text, .helper--longDesktop .helper__text {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden; }
+    .helper--long .helper__more, .helper--longDesktop .helper__more {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #676565;
+      text-decoration: underline; }
+    .helper--long .viewContent, .helper--longDesktop .viewContent {
+      -webkit-line-clamp: initial; }
+
+.centered {
+  width: 94%;
+  margin: 8px auto 0px; }
+
+.boxHelper, .boxHelper--typeB, .boxHelper--typeC {
+  width: 100%;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 1px solid #E5E3E3;
+  background-color: #FAFAFC; }
+  .boxHelper__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer; }
+    .boxHelper__header img {
+      transition: all 0.2s ease-out; }
+    .boxHelper__header .rotateImg {
+      transform: rotate(-180deg);
+      transition: all 0.2s ease-out; }
+  .boxHelper__title {
+    display: flex;
+    align-items: center;
+    padding-right: 15%; }
+    .boxHelper__title p {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+    .boxHelper__title img {
+      padding-right: 8px; }
+  .boxHelper__content {
+    margin-top: 8px; }
+  .boxHelper__imgContainer {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto 8px; }
+    .boxHelper__imgContainer img {
+      display: block;
+      width: 100%; }
+  .boxHelper--typeB {
+    padding: 20px 16px 16px;
+    border: none;
+    background-color: #FFFFFF; }
+  .boxHelper--typeC {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent; }
+
+.formApp {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px; }
+  .formApp .input, .formApp .input--key, .formApp .inputWBorder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px; }
+    .formApp .input--key {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: center;
+      margin-bottom: 14px; }
+    .formApp .input--error input {
+      -webkit-border: 1px solid #B70412;
+      -moz-border: 1px solid #B70412;
+      -ms-border: 1px solid #B70412;
+      -o-border: 1px solid #B70412;
+      border: 1px solid #B70412;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      color: #404040; }
+  .formApp > *:last-child {
+    margin-bottom: 0px; }
+  .formApp .inputWBorder {
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 8px;
+    margin-bottom: 8px; }
+    .formApp .inputWBorder:last-of-type {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      margin-bottom: 0px; }
+
+.input__textBox, .dataphone__input .input__dataphoneCard, .input__textBoxMoney, .input__textBoxSearch, .input__textBoxDate, .input__textBoxPercentage, .input__textBoxPassword, .input__textBoxPassword--view, .input__textBoxPasswordLast--view, .input__textBoxPasswordLast {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding: 8px 40px 8px 14px;
+  border: none;
+  -webkit-border: 1px solid #ffffff;
+  -moz-border: 1px solid #ffffff;
+  -ms-border: 1px solid #ffffff;
+  -o-border: 1px solid #ffffff;
+  border: 1px solid #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border-radius: 20px;
+  background-color: #fafafc;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #676565;
+  transition-duration: .2s; }
+  .input__textBox:disabled, .dataphone__input .input__dataphoneCard:disabled, .input__textBoxMoney:disabled, .input__textBoxSearch:disabled, .input__textBoxDate:disabled, .input__textBoxPercentage:disabled, .input__textBoxPassword:disabled, .input__textBoxPassword--view:disabled, .input__textBoxPasswordLast--view:disabled, .input__textBoxPasswordLast:disabled {
+    background-color: #fafafc;
+    color: #676565;
+    cursor: not-allowed;
+    opacity: 70%;
+    -webkit-text-fill-color: #676565;
+    -webkit-border: 1px solid #ffffff;
+    -moz-border: 1px solid #ffffff;
+    -ms-border: 1px solid #ffffff;
+    -o-border: 1px solid #ffffff;
+    border: 1px solid #ffffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none; }
+  .input__textBox::placeholder, .dataphone__input .input__dataphoneCard::placeholder, .input__textBoxMoney::placeholder, .input__textBoxSearch::placeholder, .input__textBoxDate::placeholder, .input__textBoxPercentage::placeholder, .input__textBoxPassword::placeholder, .input__textBoxPassword--view::placeholder, .input__textBoxPasswordLast--view::placeholder, .input__textBoxPasswordLast::placeholder {
+    color: #676565;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .input__textBox:placeholder-shown, .dataphone__input .input__dataphoneCard:placeholder-shown, .input__textBoxMoney:placeholder-shown, .input__textBoxSearch:placeholder-shown, .input__textBoxDate:placeholder-shown, .input__textBoxPercentage:placeholder-shown, .input__textBoxPassword:placeholder-shown, .input__textBoxPassword--view:placeholder-shown, .input__textBoxPasswordLast--view:placeholder-shown, .input__textBoxPasswordLast:placeholder-shown {
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.input__textBoxDate {
+  background: URL("../media/_defaultIcons/icon-calendar.svg") no-repeat 100% 50% #fafafc;
+  background-size: 21px;
+  background-position: right 15px center; }
+  .input__textBoxDate::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none; }
+  .input__textBoxDate::-webkit-calendar-picker-indicator {
+    display: block;
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto; }
+  .input__textBoxDate:disabled {
+    background-size: 0px; }
+
+.inputIcon--numeral {
+  background: URL("../media/extraIcons/icon-numeral.svg") no-repeat 100% 50% #fafafc;
+  background-size: 21px;
+  background-position: left 15px center;
+  padding-left: px !important; }
+
+.inputIcon--id {
+  background: URL("../media/extraIcons/icon-idCard.svg") no-repeat 100% 50% #fafafc;
+  background-size: 21px;
+  background-position: left 15px center;
+  padding-left: 32px !important; }
+
+.input__textBoxPassword, .input__textBoxPassword--view, .input__textBoxPasswordLast--view, .input__textBoxPasswordLast {
+  font-family: "fontello", "Roboto";
+  font-size: 14px;
+  text-align: center;
+  color: #4E4E4E;
+  padding-left: 30px;
+  padding-right: 40px;
+  letter-spacing: 4px; }
+  .input__textBoxPassword--view, .input__textBoxPasswordLast--view {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-style: normal;
+    color: #676565; }
+
+.input__cellphone {
+  margin-bottom: 0px !important;
+  gap: 8px; }
+  .input__cellphone .countryCode {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    text-overflow: ellipsis;
+    width: 25%; }
+  .input__cellphone .cellphoneNum {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    width: 71%;
+    text-align: start; }
+  .input__cellphone .phone {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    width: 33%; }
+  .input__cellphone .cityCode {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    width: 16%; }
+  .input__cellphone .ext {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    width: 19%; }
+
+.input__NIT {
+  gap: 8px; }
+  .input__NIT .NIT {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    width: 65%;
+    padding-left: 16px; }
+  .input__NIT .DV {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    width: 35%;
+    padding-left: 16px; }
+
+.dropdown {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  /* padding: 8px 40px 8px 14px; */
+  border-radius: 20px;
+  background-color: #fafafc;
+  -webkit-border: 1px solid #ffffff;
+  -moz-border: 1px solid #ffffff;
+  -ms-border: 1px solid #ffffff;
+  -o-border: 1px solid #ffffff;
+  border: 1px solid #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #676565;
+  vertical-align: middle;
+  position: relative; }
+  .dropdown .options .option {
+    padding: 0px 13px;
+    /* Aqui */
+    /*input{
+        display: inline;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        left: 0px;
+        appearance: auto;
+    }*/ }
+    .dropdown .options .option:first-of-type::after {
+      content: "";
+      background-image: url(../media/_defaultIcons/icon-dorpDown.svg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 30px;
+      height: 23px;
+      position: absolute;
+      top: 8px;
+      right: 9px;
+      pointer-events: none;
+      transition: all 0.2s ease-out;
+      opacity: 0.5;
+      pointer-events: none; }
+    .dropdown .options .option label {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #676565;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      margin: auto 0px;
+      padding-left: 0px;
+      /* Aqui */
+      align-items: center;
+      width: 100%;
+      min-height: 38px;
+      cursor: pointer;
+      word-break: break-word; }
+      .dropdown .options .option label img {
+        max-width: 24px;
+        width: 100%;
+        margin-right: 8px; }
+    .dropdown .options .option:first-of-type label {
+      padding-left: 0px; }
+    .dropdown .options .option label {
+      display: none; }
+    .dropdown .options .option input {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      display: none;
+      /* "hack" para que funcione en Firefox */
+      position: absolute;
+      left: -10000px;
+      pointer-events: none; }
+    .dropdown .options .option .checked {
+      display: flex;
+      /* Probando */
+      min-height: auto;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #676565;
+      justify-content: flex-end;
+      flex-direction: row-reverse;
+      margin-left: 0px;
+      align-items: center;
+      width: 99%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 0px;
+      padding-top: 8px;
+      padding-right: 17px; }
+      .dropdown .options .option .checked input {
+        pointer-events: none; }
+  .dropdown--mostrar {
+    overflow: visible; }
+    .dropdown--mostrar .options {
+      background: #fafafc;
+      -webkit-border: 1px solid #e5e3e3;
+      -moz-border: 1px solid #e5e3e3;
+      -ms-border: 1px solid #e5e3e3;
+      -o-border: 1px solid #e5e3e3;
+      border: 1px solid #e5e3e3;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      color: #404040;
+      position: absolute;
+      max-height: 201px;
+      overflow-y: scroll;
+      top: -1px;
+      left: -1px;
+      width: 101%;
+      height: auto;
+      z-index: 10;
+      border-radius: 20px; }
+      .dropdown--mostrar .options .option {
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+        overflow: hidden;
+        /* border-bottom: 1px solid #e5e3e3; Aqui */
+        width: auto;
+        /* margin: 0px 13px; */ }
+        .dropdown--mostrar .options .option:hover {
+          background-color: #D9D9D9; }
+        .dropdown--mostrar .options .option:first-of-type {
+          /* border-bottom: 1px solid #ADADAD; */ }
+          .dropdown--mostrar .options .option:first-of-type::after {
+            transform: rotate(-180deg);
+            z-index: 11; }
+          .dropdown--mostrar .options .option:first-of-type:hover {
+            background-color: initial; }
+          .dropdown--mostrar .options .option:first-of-type label {
+            padding-right: 20px; }
+        .dropdown--mostrar .options .option label {
+          display: flex;
+          color: #404040;
+          cursor: pointer;
+          border-bottom: 1px solid #e5e3e3; }
+        .dropdown--mostrar .options .option:first-of-type label {
+          border-bottom: 1px solid #ADADAD; }
+      .dropdown--mostrar .options .disabled {
+        /* pointer-events: none; */ }
+
+.input--fluidBigger, .input__cellphone, .input__NIT {
+  -webkit-display: flex;
+  -ms-display: flex;
+  -moz-display: flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  margin-bottom: 16px; }
+  .input--fluidBigger .dropdown, .input__cellphone .dropdown, .input__NIT .dropdown {
+    width: 36%;
+    /* padding-right: 30px; */
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #676565;
+    /* padding: 8px 20px 8px 14px; */ }
+    .input--fluidBigger .dropdown .options .option, .input__cellphone .dropdown .options .option, .input__NIT .dropdown .options .option {
+      padding: 0;
+      margin: 0; }
+      .input--fluidBigger .dropdown .options .option:first-of-type::after, .input__cellphone .dropdown .options .option:first-of-type::after, .input__NIT .dropdown .options .option:first-of-type::after {
+        right: -2px; }
+      .input--fluidBigger .dropdown .options .option:first-of-type label, .input__cellphone .dropdown .options .option:first-of-type label, .input__NIT .dropdown .options .option:first-of-type label {
+        padding-left: 10px;
+        padding-right: 15px; }
+      .input--fluidBigger .dropdown .options .option label, .input__cellphone .dropdown .options .option label, .input__NIT .dropdown .options .option label {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #676565;
+        margin-left: 8px; }
+      .input--fluidBigger .dropdown .options .option .checked, .input__cellphone .dropdown .options .option .checked, .input__NIT .dropdown .options .option .checked {
+        display: inline-block;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #676565;
+        margin-left: 0px;
+        padding-left: 15px; }
+    .input--fluidBigger .dropdown--mostrar .options, .input__cellphone .dropdown--mostrar .options, .input__NIT .dropdown--mostrar .options {
+      border-radius: 8px;
+      width: 103%;
+      overflow-x: hidden; }
+      .input--fluidBigger .dropdown--mostrar .options .option, .input__cellphone .dropdown--mostrar .options .option, .input__NIT .dropdown--mostrar .options .option {
+        padding: 0px 5px;
+        margin: 0; }
+        .input--fluidBigger .dropdown--mostrar .options .option:first-of-type label, .input__cellphone .dropdown--mostrar .options .option:first-of-type label, .input__NIT .dropdown--mostrar .options .option:first-of-type label {
+          padding-left: 0px;
+          padding-right: 15px; }
+  .input--fluidBigger .filledOut, .input__cellphone .filledOut, .input__NIT .filledOut, .input--fluidBigger .input__textBox:focus, .input__cellphone .input__textBox:focus, .input__NIT .input__textBox:focus, .input--fluidBigger .dataphone__input .input__dataphoneCard:focus, .dataphone__input .input--fluidBigger .input__dataphoneCard:focus, .input__cellphone .dataphone__input .input__dataphoneCard:focus, .dataphone__input .input__cellphone .input__dataphoneCard:focus, .input__NIT .dataphone__input .input__dataphoneCard:focus, .dataphone__input .input__NIT .input__dataphoneCard:focus, .input--fluidBigger .input__textBoxMoney:focus, .input__cellphone .input__textBoxMoney:focus, .input__NIT .input__textBoxMoney:focus, .input--fluidBigger .input__textBoxSearch:focus, .input__cellphone .input__textBoxSearch:focus, .input__NIT .input__textBoxSearch:focus, .input--fluidBigger .input__textBoxDate:focus, .input__cellphone .input__textBoxDate:focus, .input__NIT .input__textBoxDate:focus, .input--fluidBigger .input__textBoxPercentage:focus, .input__cellphone .input__textBoxPercentage:focus, .input__NIT .input__textBoxPercentage:focus, .input--fluidBigger .input__textBoxPassword:focus, .input__cellphone .input__textBoxPassword:focus, .input__NIT .input__textBoxPassword:focus, .input--fluidBigger .input__textBoxPassword--view:focus, .input__cellphone .input__textBoxPassword--view:focus, .input__NIT .input__textBoxPassword--view:focus, .input--fluidBigger .input__textBoxPasswordLast--view:focus, .input__cellphone .input__textBoxPasswordLast--view:focus, .input__NIT .input__textBoxPasswordLast--view:focus, .input--fluidBigger .input__textBoxPasswordLast:focus, .input__cellphone .input__textBoxPasswordLast:focus, .input__NIT .input__textBoxPasswordLast:focus, .input--fluidBigger .input__textBoxSearch--filledOut, .input__cellphone .input__textBoxSearch--filledOut, .input__NIT .input__textBoxSearch--filledOut {
+    -webkit-border: 1px solid #e5e3e3;
+    -moz-border: 1px solid #e5e3e3;
+    -ms-border: 1px solid #e5e3e3;
+    -o-border: 1px solid #e5e3e3;
+    border: 1px solid #e5e3e3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    color: #404040; }
+    .input--fluidBigger .filledOut .options .option:first-of-type::after, .input__cellphone .filledOut .options .option:first-of-type::after, .input__NIT .filledOut .options .option:first-of-type::after, .input--fluidBigger .input__textBox:focus .options .option:first-of-type::after, .input__cellphone .input__textBox:focus .options .option:first-of-type::after, .input__NIT .input__textBox:focus .options .option:first-of-type::after, .input--fluidBigger .dataphone__input .input__dataphoneCard:focus .options .option:first-of-type::after, .dataphone__input .input--fluidBigger .input__dataphoneCard:focus .options .option:first-of-type::after, .input__cellphone .dataphone__input .input__dataphoneCard:focus .options .option:first-of-type::after, .dataphone__input .input__cellphone .input__dataphoneCard:focus .options .option:first-of-type::after, .input__NIT .dataphone__input .input__dataphoneCard:focus .options .option:first-of-type::after, .dataphone__input .input__NIT .input__dataphoneCard:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxMoney:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxMoney:focus .options .option:first-of-type::after, .input__NIT .input__textBoxMoney:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxSearch:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxSearch:focus .options .option:first-of-type::after, .input__NIT .input__textBoxSearch:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxDate:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxDate:focus .options .option:first-of-type::after, .input__NIT .input__textBoxDate:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxPercentage:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxPercentage:focus .options .option:first-of-type::after, .input__NIT .input__textBoxPercentage:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxPassword:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxPassword:focus .options .option:first-of-type::after, .input__NIT .input__textBoxPassword:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxPassword--view:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxPassword--view:focus .options .option:first-of-type::after, .input__NIT .input__textBoxPassword--view:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxPasswordLast--view:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxPasswordLast--view:focus .options .option:first-of-type::after, .input__NIT .input__textBoxPasswordLast--view:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxPasswordLast:focus .options .option:first-of-type::after, .input__cellphone .input__textBoxPasswordLast:focus .options .option:first-of-type::after, .input__NIT .input__textBoxPasswordLast:focus .options .option:first-of-type::after, .input--fluidBigger .input__textBoxSearch--filledOut .options .option:first-of-type::after, .input__cellphone .input__textBoxSearch--filledOut .options .option:first-of-type::after, .input__NIT .input__textBoxSearch--filledOut .options .option:first-of-type::after {
+      opacity: 1; }
+    .input--fluidBigger .filledOut .options .option .checked, .input__cellphone .filledOut .options .option .checked, .input__NIT .filledOut .options .option .checked, .input--fluidBigger .input__textBox:focus .options .option .checked, .input__cellphone .input__textBox:focus .options .option .checked, .input__NIT .input__textBox:focus .options .option .checked, .input--fluidBigger .dataphone__input .input__dataphoneCard:focus .options .option .checked, .dataphone__input .input--fluidBigger .input__dataphoneCard:focus .options .option .checked, .input__cellphone .dataphone__input .input__dataphoneCard:focus .options .option .checked, .dataphone__input .input__cellphone .input__dataphoneCard:focus .options .option .checked, .input__NIT .dataphone__input .input__dataphoneCard:focus .options .option .checked, .dataphone__input .input__NIT .input__dataphoneCard:focus .options .option .checked, .input--fluidBigger .input__textBoxMoney:focus .options .option .checked, .input__cellphone .input__textBoxMoney:focus .options .option .checked, .input__NIT .input__textBoxMoney:focus .options .option .checked, .input--fluidBigger .input__textBoxSearch:focus .options .option .checked, .input__cellphone .input__textBoxSearch:focus .options .option .checked, .input__NIT .input__textBoxSearch:focus .options .option .checked, .input--fluidBigger .input__textBoxDate:focus .options .option .checked, .input__cellphone .input__textBoxDate:focus .options .option .checked, .input__NIT .input__textBoxDate:focus .options .option .checked, .input--fluidBigger .input__textBoxPercentage:focus .options .option .checked, .input__cellphone .input__textBoxPercentage:focus .options .option .checked, .input__NIT .input__textBoxPercentage:focus .options .option .checked, .input--fluidBigger .input__textBoxPassword:focus .options .option .checked, .input__cellphone .input__textBoxPassword:focus .options .option .checked, .input__NIT .input__textBoxPassword:focus .options .option .checked, .input--fluidBigger .input__textBoxPassword--view:focus .options .option .checked, .input__cellphone .input__textBoxPassword--view:focus .options .option .checked, .input__NIT .input__textBoxPassword--view:focus .options .option .checked, .input--fluidBigger .input__textBoxPasswordLast--view:focus .options .option .checked, .input__cellphone .input__textBoxPasswordLast--view:focus .options .option .checked, .input__NIT .input__textBoxPasswordLast--view:focus .options .option .checked, .input--fluidBigger .input__textBoxPasswordLast:focus .options .option .checked, .input__cellphone .input__textBoxPasswordLast:focus .options .option .checked, .input__NIT .input__textBoxPasswordLast:focus .options .option .checked, .input--fluidBigger .input__textBoxSearch--filledOut .options .option .checked, .input__cellphone .input__textBoxSearch--filledOut .options .option .checked, .input__NIT .input__textBoxSearch--filledOut .options .option .checked {
+      color: #404040; }
+  .input--fluidBigger input, .input__cellphone input, .input__NIT input {
+    width: 17%;
+    text-align: center;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 8px; }
+  .input--fluidBigger span, .input__cellphone span, .input__NIT span {
+    color: #404040; }
+
+.input__buttonAction, .input__buttonAction--noLabel {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  opacity: 0.8;
+  right: calc(-100% + 40px);
+  top: -40px;
+  margin-bottom: -40px;
+  /* position: absolute;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0.8;
+  top: 23px; */ }
+  .input__buttonAction img, .input__buttonAction--noLabel img {
+    display: inline-block;
+    width: auto; }
+  .input__buttonAction--noLabel {
+    top: 0; }
+
+.filledOut, .input__textBox:focus, .dataphone__input .input__dataphoneCard:focus, .input__textBoxMoney:focus, .input__textBoxSearch:focus, .input__textBoxDate:focus, .input__textBoxPercentage:focus, .input__textBoxPassword:focus, .input__textBoxPassword--view:focus, .input__textBoxPasswordLast--view:focus, .input__textBoxPasswordLast:focus, .input__textBoxSearch--filledOut {
+  -webkit-border: 1px solid #e5e3e3;
+  -moz-border: 1px solid #e5e3e3;
+  -ms-border: 1px solid #e5e3e3;
+  -o-border: 1px solid #e5e3e3;
+  border: 1px solid #e5e3e3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  color: #404040; }
+  .filledOut .options .option:first-of-type::after, .input__textBox:focus .options .option:first-of-type::after, .dataphone__input .input__dataphoneCard:focus .options .option:first-of-type::after, .input__textBoxMoney:focus .options .option:first-of-type::after, .input__textBoxSearch:focus .options .option:first-of-type::after, .input__textBoxDate:focus .options .option:first-of-type::after, .input__textBoxPercentage:focus .options .option:first-of-type::after, .input__textBoxPassword:focus .options .option:first-of-type::after, .input__textBoxPassword--view:focus .options .option:first-of-type::after, .input__textBoxPasswordLast--view:focus .options .option:first-of-type::after, .input__textBoxPasswordLast:focus .options .option:first-of-type::after, .input__textBoxSearch--filledOut .options .option:first-of-type::after {
+    opacity: 1; }
+  .filledOut .options .option .checked, .input__textBox:focus .options .option .checked, .dataphone__input .input__dataphoneCard:focus .options .option .checked, .input__textBoxMoney:focus .options .option .checked, .input__textBoxSearch:focus .options .option .checked, .input__textBoxDate:focus .options .option .checked, .input__textBoxPercentage:focus .options .option .checked, .input__textBoxPassword:focus .options .option .checked, .input__textBoxPassword--view:focus .options .option .checked, .input__textBoxPasswordLast--view:focus .options .option .checked, .input__textBoxPasswordLast:focus .options .option .checked, .input__textBoxSearch--filledOut .options .option .checked {
+    color: #404040; }
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?0000");
+  src: url("../fonts/fontello.eot?0000#iefix") format("embedded-opentype"), url("../fonts/fontello.woff2?0000") format("woff2"), url("../fonts/fontello.woff?0000") format("woff"), url("../fonts/fontello.ttf?0000") format("truetype"), url("../fonts/fontello.svg?0000#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.input--key .input__textBox, .input--key .dataphone__input .input__dataphoneCard, .dataphone__input .input--key .input__dataphoneCard {
+  max-width: 34px;
+  height: 34px;
+  margin: 0px 1.1%;
+  padding: 0px;
+  border-radius: 6px;
+  color: #4E4E4E;
+  font-size: 14px;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 2px; }
+
+.input__textBoxSearch--filledOut {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-border-bottom-style: none;
+  -moz-border-bottom-style: none;
+  -ms-border-bottom-style: none;
+  -o-border-bottom-style: none;
+  border-bottom-style: none; }
+
+.contentSearch {
+  position: relative; }
+
+.listSearch {
+  position: absolute;
+  width: 100%;
+  background-color: #fafafc;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 55;
+  -webkit-border: 1px solid #e5e3e3;
+  -moz-border: 1px solid #e5e3e3;
+  -ms-border: 1px solid #e5e3e3;
+  -o-border: 1px solid #e5e3e3;
+  border: 1px solid #e5e3e3;
+  -webkit-border-top: none;
+  -moz-border-top: none;
+  -ms-border-top: none;
+  -o-border-top: none;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: scroll; }
+  .listSearch__option {
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid #e5e3e3;
+    margin: 0px 13px;
+    width: auto;
+    padding-left: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040; }
+    .listSearch__option* {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+
+.dropInfo {
+  width: calc(100% - 27px);
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 0px 11px 11px;
+  background-color: #E1E1E5; }
+  .dropInfo__p {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040; }
+  .dropInfo__m {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    color: #000000; }
+
+.invalidField {
+  border: 1px solid #B70412 !important; }
+
+.input__label {
+  margin-left: 14px;
+  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-style: normal;
+  color: #404040; }
+
+.contRadio, .contRadio--column {
+  display: flex;
+  margin-left: 16px; }
+  .contRadio--column {
+    flex-direction: column; }
+    .contRadio--column .radio, .contRadio--column .radio--typeB {
+      margin-right: 0;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #cacaca; }
+      .contRadio--column .radio:last-of-type, .contRadio--column .radio--typeB:last-of-type {
+        border-bottom: 0px; }
+
+.radio, .radio--typeB {
+  position: relative;
+  display: flex;
+  padding-left: 32px;
+  width: auto;
+  margin-right: 10%;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040;
+  padding-top: 3px;
+  margin-bottom: 0;
+  cursor: pointer; }
+  .radio:last-of-type, .radio--typeB:last-of-type {
+    margin-left: 0px; }
+  .radio input, .radio--typeB input {
+    display: none; }
+    .radio input:checked ~ .radio__indicator::after, .radio--typeB input:checked ~ .radio__indicator::after {
+      opacity: 1; }
+  .radio__text .primary {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    margin-bottom: 2px; }
+  .radio__text .secondary {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #676565; }
+  .radio .radio__indicator, .radio--typeB .radio__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background: transparent;
+    -webkit-border: 1px solid #b8b5b5;
+    -moz-border: 1px solid #b8b5b5;
+    -ms-border: 1px solid #b8b5b5;
+    -o-border: 1px solid #b8b5b5;
+    border: 1px solid #b8b5b5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background-color: #fefeff;
+    border-radius: 50%;
+    transition-duration: .2s; }
+    .radio .radio__indicator::after, .radio--typeB .radio__indicator::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      width: 14px;
+      height: 14px;
+      background-color: #e1111c;
+      border-radius: 50%;
+      border: 1px solid #d20a0a;
+      box-sizing: border-box;
+      -webkit-box-shadow: 0px 2px 4px rgba(122, 120, 120, 0.5);
+      -moz-box-shadow: 0px 2px 4px rgba(122, 120, 120, 0.5);
+      -ms-box-shadow: 0px 2px 4px rgba(122, 120, 120, 0.5);
+      box-shadow: 0px 2px 4px rgba(122, 120, 120, 0.5);
+      opacity: 0;
+      transition-duration: .2s; }
+  .radio--typeB {
+    padding-top: 0; }
+    .radio--typeB .radio__indicator {
+      top: 3px; }
+
+.checkBoxList {
+  display: grid;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  grid-gap: 4px 8px;
+  grid-template-columns: 1fr 1fr; }
+
+.checkbox, .checkbox--withHeight {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  padding-top: 1px;
+  cursor: pointer;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #404040; }
+  .checkbox strong, .checkbox--withHeight strong, .checkbox a, .checkbox--withHeight a {
+    display: inline;
+    text-decoration: underline;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    text-align: left;
+    font-style: normal;
+    color: #404040; }
+  .checkbox input[type="checkbox"], .checkbox--withHeight input[type="checkbox"] {
+    opacity: 0;
+    display: none; }
+    .checkbox input[type="checkbox"]:checked ~ .checkbox__indicator::after, .checkbox--withHeight input[type="checkbox"]:checked ~ .checkbox__indicator::after {
+      opacity: 9; }
+    .checkbox input[type="checkbox"]:checked ~ .checkbox__indicator::before, .checkbox--withHeight input[type="checkbox"]:checked ~ .checkbox__indicator::before {
+      z-index: 1;
+      opacity: 1; }
+  .checkbox__indicator {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: transparent;
+    -webkit-border: 1px solid #c6c6c6;
+    -moz-border: 1px solid #c6c6c6;
+    -ms-border: 1px solid #c6c6c6;
+    -o-border: 1px solid #c6c6c6;
+    border: 1px solid #c6c6c6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 2.5px;
+    transition-duration: .2s; }
+    .checkbox__indicator:hover {
+      border: 1px solid #797979; }
+    .checkbox__indicator::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      width: 14px;
+      height: 14px;
+      background-color: #e1111c;
+      border-radius: 2px;
+      box-sizing: unset;
+      opacity: 0;
+      transition-duration: .2s; }
+    .checkbox__indicator::before {
+      width: 10px;
+      height: 8px;
+      content: '';
+      position: absolute;
+      background-image: url(../media/_defaultIcons/icon-tick-checkbox.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+  .checkbox--withHeight {
+    min-height: 32px; }
+
+.contButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin: 32px auto 0; }
+
+.button--primary, .button--secondary, .button--disabled, .button--transparent {
+  display: inline-block;
+  width: auto;
+  min-width: 144px;
+  margin: 0 5px;
+  padding: 12px 22px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: inherit; }
+  .button--primary:last-of-type, .button--secondary:last-of-type, .button--disabled:last-of-type, .button--transparent:last-of-type {
+    margin-bottom: 0; }
+
+.button--primary {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #fff;
+  background-color: #e1111c; }
+  .button--primary:disabled {
+    background-color: #d9d9d9;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    color: #676565;
+    cursor: not-allowed; }
+.button--secondary {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #000000;
+  background-color: initial; }
+.button--disabled {
+  background-color: #d9d9d9;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #676565; }
+.button--transparent {
+  background-color: transparent;
+  border: 1px solid #3B3B3B;
+  box-shadow: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #404040; }
+
+.seeMoreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 24px;
+  cursor: pointer; }
+  .seeMoreBtn p {
+    margin-right: 6px; }
+  .seeMoreBtn .rotateImg {
+    transform: rotate(180deg); }
+
+.result {
+  margin-bottom: 16px; }
+  .result .resultItem, .result .resultItem--bt, .result .resultItem--bb, .result .resultItem--typeB, .result .resultItem--helper, .result .resultItem--helperA, .result .resultItem--wHelper, .result .resultItem--helperB {
+    position: relative;
+    border-bottom: 1px solid #cacaca;
+    margin-bottom: 8px;
+    padding-bottom: 8px; }
+    .result .resultItem:last-of-type, .result .resultItem--bt:last-of-type, .result .resultItem--bb:last-of-type, .result .resultItem--typeB:last-of-type, .result .resultItem--helper:last-of-type, .result .resultItem--helperA:last-of-type, .result .resultItem--wHelper:last-of-type, .result .resultItem--helperB:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0px;
+      padding-bottom: 0px; }
+    .result .resultItem__title {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+    .result .resultItem__info {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #000000; }
+    .result .resultItem p, .result .resultItem--bt p, .result .resultItem--bb p, .result .resultItem--typeB p, .result .resultItem--helper p, .result .resultItem--helperA p, .result .resultItem--wHelper p, .result .resultItem--helperB p {
+      margin-bottom: 8px; }
+      .result .resultItem p:last-of-type, .result .resultItem--bt p:last-of-type, .result .resultItem--bb p:last-of-type, .result .resultItem--typeB p:last-of-type, .result .resultItem--helper p:last-of-type, .result .resultItem--helperA p:last-of-type, .result .resultItem--wHelper p:last-of-type, .result .resultItem--helperB p:last-of-type {
+        margin-bottom: 0px; }
+    .result .resultItem--bt {
+      border-top: 1px solid #cacaca;
+      margin-top: 8px;
+      padding-top: 8px; }
+    .result .resultItem--bb:last-of-type {
+      border-bottom: 1px solid #cacaca;
+      margin-bottom: 8px;
+      padding-bottom: 8px; }
+    .result .resultItem--typeB .resultItem__title {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #000000; }
+    .result .resultItem--typeB .resultItem__info {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+    .result .resultItem--typeB p {
+      margin-bottom: 0px; }
+    .result .resultItem--arrow {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px; }
+      .result .resultItem--arrow .text {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #404040;
+        width: calc(100% - 16px);
+        padding-left: 8px; }
+      .result .resultItem--arrow .imgContainer {
+        min-width: 16px;
+        height: 16px;
+        margin-left: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .result .resultItem--arrow .imgContainer img {
+          margin-bottom: 2px;
+          max-width: 16px;
+          max-height: 16px;
+          display: block; }
+      .result .resultItem--arrow:last-of-type {
+        margin-bottom: 0px; }
+    .result .resultItem--helper, .result .resultItem--helperA {
+      cursor: pointer; }
+      .result .resultItem--helper::after, .result .resultItem--helperA::after {
+        content: "";
+        background-image: url(../media/_defaultIcons/icon-arrowDown.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 13px;
+        right: 9px;
+        pointer-events: none;
+        transition: all 0.2s ease-out;
+        opacity: 1;
+        pointer-events: none; }
+    .result .resultItem--wHelper {
+      cursor: pointer; }
+    .result .resultItem--helperA::after {
+      top: 1px; }
+    .result .resultItem--helperB {
+      cursor: pointer; }
+      .result .resultItem--helperB::after {
+        content: "";
+        background-image: url(../media/_defaultIcons/icon-arrowDown.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        /* top: 13px; */
+        top: calc(50% - 8px);
+        right: 9px;
+        pointer-events: none;
+        transition: all 0.2s ease-out;
+        opacity: 1;
+        pointer-events: none; }
+    .result .resultItem__header {
+      position: relative;
+      padding-right: 24px; }
+      .result .resultItem__header::after {
+        content: "";
+        background-image: url(../media/_defaultIcons/icon-arrowDown.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: calc(50% - 8px);
+        right: 9px;
+        pointer-events: none;
+        transition: all 0.2s ease-out;
+        opacity: 1;
+        pointer-events: none; }
+      .result .resultItem__header.show::after {
+        transform: rotate(-180deg); }
+    .result .resultItem.show::after, .result .show.resultItem--bt::after, .result .show.resultItem--bb::after, .result .show.resultItem--typeB::after, .result .show.resultItem--helper::after, .result .show.resultItem--helperA::after, .result .show.resultItem--wHelper::after, .result .show.resultItem--helperB::after {
+      transform: rotate(-180deg); }
+  .result .resultItemNoBorder {
+    border: 0px; }
+  .result .borderBottom {
+    border-bottom: 1px solid #cacaca !important; }
+  .result__listTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    margin-bottom: 8px; }
+
+.headerEjemploOblicuo1, .headerVender, .headerApertura, .headerEcard, .headerEcardFallida, .headerSeguro, .headerNomina, .headerProteccion, .headerEjemploOblicuoRadio1, .headerEjemploOblicuo2, .headerTarifa1, .headerTarifa2, .headerTarifa3 {
+  display: flex;
+  top: 0px;
+  --height: 136px;
+  height: var(--height);
+  margin-bottom: 32px;
+  transition: 0.5s; }
+  .headerEjemploOblicuo1::before, .headerVender::before, .headerApertura::before, .headerEcard::before, .headerEcardFallida::before, .headerSeguro::before, .headerNomina::before, .headerProteccion::before, .headerEjemploOblicuoRadio1::before, .headerEjemploOblicuo2::before, .headerTarifa1::before, .headerTarifa2::before, .headerTarifa3::before {
+    content: "";
+    filter: brightness(0.7);
+    height: var(--height);
+    width: 113%;
+    border-radius: 0% 0% 93% 77px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center; }
+  .headerEjemploOblicuo1 .textoHeader, .headerVender .textoHeader, .headerApertura .textoHeader, .headerEcard .textoHeader, .headerEcardFallida .textoHeader, .headerSeguro .textoHeader, .headerNomina .textoHeader, .headerProteccion .textoHeader, .headerEjemploOblicuoRadio1 .textoHeader, .headerEjemploOblicuo2 .textoHeader, .headerTarifa1 .textoHeader, .headerTarifa2 .textoHeader, .headerTarifa3 .textoHeader {
+    position: relative;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 80px); }
+    .headerEjemploOblicuo1 .textoHeader__h, .headerVender .textoHeader__h, .headerApertura .textoHeader__h, .headerEcard .textoHeader__h, .headerEcardFallida .textoHeader__h, .headerSeguro .textoHeader__h, .headerNomina .textoHeader__h, .headerProteccion .textoHeader__h, .headerEjemploOblicuoRadio1 .textoHeader__h, .headerEjemploOblicuo2 .textoHeader__h, .headerTarifa1 .textoHeader__h, .headerTarifa2 .textoHeader__h, .headerTarifa3 .textoHeader__h {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 700;
+      text-align: center;
+      font-style: normal;
+      color: #ffffff;
+      margin-bottom: 4px; }
+    .headerEjemploOblicuo1 .textoHeader__p, .headerVender .textoHeader__p, .headerApertura .textoHeader__p, .headerEcard .textoHeader__p, .headerEcardFallida .textoHeader__p, .headerSeguro .textoHeader__p, .headerNomina .textoHeader__p, .headerProteccion .textoHeader__p, .headerEjemploOblicuoRadio1 .textoHeader__p, .headerEjemploOblicuo2 .textoHeader__p, .headerTarifa1 .textoHeader__p, .headerTarifa2 .textoHeader__p, .headerTarifa3 .textoHeader__p, .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerVender .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerApertura .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerSeguro .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerNomina .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerVender .textoHeader__p--bold, .headerVender .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .textoHeader__p--bold, .headerApertura .headerVender .textoHeader__p--bold, .headerVender .headerApertura .textoHeader__p--bold, .headerEcard .headerVender .textoHeader__p--bold, .headerVender .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerVender .textoHeader__p--bold, .headerVender .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerVender .textoHeader__p--bold, .headerVender .headerSeguro .textoHeader__p--bold, .headerNomina .headerVender .textoHeader__p--bold, .headerVender .headerNomina .textoHeader__p--bold, .headerProteccion .headerVender .textoHeader__p--bold, .headerVender .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerVender .textoHeader__p--bold, .headerVender .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerVender .textoHeader__p--bold, .headerVender .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerVender .textoHeader__p--bold, .headerVender .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerVender .textoHeader__p--bold, .headerVender .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerVender .textoHeader__p--bold, .headerVender .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerApertura .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerApertura .textoHeader__p--bold, .headerApertura .headerVender .textoHeader__p--bold, .headerApertura .textoHeader__p--bold, .headerEcard .headerApertura .textoHeader__p--bold, .headerApertura .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerApertura .textoHeader__p--bold, .headerApertura .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerApertura .textoHeader__p--bold, .headerApertura .headerSeguro .textoHeader__p--bold, .headerNomina .headerApertura .textoHeader__p--bold, .headerApertura .headerNomina .textoHeader__p--bold, .headerProteccion .headerApertura .textoHeader__p--bold, .headerApertura .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerApertura .textoHeader__p--bold, .headerApertura .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerApertura .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerApertura .textoHeader__p--bold, .headerApertura .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerApertura .textoHeader__p--bold, .headerApertura .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerApertura .textoHeader__p--bold, .headerApertura .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcard .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEcard .textoHeader__p--bold, .headerEcard .headerVender .textoHeader__p--bold, .headerApertura .headerEcard .textoHeader__p--bold, .headerEcard .headerApertura .textoHeader__p--bold, .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEcard .textoHeader__p--bold, .headerEcard .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEcard .textoHeader__p--bold, .headerEcard .headerSeguro .textoHeader__p--bold, .headerNomina .headerEcard .textoHeader__p--bold, .headerEcard .headerNomina .textoHeader__p--bold, .headerProteccion .headerEcard .textoHeader__p--bold, .headerEcard .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEcard .textoHeader__p--bold, .headerEcard .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEcard .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerEcard .textoHeader__p--bold, .headerEcard .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerEcard .textoHeader__p--bold, .headerEcard .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerEcard .textoHeader__p--bold, .headerEcard .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerVender .textoHeader__p--bold, .headerApertura .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerApertura .textoHeader__p--bold, .headerEcard .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEcard .textoHeader__p--bold, .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerSeguro .textoHeader__p--bold, .headerNomina .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerNomina .textoHeader__p--bold, .headerProteccion .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerSeguro .textoHeader__p--bold, .headerSeguro .headerVender .textoHeader__p--bold, .headerApertura .headerSeguro .textoHeader__p--bold, .headerSeguro .headerApertura .textoHeader__p--bold, .headerEcard .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEcardFallida .textoHeader__p--bold, .headerSeguro .textoHeader__p--bold, .headerNomina .headerSeguro .textoHeader__p--bold, .headerSeguro .headerNomina .textoHeader__p--bold, .headerProteccion .headerSeguro .textoHeader__p--bold, .headerSeguro .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerNomina .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerNomina .textoHeader__p--bold, .headerNomina .headerVender .textoHeader__p--bold, .headerApertura .headerNomina .textoHeader__p--bold, .headerNomina .headerApertura .textoHeader__p--bold, .headerEcard .headerNomina .textoHeader__p--bold, .headerNomina .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerNomina .textoHeader__p--bold, .headerNomina .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerNomina .textoHeader__p--bold, .headerNomina .headerSeguro .textoHeader__p--bold, .headerNomina .textoHeader__p--bold, .headerProteccion .headerNomina .textoHeader__p--bold, .headerNomina .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerNomina .textoHeader__p--bold, .headerNomina .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerNomina .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerNomina .textoHeader__p--bold, .headerNomina .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerNomina .textoHeader__p--bold, .headerNomina .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerNomina .textoHeader__p--bold, .headerNomina .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerProteccion .textoHeader__p--bold, .headerProteccion .headerVender .textoHeader__p--bold, .headerApertura .headerProteccion .textoHeader__p--bold, .headerProteccion .headerApertura .textoHeader__p--bold, .headerEcard .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerProteccion .textoHeader__p--bold, .headerProteccion .headerSeguro .textoHeader__p--bold, .headerNomina .headerProteccion .textoHeader__p--bold, .headerProteccion .headerNomina .textoHeader__p--bold, .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerVender .textoHeader__p--bold, .headerApertura .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerApertura .textoHeader__p--bold, .headerEcard .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerSeguro .textoHeader__p--bold, .headerNomina .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerNomina .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerVender .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerApertura .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerSeguro .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerNomina .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerVender .textoHeader__p--bold, .headerApertura .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerApertura .textoHeader__p--bold, .headerEcard .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerSeguro .textoHeader__p--bold, .headerNomina .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerNomina .textoHeader__p--bold, .headerProteccion .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerVender .textoHeader__p--bold, .headerApertura .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerApertura .textoHeader__p--bold, .headerEcard .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerSeguro .textoHeader__p--bold, .headerNomina .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerNomina .textoHeader__p--bold, .headerProteccion .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerTarifa3 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerVender .textoHeader__p--bold, .headerApertura .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerApertura .textoHeader__p--bold, .headerEcard .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerSeguro .textoHeader__p--bold, .headerNomina .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerNomina .textoHeader__p--bold, .headerProteccion .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerTarifa1 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerTarifa1 .textoHeader__p--bold, .headerTarifa2 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerTarifa2 .textoHeader__p--bold, .headerTarifa3 .textoHeader__p--bold {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: center;
+      font-style: normal;
+      color: #ffffff; }
+      .headerEjemploOblicuo1 .textoHeader__p a, .headerVender .textoHeader__p a, .headerApertura .textoHeader__p a, .headerEcard .textoHeader__p a, .headerEcardFallida .textoHeader__p a, .headerSeguro .textoHeader__p a, .headerNomina .textoHeader__p a, .headerProteccion .textoHeader__p a, .headerEjemploOblicuoRadio1 .textoHeader__p a, .headerEjemploOblicuo2 .textoHeader__p a, .headerTarifa1 .textoHeader__p a, .headerTarifa2 .textoHeader__p a, .headerTarifa3 .textoHeader__p a, .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerVender .textoHeader__p--bold a, .headerApertura .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerApertura .textoHeader__p--bold a, .headerEcard .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerSeguro .textoHeader__p--bold a, .headerNomina .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerNomina .textoHeader__p--bold a, .headerProteccion .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerVender .textoHeader__p--bold a, .headerVender .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .textoHeader__p--bold a, .headerApertura .headerVender .textoHeader__p--bold a, .headerVender .headerApertura .textoHeader__p--bold a, .headerEcard .headerVender .textoHeader__p--bold a, .headerVender .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerVender .textoHeader__p--bold a, .headerVender .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerVender .textoHeader__p--bold a, .headerVender .headerSeguro .textoHeader__p--bold a, .headerNomina .headerVender .textoHeader__p--bold a, .headerVender .headerNomina .textoHeader__p--bold a, .headerProteccion .headerVender .textoHeader__p--bold a, .headerVender .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerVender .textoHeader__p--bold a, .headerVender .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerVender .textoHeader__p--bold a, .headerVender .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerVender .textoHeader__p--bold a, .headerVender .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerVender .textoHeader__p--bold a, .headerVender .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerVender .textoHeader__p--bold a, .headerVender .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerApertura .textoHeader__p--bold a, .headerApertura .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerApertura .textoHeader__p--bold a, .headerApertura .headerVender .textoHeader__p--bold a, .headerApertura .textoHeader__p--bold a, .headerEcard .headerApertura .textoHeader__p--bold a, .headerApertura .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerApertura .textoHeader__p--bold a, .headerApertura .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerApertura .textoHeader__p--bold a, .headerApertura .headerSeguro .textoHeader__p--bold a, .headerNomina .headerApertura .textoHeader__p--bold a, .headerApertura .headerNomina .textoHeader__p--bold a, .headerProteccion .headerApertura .textoHeader__p--bold a, .headerApertura .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerApertura .textoHeader__p--bold a, .headerApertura .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerApertura .textoHeader__p--bold a, .headerApertura .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerApertura .textoHeader__p--bold a, .headerApertura .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerApertura .textoHeader__p--bold a, .headerApertura .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerApertura .textoHeader__p--bold a, .headerApertura .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEcard .textoHeader__p--bold a, .headerEcard .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerEcard .textoHeader__p--bold a, .headerEcard .headerVender .textoHeader__p--bold a, .headerApertura .headerEcard .textoHeader__p--bold a, .headerEcard .headerApertura .textoHeader__p--bold a, .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerEcard .textoHeader__p--bold a, .headerEcard .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerEcard .textoHeader__p--bold a, .headerEcard .headerSeguro .textoHeader__p--bold a, .headerNomina .headerEcard .textoHeader__p--bold a, .headerEcard .headerNomina .textoHeader__p--bold a, .headerProteccion .headerEcard .textoHeader__p--bold a, .headerEcard .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEcard .textoHeader__p--bold a, .headerEcard .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEcard .textoHeader__p--bold a, .headerEcard .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerEcard .textoHeader__p--bold a, .headerEcard .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerEcard .textoHeader__p--bold a, .headerEcard .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerEcard .textoHeader__p--bold a, .headerEcard .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerVender .textoHeader__p--bold a, .headerApertura .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerApertura .textoHeader__p--bold a, .headerEcard .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerEcard .textoHeader__p--bold a, .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerSeguro .textoHeader__p--bold a, .headerNomina .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerNomina .textoHeader__p--bold a, .headerProteccion .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerEcardFallida .textoHeader__p--bold a, .headerEcardFallida .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerVender .textoHeader__p--bold a, .headerApertura .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerApertura .textoHeader__p--bold a, .headerEcard .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .textoHeader__p--bold a, .headerNomina .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerNomina .textoHeader__p--bold a, .headerProteccion .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerSeguro .textoHeader__p--bold a, .headerSeguro .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerNomina .textoHeader__p--bold a, .headerNomina .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerNomina .textoHeader__p--bold a, .headerNomina .headerVender .textoHeader__p--bold a, .headerApertura .headerNomina .textoHeader__p--bold a, .headerNomina .headerApertura .textoHeader__p--bold a, .headerEcard .headerNomina .textoHeader__p--bold a, .headerNomina .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerNomina .textoHeader__p--bold a, .headerNomina .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerNomina .textoHeader__p--bold a, .headerNomina .headerSeguro .textoHeader__p--bold a, .headerNomina .textoHeader__p--bold a, .headerProteccion .headerNomina .textoHeader__p--bold a, .headerNomina .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerNomina .textoHeader__p--bold a, .headerNomina .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerNomina .textoHeader__p--bold a, .headerNomina .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerNomina .textoHeader__p--bold a, .headerNomina .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerNomina .textoHeader__p--bold a, .headerNomina .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerNomina .textoHeader__p--bold a, .headerNomina .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerVender .textoHeader__p--bold a, .headerApertura .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerApertura .textoHeader__p--bold a, .headerEcard .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerSeguro .textoHeader__p--bold a, .headerNomina .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerNomina .textoHeader__p--bold a, .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerProteccion .textoHeader__p--bold a, .headerProteccion .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerVender .textoHeader__p--bold a, .headerApertura .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerApertura .textoHeader__p--bold a, .headerEcard .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerSeguro .textoHeader__p--bold a, .headerNomina .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerNomina .textoHeader__p--bold a, .headerProteccion .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerVender .textoHeader__p--bold a, .headerApertura .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerApertura .textoHeader__p--bold a, .headerEcard .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerSeguro .textoHeader__p--bold a, .headerNomina .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerNomina .textoHeader__p--bold a, .headerProteccion .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerVender .textoHeader__p--bold a, .headerApertura .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerApertura .textoHeader__p--bold a, .headerEcard .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerSeguro .textoHeader__p--bold a, .headerNomina .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerNomina .textoHeader__p--bold a, .headerProteccion .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa1 .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerVender .textoHeader__p--bold a, .headerApertura .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerApertura .textoHeader__p--bold a, .headerEcard .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerSeguro .textoHeader__p--bold a, .headerNomina .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerNomina .textoHeader__p--bold a, .headerProteccion .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa2 .headerTarifa3 .textoHeader__p--bold a, .headerEjemploOblicuo1 .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerEjemploOblicuo1 .textoHeader__p--bold a, .headerVender .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerVender .textoHeader__p--bold a, .headerApertura .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerApertura .textoHeader__p--bold a, .headerEcard .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerEcard .textoHeader__p--bold a, .headerEcardFallida .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerEcardFallida .textoHeader__p--bold a, .headerSeguro .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerSeguro .textoHeader__p--bold a, .headerNomina .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerNomina .textoHeader__p--bold a, .headerProteccion .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerProteccion .textoHeader__p--bold a, .headerEjemploOblicuoRadio1 .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerEjemploOblicuoRadio1 .textoHeader__p--bold a, .headerEjemploOblicuo2 .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerEjemploOblicuo2 .textoHeader__p--bold a, .headerTarifa1 .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerTarifa1 .textoHeader__p--bold a, .headerTarifa2 .headerTarifa3 .textoHeader__p--bold a, .headerTarifa3 .headerTarifa2 .textoHeader__p--bold a, .headerTarifa3 .textoHeader__p--bold a {
+        font-weight: 900;
+        text-decoration: underline; }
+
+.headerEjemploOvalo1 {
+  display: flex;
+  top: 0px;
+  --height: 136px;
+  height: var(--height);
+  margin-bottom: 32px;
+  transition: 0.5s; }
+  .headerEjemploOvalo1::before {
+    content: "";
+    filter: brightness(0.7);
+    height: var(--height);
+    width: 113%;
+    border-radius: 0% 0% 55% 55%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center; }
+  .headerEjemploOvalo1 .textoHeader {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 80px); }
+    .headerEjemploOvalo1 .textoHeader__h {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 700;
+      text-align: center;
+      font-style: normal;
+      color: #ffffff;
+      margin-bottom: 4px; }
+    .headerEjemploOvalo1 .textoHeader__p, .headerEjemploOvalo1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerVender .textoHeader__p--bold, .headerVender .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerApertura .textoHeader__p--bold, .headerApertura .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerEcard .textoHeader__p--bold, .headerEcard .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerNomina .textoHeader__p--bold, .headerNomina .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOvalo1 .textoHeader__p--bold, .headerEjemploOvalo1 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOvalo1 .textoHeader__p--bold {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: center;
+      font-style: normal;
+      color: #ffffff; }
+
+.headerNegocio, .headerConfirmacion {
+  z-index: 1;
+  height: 224px;
+  border-radius: 10px;
+  padding: 16px; }
+  .headerNegocio::before, .headerConfirmacion::before {
+    content: "";
+    filter: brightness(0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px; }
+  .headerNegocio .textoHeader, .headerConfirmacion .textoHeader {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100%); }
+    .headerNegocio .textoHeader__h, .headerConfirmacion .textoHeader__h {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 700;
+      text-align: center;
+      font-style: normal;
+      color: #ffffff;
+      margin-bottom: 4px; }
+    .headerNegocio .textoHeader__p, .headerConfirmacion .textoHeader__p, .headerNegocio .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerVender .textoHeader__p--bold, .headerVender .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerVender .textoHeader__p--bold, .headerVender .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerApertura .textoHeader__p--bold, .headerApertura .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerApertura .textoHeader__p--bold, .headerApertura .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerEcard .textoHeader__p--bold, .headerEcard .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerEcard .textoHeader__p--bold, .headerEcard .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerSeguro .textoHeader__p--bold, .headerSeguro .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerSeguro .textoHeader__p--bold, .headerSeguro .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerNomina .textoHeader__p--bold, .headerNomina .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerNomina .textoHeader__p--bold, .headerNomina .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerProteccion .textoHeader__p--bold, .headerProteccion .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerProteccion .textoHeader__p--bold, .headerProteccion .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerConfirmacion .textoHeader__p--bold, .headerNegocio .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerNegocio .textoHeader__p--bold, .headerConfirmacion .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerConfirmacion .textoHeader__p--bold {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: center;
+      font-style: normal;
+      color: #ffffff; }
+
+.headerEjemploOblicuo1, .headerVender, .headerApertura, .headerEcard, .headerEcardFallida, .headerSeguro, .headerNomina, .headerProteccion {
+  --height:112px;
+  margin-bottom: 16px; }
+  .headerEjemploOblicuo1::before, .headerVender::before, .headerApertura::before, .headerEcard::before, .headerEcardFallida::before, .headerSeguro::before, .headerNomina::before, .headerProteccion::before {
+    background-image: url(../media/images/header-Ejemplo1.jpg); }
+  .headerEjemploOblicuo1 .textoHeader, .headerVender .textoHeader, .headerApertura .textoHeader, .headerEcard .textoHeader, .headerEcardFallida .textoHeader, .headerSeguro .textoHeader, .headerNomina .textoHeader, .headerProteccion .textoHeader {
+    width: 100%; }
+    .headerEjemploOblicuo1 .textoHeader__h, .headerVender .textoHeader__h, .headerApertura .textoHeader__h, .headerEcard .textoHeader__h, .headerEcardFallida .textoHeader__h, .headerSeguro .textoHeader__h, .headerNomina .textoHeader__h, .headerProteccion .textoHeader__h {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 0px; }
+    .headerEjemploOblicuo1 .textoHeader__p, .headerVender .textoHeader__p, .headerApertura .textoHeader__p, .headerEcard .textoHeader__p, .headerEcardFallida .textoHeader__p, .headerSeguro .textoHeader__p, .headerNomina .textoHeader__p, .headerProteccion .textoHeader__p, .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerVender .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerApertura .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerSeguro .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerNomina .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo1 .textoHeader__p--bold, .headerEjemploOblicuo1 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerVender .textoHeader__p--bold, .headerVender .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .textoHeader__p--bold, .headerApertura .headerVender .textoHeader__p--bold, .headerVender .headerApertura .textoHeader__p--bold, .headerEcard .headerVender .textoHeader__p--bold, .headerVender .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerVender .textoHeader__p--bold, .headerVender .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerVender .textoHeader__p--bold, .headerVender .headerSeguro .textoHeader__p--bold, .headerNomina .headerVender .textoHeader__p--bold, .headerVender .headerNomina .textoHeader__p--bold, .headerProteccion .headerVender .textoHeader__p--bold, .headerVender .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerApertura .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerApertura .textoHeader__p--bold, .headerApertura .headerVender .textoHeader__p--bold, .headerApertura .textoHeader__p--bold, .headerEcard .headerApertura .textoHeader__p--bold, .headerApertura .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerApertura .textoHeader__p--bold, .headerApertura .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerApertura .textoHeader__p--bold, .headerApertura .headerSeguro .textoHeader__p--bold, .headerNomina .headerApertura .textoHeader__p--bold, .headerApertura .headerNomina .textoHeader__p--bold, .headerProteccion .headerApertura .textoHeader__p--bold, .headerApertura .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcard .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEcard .textoHeader__p--bold, .headerEcard .headerVender .textoHeader__p--bold, .headerApertura .headerEcard .textoHeader__p--bold, .headerEcard .headerApertura .textoHeader__p--bold, .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEcard .textoHeader__p--bold, .headerEcard .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEcard .textoHeader__p--bold, .headerEcard .headerSeguro .textoHeader__p--bold, .headerNomina .headerEcard .textoHeader__p--bold, .headerEcard .headerNomina .textoHeader__p--bold, .headerProteccion .headerEcard .textoHeader__p--bold, .headerEcard .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerVender .textoHeader__p--bold, .headerApertura .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerApertura .textoHeader__p--bold, .headerEcard .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerEcard .textoHeader__p--bold, .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerSeguro .textoHeader__p--bold, .headerNomina .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerNomina .textoHeader__p--bold, .headerProteccion .headerEcardFallida .textoHeader__p--bold, .headerEcardFallida .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerSeguro .textoHeader__p--bold, .headerSeguro .headerVender .textoHeader__p--bold, .headerApertura .headerSeguro .textoHeader__p--bold, .headerSeguro .headerApertura .textoHeader__p--bold, .headerEcard .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerSeguro .textoHeader__p--bold, .headerSeguro .headerEcardFallida .textoHeader__p--bold, .headerSeguro .textoHeader__p--bold, .headerNomina .headerSeguro .textoHeader__p--bold, .headerSeguro .headerNomina .textoHeader__p--bold, .headerProteccion .headerSeguro .textoHeader__p--bold, .headerSeguro .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerNomina .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerNomina .textoHeader__p--bold, .headerNomina .headerVender .textoHeader__p--bold, .headerApertura .headerNomina .textoHeader__p--bold, .headerNomina .headerApertura .textoHeader__p--bold, .headerEcard .headerNomina .textoHeader__p--bold, .headerNomina .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerNomina .textoHeader__p--bold, .headerNomina .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerNomina .textoHeader__p--bold, .headerNomina .headerSeguro .textoHeader__p--bold, .headerNomina .textoHeader__p--bold, .headerProteccion .headerNomina .textoHeader__p--bold, .headerNomina .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerProteccion .textoHeader__p--bold, .headerProteccion .headerVender .textoHeader__p--bold, .headerApertura .headerProteccion .textoHeader__p--bold, .headerProteccion .headerApertura .textoHeader__p--bold, .headerEcard .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerProteccion .textoHeader__p--bold, .headerProteccion .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerProteccion .textoHeader__p--bold, .headerProteccion .headerSeguro .textoHeader__p--bold, .headerNomina .headerProteccion .textoHeader__p--bold, .headerProteccion .headerNomina .textoHeader__p--bold, .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerVender .textoHeader__p--bold, .headerApertura .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerApertura .textoHeader__p--bold, .headerEcard .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerSeguro .textoHeader__p--bold, .headerNomina .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerNomina .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuoRadio1 .textoHeader__p--bold, .headerEjemploOblicuoRadio1 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerVender .textoHeader__p--bold, .headerApertura .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerApertura .textoHeader__p--bold, .headerEcard .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerSeguro .textoHeader__p--bold, .headerNomina .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerNomina .textoHeader__p--bold, .headerProteccion .headerEjemploOblicuo2 .textoHeader__p--bold, .headerEjemploOblicuo2 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerVender .textoHeader__p--bold, .headerApertura .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerApertura .textoHeader__p--bold, .headerEcard .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerSeguro .textoHeader__p--bold, .headerNomina .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerNomina .textoHeader__p--bold, .headerProteccion .headerTarifa1 .textoHeader__p--bold, .headerTarifa1 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerVender .textoHeader__p--bold, .headerApertura .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerApertura .textoHeader__p--bold, .headerEcard .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerSeguro .textoHeader__p--bold, .headerNomina .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerNomina .textoHeader__p--bold, .headerProteccion .headerTarifa2 .textoHeader__p--bold, .headerTarifa2 .headerProteccion .textoHeader__p--bold, .headerEjemploOblicuo1 .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerVender .textoHeader__p--bold, .headerApertura .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerApertura .textoHeader__p--bold, .headerEcard .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEcard .textoHeader__p--bold, .headerEcardFallida .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerEcardFallida .textoHeader__p--bold, .headerSeguro .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerSeguro .textoHeader__p--bold, .headerNomina .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerNomina .textoHeader__p--bold, .headerProteccion .headerTarifa3 .textoHeader__p--bold, .headerTarifa3 .headerProteccion .textoHeader__p--bold {
+      font-size: 14px; }
+      .headerEjemploOblicuo1 .textoHeader__p--bold, .headerVender .textoHeader__p--bold, .headerApertura .textoHeader__p--bold, .headerEcard .textoHeader__p--bold, .headerEcardFallida .textoHeader__p--bold, .headerSeguro .textoHeader__p--bold, .headerNomina .textoHeader__p--bold, .headerProteccion .textoHeader__p--bold {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700; }
+
+.headerEjemploOblicuoRadio1 {
+  --height:112px;
+  margin-bottom: 16px; }
+  .headerEjemploOblicuoRadio1::before {
+    background-image: url(../media/images/header-Ejemplo1.jpg); }
+  .headerEjemploOblicuoRadio1 .textoHeader__h {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0px; }
+  .headerEjemploOblicuoRadio1 .textoHeader__p, .headerEjemploOblicuoRadio1 .textoHeader__p--bold {
+    font-size: 14px; }
+    .headerEjemploOblicuoRadio1 .textoHeader__p--bold {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700; }
+
+.headerEjemploOblicuo2 {
+  --height:112px;
+  margin-bottom: 16px; }
+  .headerEjemploOblicuo2::before {
+    background-image: url(../media/images/header-Ejemplo1.jpg); }
+  .headerEjemploOblicuo2 .textoHeader__h {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0px; }
+  .headerEjemploOblicuo2 .textoHeader__p, .headerEjemploOblicuo2 .textoHeader__p--bold {
+    font-size: 14px; }
+    .headerEjemploOblicuo2 .textoHeader__p--bold {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700; }
+
+.headerEjemploOblicuo2 {
+  --height:96px;
+  margin-bottom: 16px; }
+  .headerEjemploOblicuo2::before {
+    background-image: url(../media/images/header-Ejemplo2.jpg);
+    filter: initial;
+    background-position: center -120px; }
+
+.headerEjemploOvalo1 {
+  --height:64px;
+  margin-bottom: 16px; }
+  .headerEjemploOvalo1::before {
+    background-image: url(../media/images/header-Ejemplo1.jpg);
+    width: 100%; }
+
+.headerNegocio {
+  height: 184px;
+  padding: 22px 16px; }
+  .headerNegocio::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 46%, rgba(0, 0, 0, 0.76) 79%), url(../media/images/image-headerNegocio.jpg);
+    background-position: 0 0, 0 0;
+    background-size: 105%; }
+
+.headerConfirmacion {
+  height: 184px;
+  padding: 22px 16px; }
+  .headerConfirmacion::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 46%, rgba(0, 0, 0, 0.76) 79%), url(../media/images/image-openAccount.jpg);
+    background-position: 0 0, 0 0; }
+
+.headerVender {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerVender::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-accountHeader2.jpg);
+    background-size: 90%;
+    background-position-x: 0, 0px;
+    background-position-y: 0, 0%; }
+
+.headerApertura {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerApertura::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-openAccountHeader.jpg);
+    background-size: 90%;
+    background-position-x: 0, 0px;
+    background-position-y: 0, 30%; }
+
+.headerEcard {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerEcard::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-ecardHeader.jpg);
+    background-size: 88%;
+    background-position-x: 0, 0px;
+    background-position-y: 0, 54%; }
+
+.headerEcardFallida {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerEcardFallida::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-ecardFailedHeader.jpg);
+    background-position-x: -34px; }
+
+.headerSeguro {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerSeguro::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-insuranceHeader.jpg);
+    background-size: 90%;
+    background-position-x: 0, 0;
+    background-position-y: 0, 38%; }
+
+.headerNomina {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerNomina::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-payrollHeader.jpg);
+    background-size: 90%;
+    background-position-x: 0,0; }
+
+.headerProteccion {
+  --height: 136px;
+  background-color: #F0F0F3; }
+  .headerProteccion::before {
+    filter: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 63%), url(../media/images/image-cardInsurance.jpg);
+    background-size: 89%;
+    background-position-x: 0px; }
+
+.headerTarifa1 {
+  --height:112px;
+  margin-bottom: 16px; }
+  .headerTarifa1::before {
+    background-image: url(../media/images/header1.jpg);
+    width: 100%;
+    background-position-y: -14px;
+    filter: brightness(0.6); }
+  .headerTarifa1 .textoHeader {
+    margin-top: 24px; }
+    .headerTarifa1 .textoHeader__h {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 0px; }
+    .headerTarifa1 .textoHeader__p, .headerTarifa1 .textoHeader__p--bold {
+      font-size: 14px; }
+      .headerTarifa1 .textoHeader__p--bold {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700; }
+
+.headerTarifa2 {
+  --height:112px;
+  margin-bottom: 16px; }
+  .headerTarifa2::before {
+    background-image: url(../media/images/header2.jpg);
+    width: 100%;
+    filter: brightness(0.6); }
+  .headerTarifa2 .textoHeader {
+    margin-top: 24px; }
+    .headerTarifa2 .textoHeader__h {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 0px; }
+    .headerTarifa2 .textoHeader__p, .headerTarifa2 .textoHeader__p--bold {
+      font-size: 14px; }
+      .headerTarifa2 .textoHeader__p--bold {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700; }
+
+.headerTarifa3 {
+  --height:112px;
+  margin-bottom: 16px; }
+  .headerTarifa3::before {
+    background-image: url(../media/images/header3.jpg);
+    width: 100%;
+    filter: brightness(0.6); }
+  .headerTarifa3 .textoHeader {
+    margin-top: 24px; }
+    .headerTarifa3 .textoHeader__h {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 0px; }
+    .headerTarifa3 .textoHeader__p, .headerTarifa3 .textoHeader__p--bold {
+      font-size: 14px; }
+      .headerTarifa3 .textoHeader__p--bold {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700; }
+
+.contentCards {
+  width: 100%;
+  background-color: #ffffff; }
+  .contentCards .textBenefits__p {
+    padding-bottom: 16px; }
+  .contentCards .textBenefits--slider {
+    color: #404040; }
+    .contentCards .textBenefits--slider .listBeneficios {
+      text-align: left; }
+      .contentCards .textBenefits--slider .listBeneficios .listBeneficios__point {
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 10px;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #404040; }
+        .contentCards .textBenefits--slider .listBeneficios .listBeneficios__point::before {
+          content: "\2022";
+          left: 0;
+          top: -5px;
+          position: absolute;
+          font-family: "Roboto", sans-serif;
+          font-size: 25px;
+          line-height: initial;
+          font-weight: 700;
+          text-align: left;
+          font-style: normal;
+          color: #979797; }
+
+.boxGrey {
+  background-color: #F1F2F8;
+  text-align: left;
+  padding: 10px 16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  color: #676565; }
+
+.contentBenefits__uno {
+  width: 90%; }
+  .contentBenefits__uno .contentCards {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48), -5px -5px 10px #fafbff; }
+    .contentBenefits__uno .contentCards .imageBenefits {
+      position: relative;
+      width: 100%;
+      height: 137px;
+      text-align: center;
+      z-index: -1; }
+      .contentBenefits__uno .contentCards .imageBenefits::before {
+        background-image: url(../media/images/pexels-pixabay-33129.png);
+        content: "";
+        position: absolute;
+        top: -21px;
+        background-size: cover;
+        background-position: center;
+        height: 158px;
+        width: 100%;
+        background-repeat: no-repeat;
+        left: 0; }
+    .contentBenefits__uno .contentCards .textBenefits--slider {
+      height: auto;
+      padding: 16px 17px; }
+
+.linkBold {
+  font-weight: bold; }
+  .linkBold--underline {
+    font-weight: bold;
+    text-decoration: underline; }
+
+.swiperRed {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  position: relative; }
+  .swiperRed .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background-color: #D8D8D8;
+    opacity: 100%;
+    margin: 0 3px;
+    border-radius: 30px;
+    transition-duration: .3s; }
+    .swiperRed .swiper-pagination-bullet-active {
+      width: 16px;
+      background-color: #e1111c; }
+
+.camera {
+  height: 100vh;
+  width: 100%;
+  position: relative; }
+  .camera .showCamera {
+    width: 100%;
+    height: calc(100% - 118px); }
+  .camera .cameraButtons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 118px; }
+
+.contModal, .contModal--loaderLight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 3, 3, 0.6);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition-timing-function: ease-in-out;
+  transition-duration: .3s; }
+  .contModal .modal, .contModal--loaderLight .modal, .contModal .modal--medium, .contModal--loaderLight .modal--medium {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    --padingH: 24px;
+    padding: var(--padingH) 24px;
+    min-width: 310px;
+    max-width: 300px;
+    /* Se pone el max-height en caso de que el modal exceda su altura o se tome el
+    dispositivo de forma horizontal */
+    height: auto;
+    max-height: 94vh;
+    background: #ebecf0;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    transition-duration: .3s; }
+    .contModal .modal .modalHeader, .contModal--loaderLight .modal .modalHeader, .contModal .modal--medium .modalHeader, .contModal--loaderLight .modal--medium .modalHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center; }
+      .contModal .modal .modalHeader .modalIcon, .contModal--loaderLight .modal .modalHeader .modalIcon, .contModal .modal--medium .modalHeader .modalIcon, .contModal--loaderLight .modal--medium .modalHeader .modalIcon {
+        display: inline-block;
+        margin: 0px auto;
+        margin-bottom: 8px; }
+        .contModal .modal .modalHeader .modalIcon__img, .contModal--loaderLight .modal .modalHeader .modalIcon__img, .contModal .modal--medium .modalHeader .modalIcon__img, .contModal--loaderLight .modal--medium .modalHeader .modalIcon__img {
+          max-width: 60px; }
+          .contModal .modal .modalHeader .modalIcon__img--medium, .contModal--loaderLight .modal .modalHeader .modalIcon__img--medium, .contModal .modal--medium .modalHeader .modalIcon__img--medium, .contModal--loaderLight .modal--medium .modalHeader .modalIcon__img--medium {
+            width: 48px;
+            height: 48px; }
+          .contModal .modal .modalHeader .modalIcon__img--large, .contModal--loaderLight .modal .modalHeader .modalIcon__img--large, .contModal .modal--medium .modalHeader .modalIcon__img--large, .contModal--loaderLight .modal--medium .modalHeader .modalIcon__img--large {
+            max-width: 70px; }
+      .contModal .modal .modalHeader .modalInfo__title, .contModal--loaderLight .modal .modalHeader .modalInfo__title, .contModal .modal--medium .modalHeader .modalInfo__title, .contModal--loaderLight .modal--medium .modalHeader .modalInfo__title {
+        margin-bottom: 14px; }
+      .contModal .modal .modalHeader .modalInfo__text, .contModal--loaderLight .modal .modalHeader .modalInfo__text, .contModal .modal--medium .modalHeader .modalInfo__text, .contModal--loaderLight .modal--medium .modalHeader .modalInfo__text {
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #404040; }
+    .contModal .modal .modalBody, .contModal--loaderLight .modal .modalBody, .contModal .modal--medium .modalBody, .contModal--loaderLight .modal--medium .modalBody {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: auto; }
+      .contModal .modal .modalBody .modalInfo__title, .contModal--loaderLight .modal .modalBody .modalInfo__title, .contModal .modal--medium .modalBody .modalInfo__title, .contModal--loaderLight .modal--medium .modalBody .modalInfo__title {
+        margin-bottom: 14px; }
+      .contModal .modal .modalBody .modalInfo__description, .contModal--loaderLight .modal .modalBody .modalInfo__description, .contModal .modal--medium .modalBody .modalInfo__description, .contModal--loaderLight .modal--medium .modalBody .modalInfo__description {
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 400;
+        text-align: center;
+        font-style: normal;
+        color: #404040; }
+        .contModal .modal .modalBody .modalInfo__description--typeB, .contModal--loaderLight .modal .modalBody .modalInfo__description--typeB, .contModal .modal--medium .modalBody .modalInfo__description--typeB, .contModal--loaderLight .modal--medium .modalBody .modalInfo__description--typeB {
+          font-family: "Roboto", sans-serif;
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 400;
+          text-align: center;
+          font-style: normal;
+          color: #404040; }
+      .contModal .modal .modalBody > *:last-child, .contModal--loaderLight .modal .modalBody > *:last-child, .contModal .modal--medium .modalBody > *:last-child, .contModal--loaderLight .modal--medium .modalBody > *:last-child {
+        margin-bottom: 0px; }
+    .contModal .modal--medium, .contModal--loaderLight .modal--medium {
+      width: unset;
+      min-width: 280px; }
+
+.contModal--loaderLight {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.contModal--isShow {
+  opacity: 1;
+  pointer-events: inherit; }
+  .contModal--isShow .modal, .contModal--isShow .contModal .modal--medium, .contModal .contModal--isShow .modal--medium, .contModal--isShow .contModal--loaderLight .modal--medium, .contModal--loaderLight .contModal--isShow .modal--medium, .contModal--isShow .modal--medium {
+    top: 50%; }
+
+.modalLoader {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  position: relative; }
+  .modalLoader .modalLoader__clock {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2.9px solid #e1111c;
+    height: 100%;
+    width: 100%;
+    position: relative; }
+    .modalLoader .modalLoader__clock:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      background-color: #e1111c;
+      width: 3.5px;
+      height: 13px;
+      top: 20px;
+      left: 20px;
+      border-radius: 100px;
+      -webkit-transform-origin: 50% 0;
+      -moz-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+      -o-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+      -webkit-animation: hour 60s linear infinite;
+      -moz-animation: hour 60s linear infinite;
+      -ms-animation: hour 60s linear infinite;
+      -o-animation: hour 60s linear infinite;
+      animation: hour 60s linear infinite; }
+    .modalLoader .modalLoader__clock:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      background-color: #e1111c;
+      width: 3.5px;
+      height: 17px;
+      top: 20px;
+      left: 20px;
+      border-radius: 100px;
+      -webkit-transform-origin: 50% 0;
+      -moz-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
+      -o-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+      -webkit-animation: minutes 10s linear infinite;
+      -moz-animation: minutes 10s linear infinite;
+      -ms-animation: minutes 10s linear infinite;
+      -o-animation: minutes 10s linear infinite;
+      animation: minutes 10s linear infinite; }
+
+@-webkit-keyframes hour {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-moz-keyframes hour {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-ms-keyframes hour {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-o-keyframes hour {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@keyframes hour {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-webkit-keyframes minutes {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-moz-keyframes minutes {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-ms-keyframes minutes {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@-o-keyframes minutes {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+@keyframes minutes {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg); } }
+.contLoaderShops {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+  pointer-events: none;
+  transition-timing-function: ease-in-out;
+  transition-duration: .3s; }
+  .contLoaderShops__steps {
+    display: inline-block;
+    position: relative;
+    margin-top: 24px; }
+    .contLoaderShops__steps .loader__track {
+      stroke-width: 3;
+      stroke: #D9D9D9;
+      fill: none; }
+    .contLoaderShops__steps .loader__progress {
+      stroke-width: 3;
+      stroke: #F94742;
+      stroke-linecap: round;
+      fill: none;
+      -webkit-transform: rotate(270deg);
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      transform: rotate(270deg);
+      transform-origin: center;
+      transition-duration: .2s; }
+    .contLoaderShops__steps .loader__counter {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .contLoaderShops__steps .loader__counter p, .contLoaderShops__steps .loader__counter span {
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 700;
+        text-align: left;
+        font-style: normal;
+        color: #404040; }
+  .contLoaderShops .loader__text {
+    margin-top: 24px; }
+    .contLoaderShops .loader__text p {
+      /* min-height: 40px; */
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+
+.contModal .loader, .contModal--loaderLight .loader {
+  top: 50%;
+  background-color: transparent; }
+  .contModal .loader img, .contModal--loaderLight .loader img {
+    display: inline-block;
+    width: 65px;
+    height: auto;
+    margin: 0 auto;
+    pointer-events: none; }
+  .contModal .loader svg, .contModal--loaderLight .loader svg {
+    display: inline-block;
+    width: 90px;
+    height: auto;
+    margin: 0 auto;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto; }
+    .contModal .loader svg.dark .cls-1, .contModal--loaderLight .loader svg.dark .cls-1, .contModal .loader svg.light .cls-1, .contModal--loaderLight .loader svg.light .cls-1 {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 6px; }
+    .contModal .loader svg.dark, .contModal--loaderLight .loader svg.dark {
+      stroke: #505050; }
+    .contModal .loader svg.light, .contModal--loaderLight .loader svg.light {
+      stroke: #d7d7d7; }
+    .contModal .loader svg.default .cls-1, .contModal--loaderLight .loader svg.default .cls-1 {
+      fill: none;
+      stroke: #f84742;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 6px;
+      stroke-dasharray: 230;
+      stroke-dashoffset: 340;
+      animation: loader 4.5s linear reverse infinite;
+      -webkit-animation: loader 4.5s linear reverse infinite;
+      -moz-animation: loader 4.5s linear reverse infinite; }
+
+@keyframes loader {
+  0% {
+    stroke-dashoffset: 470; }
+  100% {
+    stroke-dashoffset: 1410; } }
+@-webkit-keyframes loader {
+  0% {
+    stroke-dashoffset: 470; }
+  100% {
+    stroke-dashoffset: 1410; } }
+@-moz-keyframes loader {
+  0% {
+    stroke-dashoffset: 470; }
+  100% {
+    stroke-dashoffset: 1410; } }
+.headerWebMain {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 100%;
+  padding: 0 24px;
+  margin-top: 20px;
+  text-align: center; }
+  .headerWebMain .headerWebMain__title {
+    display: inline-block;
+    width: 50%;
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    color: #000; }
+  .headerWebMain nav ul {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-flex-direction: arrow;
+    -moz-flex-direction: arrow;
+    -ms-flex-direction: arrow;
+    -o-flex-direction: arrow;
+    flex-direction: arrow;
+    width: auto; }
+    .headerWebMain nav ul li {
+      display: inline-block;
+      text-align: center;
+      margin: 0 16px; }
+      .headerWebMain nav ul li:last-of-type {
+        margin-right: 0px; }
+      .headerWebMain nav ul li a {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #676565; }
+        .headerWebMain nav ul li a img {
+          display: block;
+          margin: 0 auto 8px;
+          width: 100%;
+          max-width: 24px; }
+
+.cardContainer, .cardContainer--inactive {
+  width: calc(100% - 32px);
+  max-width: 550px;
+  margin: 8px auto 0;
+  border-radius: 10px;
+  background-color: #f0f0f3; }
+  .cardContainer .cardHeader, .cardContainer--inactive .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+    padding: 16px;
+    background-color: #FAFAFC;
+    cursor: pointer; }
+    .cardContainer .cardHeader__icon, .cardContainer--inactive .cardHeader__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 24px;
+      width: 24px; }
+      .cardContainer .cardHeader__icon .rotate, .cardContainer--inactive .cardHeader__icon .rotate {
+        transform: rotate(0deg); }
+    .cardContainer .cardHeader p, .cardContainer--inactive .cardHeader p {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #000000; }
+    .cardContainer .cardHeader--incomplete p, .cardContainer--inactive .cardHeader--incomplete p {
+      position: relative;
+      padding-left: 24px; }
+      .cardContainer .cardHeader--incomplete p::before, .cardContainer--inactive .cardHeader--incomplete p::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-image: url(../media/_defaultIcons/icon-validationIncomplete.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+    .cardContainer .cardHeader--success p, .cardContainer--inactive .cardHeader--success p {
+      position: relative;
+      padding-left: 24px; }
+      .cardContainer .cardHeader--success p::before, .cardContainer--inactive .cardHeader--success p::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background-image: url(../media/_defaultIcons/icon-validationSuccess.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+  .cardContainer .cardContent, .cardContainer--inactive .cardContent {
+    padding: 16px 16px 24px; }
+  .cardContainer--inactive {
+    box-shadow: none;
+    border: 1px solid #E5E3E3; }
+    .cardContainer--inactive .cardHeader {
+      border-radius: 10px; }
+      .cardContainer--inactive .cardHeader__icon .rotate {
+        transform: rotate(180deg); }
+
+.resultTag {
+  position: relative;
+  margin: 36px auto 16px;
+  background-color: white;
+  border-radius: 10px;
+  min-height: 50px; }
+  .resultTag__titleContainer {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    bottom: calc(100% - 12px);
+    width: 100%; }
+  .resultTag__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    min-width: 205px;
+    padding-top: 2px;
+    background-color: #FF5947;
+    border-radius: 6px; }
+  .resultTag__content {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    color: #000000;
+    padding: 20px 10px 16px;
+    word-wrap: break-word; }
+
+.checkList__item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0px;
+  border-bottom: 1px solid #CACACA; }
+  .checkList__item:nth-child(1) span::after {
+    content: "1"; }
+  .checkList__item:nth-child(2) span::after {
+    content: "2"; }
+  .checkList__item:nth-child(3) span::after {
+    content: "3"; }
+  .checkList__item span {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; }
+    .checkList__item span::after {
+      content: "1";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 10px;
+      color: #6E6E6E;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto; }
+  .checkList__item:first-child {
+    padding-top: 0px; }
+  .checkList__item:last-child {
+    border-bottom: 0px;
+    padding-bottom: 0px; }
+  .checkList__item .checkedItem {
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 10px;
+    background: url(../media/extraIcons/icon-check-red.svg); }
+    .checkList__item .checkedItem::after {
+      visibility: hidden;
+      color: #e1111c; }
+  .checkList__item .focusedItem {
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 10px;
+    background: url(../media/extraIcons/icon-focusedCircle.svg); }
+    .checkList__item .focusedItem::after {
+      color: #e1111c; }
+  .checkList__item .inactiveItem {
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 10px;
+    background: url(../media/extraIcons/icon-inactiveCircle.svg); }
+    .checkList__item .inactiveItem::after {
+      color: #6E6E6E; }
+  .checkList__item .failedItem {
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 10px;
+    background: url(../media/extraIcons/icon-failedCircle.svg); }
+    .checkList__item .failedItem::after {
+      visibility: hidden; }
+  .checkList__item .itemText {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    text-align: left;
+    font-style: normal;
+    color: #676565; }
+    .checkList__item .itemText--checked {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #404040; }
+
+.idContainer {
+  margin-bottom: 32px; }
+  .idContainer__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    color: #000000;
+    margin-bottom: 8px; }
+  .idContainer__image, .idContainer__image--checked, .idContainer__image--failed {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 190px;
+    max-height: 120px;
+    margin: 0 auto 15px; }
+    .idContainer__image img, .idContainer__image--checked img, .idContainer__image--failed img {
+      display: block;
+      border-radius: 12px;
+      width: 100%; }
+    .idContainer__image--checked img {
+      filter: brightness(0.8); }
+    .idContainer__image--checked:after {
+      content: url(../media/extraIcons/icon-grayChecked.svg);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 16px); }
+    .idContainer__image--failed img {
+      filter: brightness(0.8); }
+    .idContainer__image--failed:after {
+      content: url(../media/extraIcons/icon-grayFailed.svg);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 16px); }
+
+.gifContainer {
+  width: calc(100% - 16px);
+  max-width: 450px;
+  margin: 0 auto 16px;
+  border-radius: 10px;
+  overflow: hidden; }
+  .gifContainer img {
+    display: block;
+    width: 100%; }
+
+.iconTabs {
+  width: 100%;
+  background-color: transparent; }
+  .iconTabs .tabsContainer {
+    display: flex;
+    justify-content: space-around; }
+    .iconTabs .tabsContainer__item, .iconTabs .tabsContainer__item--inactive {
+      width: 50%;
+      cursor: pointer; }
+      .iconTabs .tabsContainer__item .divisor, .iconTabs .tabsContainer__item--inactive .divisor {
+        height: 4px;
+        border-radius: 2px;
+        background-color: #DD141D;
+        margin-top: 12px; }
+      .iconTabs .tabsContainer__item--inactive .divisor {
+        height: 2px;
+        background-color: #E1E1E5;
+        border-radius: none;
+        margin-top: 13px; }
+  .iconTabs .tabContent, .iconTabs .tabContent--inactive {
+    margin-top: 16px; }
+    .iconTabs .tabContent__title {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #000000; }
+    .iconTabs .tabContent__text {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      text-align: left;
+      font-style: normal;
+      color: #404040;
+      margin-top: 16px; }
+    .iconTabs .tabContent--inactive {
+      display: none; }
+
+.hidden {
+  display: none; }
+
+.logoGrid--auto {
+  margin: 0 auto; }
+.logoGrid__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #000000;
+  margin-top: 16px; }
+.logoGrid__container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px; }
+.logoGrid__item {
+  display: grid;
+  /* flex: 1; */
+  justify-items: center; }
+  .logoGrid__item .logoContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    max-width: 48px;
+    height: 32px; }
+  .logoGrid__item .logoText {
+    font-family: "Roboto", sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 500;
+    text-align: center;
+    font-style: normal;
+    color: #404040;
+    margin-top: 8px; }
+
+.dataphone, .dataphone--wLabel {
+  margin-top: 16px; }
+  .dataphone--wLabel {
+    position: relative;
+    margin-top: 32px; }
+  .dataphone__label {
+    width: fit-content;
+    min-width: 205px;
+    position: absolute;
+    bottom: calc(100% - 12px);
+    left: 50%;
+    padding: 5px 4px 4px;
+    border-radius: 6px;
+    background-color: #FF5947;
+    transform: translate(-50%);
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    color: #FFFFFF; }
+  .dataphone__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    padding: 0px 16px; }
+  .dataphone__card, .dataphone__card--wLabel {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 16px;
+    margin-top: 16px;
+    background-color: #FBFBFC;
+    border-radius: 10px; }
+    .dataphone__card--wLabel {
+      padding-top: 32px; }
+  .dataphone__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    background-color: #EBECF0;
+    border-radius: 10px; }
+    .dataphone__image img {
+      max-width: 55px;
+      max-height: 55px; }
+  .dataphone__info .title {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    padding: 0px; }
+  .dataphone__info .description {
+    font-family: "Roboto", sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040;
+    margin-top: 8px;
+    padding: 0px; }
+  .dataphone__input {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px; }
+    .dataphone__input label {
+      font-family: "Roboto", sans-serif;
+      font-size: 11px;
+      line-height: 13px;
+      font-weight: 500;
+      text-align: left;
+      font-style: normal;
+      color: #404040;
+      width: 56px; }
+    .dataphone__input .input__dataphoneCard {
+      font-size: 12px;
+      font-weight: 700;
+      color: #000000;
+      width: 72px;
+      padding: 8px;
+      text-align: center;
+      border-radius: 4px;
+      border: 1px solid #E5E3E3; }
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  position: sticky;
+  bottom: 0;
+  min-height: 72px;
+  background-color: white;
+  border-radius: 15px 15px 0 0; }
+  .footer__info .title {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #676565;
+    margin-bottom: 4px; }
+  .footer__info .description {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    color: #404040; }
+  .footer__icon {
+    justify-self: center;
+    max-height: 24px;
+    max-height: 24px;
+    cursor: pointer; }
+    .footer__icon img {
+      display: block; }
+
+.container, .container--sectionTyC {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 24px;
+  text-align: center;
+  position: relative; }
+  .container--sectionTyC {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    height: 100vh; }
+
+.wh-100 {
+  width: 100% !important; }
+
+.wh-90 {
+  width: 90% !important; }
+
+.wh-82 {
+  width: 82% !important; }
+
+.wh-80 {
+  width: 80% !important; }
+
+.wh-65 {
+  width: 65% !important; }
+
+.wh-60 {
+  width: 60% !important; }
+
+.wh-50 {
+  width: 50% !important; }
+
+.wh-40 {
+  width: 40% !important; }
+
+.wh-35 {
+  width: 35% !important; }
+
+.wh-20 {
+  width: 20% !important; }
+
+.wh-auto {
+  width: auto            !important; }
+
+.mxw-180px {
+  max-width: 180px !important; }
+
+.mxw-210px {
+  max-width: 210px !important; }
+
+.mxw-250px {
+  max-width: 250px !important; }
+
+.mxw-300px {
+  max-width: 300px !important; }
+
+.mxw-335px {
+  max-width: 335px !important; }
+
+.mxw-550px {
+  max-width: 550px !important; }
+
+.mxw-650px {
+  max-width: 650px !important; }
+
+.mxw-750px {
+  max-width: 750px !important; }
+
+.mt-0px {
+  margin-top: 0px !important; }
+
+.mb-0px {
+  margin-bottom: 0px !important; }
+
+.ml-0px {
+  margin-left: 0px !important; }
+
+.mr-0px {
+  margin-right: 0px !important; }
+
+.mV-0px {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important; }
+
+.mH-0px {
+  margin-left: 0px !important;
+  margin-right: 0px !important; }
+
+.mt-4px {
+  margin-top: 4px !important; }
+
+.mb-4px {
+  margin-bottom: 4px !important; }
+
+.ml-4px {
+  margin-left: 4px !important; }
+
+.mr-4px {
+  margin-right: 4px !important; }
+
+.mV-4px {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important; }
+
+.mH-4px {
+  margin-left: 4px !important;
+  margin-right: 4px !important; }
+
+.mt-8px {
+  margin-top: 8px !important; }
+
+.mb-8px {
+  margin-bottom: 8px !important; }
+
+.ml-8px {
+  margin-left: 8px !important; }
+
+.mr-8px {
+  margin-right: 8px !important; }
+
+.mV-8px {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important; }
+
+.mH-8px {
+  margin-left: 8px !important;
+  margin-right: 8px !important; }
+
+.mt-12px {
+  margin-top: 12px !important; }
+
+.mb-12px {
+  margin-bottom: 12px !important; }
+
+.ml-12px {
+  margin-left: 12px !important; }
+
+.mr-12px {
+  margin-right: 12px !important; }
+
+.mV-12px {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important; }
+
+.mH-12px {
+  margin-left: 12px !important;
+  margin-right: 12px !important; }
+
+.mt-14px {
+  margin-top: 14px !important; }
+
+.mb-14px {
+  margin-bottom: 14px !important; }
+
+.ml-14px {
+  margin-left: 14px !important; }
+
+.mr-14px {
+  margin-right: 14px !important; }
+
+.mV-14px {
+  margin-top: 14px !important;
+  margin-bottom: 14px !important; }
+
+.mH-14px {
+  margin-left: 14px !important;
+  margin-right: 14px !important; }
+
+.mt-16px {
+  margin-top: 16px !important; }
+
+.mb-16px {
+  margin-bottom: 16px !important; }
+
+.ml-16px {
+  margin-left: 16px !important; }
+
+.mr-16px {
+  margin-right: 16px !important; }
+
+.mV-16px {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important; }
+
+.mH-16px {
+  margin-left: 16px !important;
+  margin-right: 16px !important; }
+
+.mt-20px {
+  margin-top: 20px !important; }
+
+.mb-20px {
+  margin-bottom: 20px !important; }
+
+.ml-20px {
+  margin-left: 20px !important; }
+
+.mr-20px {
+  margin-right: 20px !important; }
+
+.mV-20px {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important; }
+
+.mH-20px {
+  margin-left: 20px !important;
+  margin-right: 20px !important; }
+
+.mt-24px {
+  margin-top: 24px !important; }
+
+.mb-24px {
+  margin-bottom: 24px !important; }
+
+.ml-24px {
+  margin-left: 24px !important; }
+
+.mr-24px {
+  margin-right: 24px !important; }
+
+.mV-24px {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important; }
+
+.mH-24px {
+  margin-left: 24px !important;
+  margin-right: 24px !important; }
+
+.mt-30px {
+  margin-top: 30px !important; }
+
+.mb-30px {
+  margin-bottom: 30px !important; }
+
+.ml-30px {
+  margin-left: 30px !important; }
+
+.mr-30px {
+  margin-right: 30px !important; }
+
+.mV-30px {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important; }
+
+.mH-30px {
+  margin-left: 30px !important;
+  margin-right: 30px !important; }
+
+.mt-32px {
+  margin-top: 32px !important; }
+
+.mb-32px {
+  margin-bottom: 32px !important; }
+
+.ml-32px {
+  margin-left: 32px !important; }
+
+.mr-32px {
+  margin-right: 32px !important; }
+
+.mV-32px {
+  margin-top: 32px !important;
+  margin-bottom: 32px !important; }
+
+.mH-32px {
+  margin-left: 32px !important;
+  margin-right: 32px !important; }
+
+.mt-auto {
+  margin-top: auto !important; }
+
+.mb-auto {
+  margin-bottom: auto !important; }
+
+.ml-auto {
+  margin-left: auto !important; }
+
+.mr-auto {
+  margin-right: auto !important; }
+
+.mV-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important; }
+
+.mH-auto {
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
+.pt-0px {
+  padding-top: 0px !important; }
+
+.pb-0px {
+  padding-bottom: 0px !important; }
+
+.pl-0px {
+  padding-left: 0px !important; }
+
+.pr-0px {
+  padding-right: 0px !important; }
+
+.pV-0px {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important; }
+
+.pH-0px {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
+.pt-4px {
+  padding-top: 4px !important; }
+
+.pb-4px {
+  padding-bottom: 4px !important; }
+
+.pl-4px {
+  padding-left: 4px !important; }
+
+.pr-4px {
+  padding-right: 4px !important; }
+
+.pV-4px {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important; }
+
+.pH-4px {
+  padding-left: 4px !important;
+  padding-right: 4px !important; }
+
+.pt-6px {
+  padding-top: 6px !important; }
+
+.pb-6px {
+  padding-bottom: 6px !important; }
+
+.pl-6px {
+  padding-left: 6px !important; }
+
+.pr-6px {
+  padding-right: 6px !important; }
+
+.pV-6px {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important; }
+
+.pH-6px {
+  padding-left: 6px !important;
+  padding-right: 6px !important; }
+
+.pt-8px {
+  padding-top: 8px !important; }
+
+.pb-8px {
+  padding-bottom: 8px !important; }
+
+.pl-8px {
+  padding-left: 8px !important; }
+
+.pr-8px {
+  padding-right: 8px !important; }
+
+.pV-8px {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important; }
+
+.pH-8px {
+  padding-left: 8px !important;
+  padding-right: 8px !important; }
+
+.pt-10px {
+  padding-top: 10px !important; }
+
+.pb-10px {
+  padding-bottom: 10px !important; }
+
+.pl-10px {
+  padding-left: 10px !important; }
+
+.pr-10px {
+  padding-right: 10px !important; }
+
+.pV-10px {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important; }
+
+.pH-10px {
+  padding-left: 10px !important;
+  padding-right: 10px !important; }
+
+.pt-14px {
+  padding-top: 14px !important; }
+
+.pb-14px {
+  padding-bottom: 14px !important; }
+
+.pl-14px {
+  padding-left: 14px !important; }
+
+.pr-14px {
+  padding-right: 14px !important; }
+
+.pV-14px {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important; }
+
+.pH-14px {
+  padding-left: 14px !important;
+  padding-right: 14px !important; }
+
+.pt-16px {
+  padding-top: 16px !important; }
+
+.pb-16px {
+  padding-bottom: 16px !important; }
+
+.pl-16px {
+  padding-left: 16px !important; }
+
+.pr-16px {
+  padding-right: 16px !important; }
+
+.pV-16px {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important; }
+
+.pH-16px {
+  padding-left: 16px !important;
+  padding-right: 16px !important; }
+
+.pt-20px {
+  padding-top: 20px !important; }
+
+.pb-20px {
+  padding-bottom: 20px !important; }
+
+.pl-20px {
+  padding-left: 20px !important; }
+
+.pr-20px {
+  padding-right: 20px !important; }
+
+.pV-20px {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important; }
+
+.pH-20px {
+  padding-left: 20px !important;
+  padding-right: 20px !important; }
+
+.pt-24px {
+  padding-top: 24px !important; }
+
+.pb-24px {
+  padding-bottom: 24px !important; }
+
+.pl-24px {
+  padding-left: 24px !important; }
+
+.pr-24px {
+  padding-right: 24px !important; }
+
+.pV-24px {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important; }
+
+.pH-24px {
+  padding-left: 24px !important;
+  padding-right: 24px !important; }
+
+.pt-28px {
+  padding-top: 28px !important; }
+
+.pb-28px {
+  padding-bottom: 28px !important; }
+
+.pl-28px {
+  padding-left: 28px !important; }
+
+.pr-28px {
+  padding-right: 28px !important; }
+
+.pV-28px {
+  padding-top: 28px !important;
+  padding-bottom: 28px !important; }
+
+.pH-28px {
+  padding-left: 28px !important;
+  padding-right: 28px !important; }
+
+.pt-32px {
+  padding-top: 32px !important; }
+
+.pb-32px {
+  padding-bottom: 32px !important; }
+
+.pl-32px {
+  padding-left: 32px !important; }
+
+.pr-32px {
+  padding-right: 32px !important; }
+
+.pV-32px {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important; }
+
+.pH-32px {
+  padding-left: 32px !important;
+  padding-right: 32px !important; }
+
+.zi-1 {
+  z-index: 1 !important; }
+
+.zi-2 {
+  z-index: 2 !important; }
+
+.zi-4 {
+  z-index: 4 !important; }
+
+.zi-6 {
+  z-index: 6 !important; }
+
+.zi-8 {
+  z-index: 8 !important; }
+
+.zi-10 {
+  z-index: 10 !important; }
+
+.ta-left {
+  text-align: left !important; }
+
+.ta-center {
+  text-align: center !important; }
+
+.ta-right {
+  text-align: right !important; }
+
+.ta-justify {
+  text-align: justify !important; }
+
+.fz-10px {
+  font-size: 10px !important; }
+
+.fz-11px {
+  font-size: 11px !important; }
+
+.fz-12px {
+  font-size: 12px !important; }
+
+.fz-14px {
+  font-size: 14px !important; }
+
+.fz-16px {
+  font-size: 16px !important; }
+
+.fz-18px {
+  font-size: 18px !important; }
+
+.fz-16px {
+  font-size: 16px !important; }
+
+.fz-20px {
+  font-size: 20px !important; }
+
+.fz-24px {
+  font-size: 24px !important; }
+
+.fw-thin {
+  font-weight: 100 !important; }
+
+.fw-light {
+  font-weight: 300 !important; }
+
+.fw-regular {
+  font-weight: 400 !important; }
+
+.fw-medium {
+  font-weight: 500 !important; }
+
+.fw-bold {
+  font-weight: 700 !important; }
+
+.fw-black {
+  font-weight: 900 !important; }
+
+.tt-uppercase {
+  text-transform: uppercase !important; }
+
+.tt-lowercase {
+  text-transform: lowercase !important; }
+
+.tt-capitalize {
+  text-transform: capitalize !important; }
+
+.ct1 {
+  color: #404040 !important; }
+
+.ct2 {
+  color: #000000 !important; }
+
+.ct3 {
+  color: #676565 !important; }
+
+.is--scrollLocked {
+  overflow-y: hidden; }
+
+.hidden {
+  display: none !important;
+  pointer-events: none !important; }
+
+@media (min-width: 50em) {
+  .helper--long .helper__text {
+    -webkit-line-clamp: initial; }
+
+  .listBenefits__itemB {
+    -webkit-align-items: center;
+    -mox-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center; }
+
+  .ContainerMainTyC__canvas::-webkit-scrollbar {
+    width: 10px;
+    height: 10px; }
+  .ContainerMainTyC__canvas::-webkit-scrollbar-thumb:hover {
+    background: #c2c2c2;
+    cursor: pointer; } }
+@media (min-width: 515px) {
+  .listBenefits__itemCenter, .listBenefits__oneLineItem {
+    align-items: center; } }
+@media (max-width: 320px) {
+  .headerEcardFallida {
+    --height:152px; } }
+@media (max-width: 350px) {
+  .result .resultItem--helperB::after {
+    top: 21px; }
+
+  .headerTarifa1 {
+    --height:135px; }
+
+  .headerTarifa2 {
+    --height:135px; } }
+@media (min-width: 450px) {
+  .headerEcard::before {
+    background-size: 88%;
+    background-position-x: 0, 0px;
+    background-position-y: 0, 38%; }
+
+  .headerEcardFallida::before {
+    background-position-x: 0, -34px;
+    background-position-y: 0, 33%; } }
+@media (min-width: 530px) {
+  .headerNegocio::before {
+    background-position: 0 0, 0 20%; } }
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait and Landscape */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait and Landscape */
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait and Landscape */
+/* ----------- iPhone X ----------- */
+/* Portrait and Landscape */
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- Back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Solicitud de seguro</h2>
+            <p class="contentBox__text fw-bold ta-center pH-8px">
+                Proteja a su familia con un Seguro de Vida
+            </p>
+            <!-- Lista -->
+            <div class="result mt-8px">
+                <div class="result__listTitle fw-regular mb-16px">
+                    Cubra los gastos de su hogar en caso de:
+                </div>
+                <div class="resultItem--arrow">
+                    <div class="imgContainer">
+                        <img src="../media/_defaultIcons/icon-lemotive.svg" alt="lemotive">
+                    </div>
+                    <p class="text">
+                        Muerte por cualquier causa.
+                    </p>
+                </div>
+                <div class="resultItem--arrow">
+                    <div class="imgContainer">
+                        <img src="../media/_defaultIcons/icon-lemotive.svg" alt="lemotive">
+                    </div>
+                    <p class="text">
+                        Incapacidad total y permanente.
+                    </p>
+                </div>
+            </div>
+
+            <div class="contextInfo mt-16px">
+                <a href="javascript:void(0)" class="fz-14px fw-bold">Ver Términos y Condiciones</a>.
+            </div>
+
+            <form action="" class="formApp mt-16px">
+                <div class="input">
+                    <label for="" class="input__label">Seleccione el valor a asegurar</label>
+                    <div class="dropdown">
+                        <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                        <div class="options">
+                            <!-- Si un option tendría que ir disabled, este se nombra en la clase del el label -->
+                            <div class="option">
+                                <label class="clickDropdown checked disabled">
+                                    <input type="radio" name="radio1" value="0" checked="" disabled="">
+                                    Seleccione un valor
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showItem('prima')">
+                                    <input type="radio" name="radio1" value="opt1" disabled=""> $ 12.000.000
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showItem('prima')">
+                                    <input type="radio" name="radio1" value="opt2" disabled=""> $ 24.000.000
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showItem('prima')">
+                                    <input type="radio" name="radio1" value="opt3" disabled=""> $ 36.000.000
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showItem('prima')">
+                                    <input type="radio" name="radio1" value="opt4" disabled=""> $ 48.000.000
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showItem('prima')">
+                                    <input type="radio" name="radio1" value="opt5" disabled=""> $ 60.000.000
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="prima" class="resultTag hidden">
+                    <div class="resultTag__titleContainer">
+                        <p class="resultTag__title">Valor prima mensual</p>
+                    </div>
+                    <p class="resultTag__content">
+                        $441.000,00
+                    </p>
+                </div>
+                <label class="checkbox">
+                    Manifiesto que he leído y acepto firmar la <a href="javascript:void(0)">Declaración de
+                    asegurabilidad.</a>
+                    <input type="checkbox" onclick="checkBullet(this, 'nextButton')">
+                    <div class="checkbox__indicator"></div>
+                </label>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+
+        <!-- Buttons -->
+        <div class="contButtons mt-24px">
+            <p class="contButtons__title">¿Desea adquirir este Seguro?</p>
+            <button type="button" id="nextButton" class="button--primary" disabled>Adquirir</button>
+            <button type="button" class="button--secondary">Omitir</button>
+        </div>
+
+        <!-- Informacion contextual-->
+        <div class="contextInfo--typeB mt-24px">
+            <p>Este seguro es expedido por <br><strong>Seguros Bolívar S.A.</strong></p>
+        </div>
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

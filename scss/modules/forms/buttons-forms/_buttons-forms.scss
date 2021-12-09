@@ -1,0 +1,80 @@
+//Container y Botones genericos
+.contButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 32px auto 0;
+}
+
+%buton2{
+    display: inline-block;
+    width: auto;
+    min-width: 144px;
+    margin: 0 5px;
+    padding: 12px 22px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    margin-bottom: 16px;
+
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: inherit;
+
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+}
+
+//Botones genericos
+.button{
+
+    &--primary{
+        @extend %buton2;
+        @include defaultFont(1, $fz: $font-p, $fw: bold, $c: #fff, $ta: center);
+        background-color: $red-primary;
+
+        &:disabled{
+            //pointer-events: none;
+            background-color: #d9d9d9;
+            @include defaultFont(1, $fz: $font-p, $fw: bold, $c: $text-enable, $ta: center);
+            cursor: not-allowed;
+        }
+    }  
+    
+    &--secondary{
+        @extend %buton2;
+        @include defaultFont(1, $fz: $font-p, $fw: bold, $c: #000000, $ta: center);
+        background-color: initial;
+    }
+
+    &--disabled{
+        @extend %buton2;
+        background-color: #d9d9d9;
+        @include defaultFont(1, $fz: $font-p, $fw: bold, $c: $text-enable, $ta: center);
+    }
+
+    &--transparent{
+        @extend %buton2;
+        background-color: transparent;
+        border: 1px solid #3B3B3B;
+        box-shadow: none;
+        @include defaultFont(0, $fw: bold, $c: $text-color, $fz: $font-p, $lh: 16px)
+    }
+}
+
+.seeMoreBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    cursor: pointer;
+    p{
+        margin-right: 6px;
+    }
+    .rotateImg{
+        transform: rotate(180deg);
+    }
+}

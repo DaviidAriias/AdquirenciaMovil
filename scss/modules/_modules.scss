@@ -1,0 +1,86 @@
+//============ Modules SCSS ============
+//-------- Texts SCSS
+@import 'main-texts/_main-texts';
+
+
+//-------- Back Button SCSS
+@import 'buttons/_buttons';
+
+
+//-------- box Main SCSS
+@import 'box-main/_box-main';
+
+
+//-------- Tracking SCSS
+@import 'tracking/_tracking';
+
+
+//-------- Benefits Swiper SCSS
+@import 'benefits/_benefits';
+
+
+//-------- Benefits Lista SCSS
+@import 'benefits/benefits_list';
+
+
+//-------- Lists
+@import 'lists/lists';
+@import 'lists/details-list';
+
+
+//-------- hr SCSS
+@import 'separator/separator';
+
+
+//-------- helper SCSS
+@import 'helper/helper';
+@import 'helper/box-helper';
+
+
+//-------- Forms SCSS
+@import 'forms/_form';
+
+
+//-------- Confirmations y resultados SCSS
+@import 'results/result-item';
+
+
+//-------- headers de ejemplo
+@import 'header/header';
+
+
+//-------- paginador para swiper
+@import 'pager/pager';
+
+
+//-------- Vista camara
+@import 'camera/camera';
+
+
+//-------- Modals SCSS
+@import 'modals/_modals';
+
+
+//-------- Web Components !Important
+@import 'web-components/_web-components';
+
+
+//------- biometria 
+
+@import 'GIF/GIF';
+
+
+//-------- Tab card
+@import 'icons-tabs/icons-tabs';
+
+
+//-------- Card logo/icons grid
+@import 'logo-grid/logo-grid';
+
+
+//-------- Dataphone card
+@import 'dataphone/dataphone';
+
+
+//-------- Dataphone card
+@import 'footer/footer'

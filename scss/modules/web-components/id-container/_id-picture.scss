@@ -1,0 +1,52 @@
+.idContainer{
+    margin-bottom: 32px;
+
+    
+
+    &__title{
+        @include defaultFont(1, $fw: bold, $ta: center, $c: $titles-color);
+        margin-bottom:  8px;     
+    }
+
+    &__image{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 190px;
+        max-height: 120px;
+        margin: 0 auto 15px;
+        img{
+            display: block;
+            border-radius: 12px;
+            width: 100%;
+        }
+
+        &--checked{
+            @extend .idContainer__image;
+            img{
+                filter: brightness(0.8);
+            }
+            &:after{
+                content: url(../media/extraIcons/icon-grayChecked.svg);
+                position: absolute;
+                top: 50%;
+                transform:translateY(-50%);
+                left: calc(100% + 16px);
+            }
+        }
+
+        &--failed{
+            @extend .idContainer__image;
+            img{
+                filter: brightness(0.8);
+            }
+            &:after{
+                content: url(../media/extraIcons/icon-grayFailed.svg);
+                position: absolute;
+                top: 50%;
+                transform:translateY(-50%);
+                left: calc(100% + 16px);
+            }
+        }
+    }
+}

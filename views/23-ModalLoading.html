@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+
+    <!-- #region Modal -->
+    <section class="contModal contModal--isShow" id="modal1">
+        <div class="modal--medium pt-32px">
+            <div class="modalHeader">
+                <!-- Titulo del modal-->
+                <h3 class="modalInfo__title mb-8px">Espere un momento</h3>
+                <p class="modalInfo__text">Estamos validando su solicitud</p>
+            </div>
+
+            <!-- el body del molda posee scroll -->
+            <div class="modalBody">
+                <div class="contLoaderShops">
+                    <div class="contLoaderShops__steps">
+                        <svg width="104" height="104">
+                            <circle r="50" cx="52" cy="52" class="loader__track"></circle>
+                            <circle r="50" cx="52" cy="52" class="loader__progress"></circle>
+                        </svg>
+
+                        <div class="loader__counter ">
+                            <p class="ta-center"><span>1</span> de 3</p>
+                        </div>
+                    </div>
+                    <div class="loader__text">
+                        <p>
+                            Creando su Cuenta Móvil Negocio…
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- #endregion Modal -->
+
+    <!--  Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/circle-loader.js"></script>
+
+</body>
+
+</html>

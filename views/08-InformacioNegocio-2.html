@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Información del negocio</h2>
+            <p class="contentBox__text ct2 mb-0px">
+                Para afiliar su negocio ingrese la siguiente información:
+            </p>
+            <!-- Formulario -->
+            <form class="formApp mt-16px">
+                <div class="input">
+                    <label for="" class="input__label">¿Cuál es el nombre de su negocio?</label>
+                    <input type="text" class="input__textBox" value="" placeholder="Ingrese un nombre">
+                </div>
+                <!-- Input Direccion -->
+                <fieldset class="input">
+                    <label for="" class="input__label">¿Cuál es la dirección de su negocio?</label>
+                    <div class="">
+                        <div class="input--fluidBigger mb-0px">
+                            <div class="dropdown">
+                                <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                <div class="options">
+                                    <div class="option">
+                                        <label class="clickDropdown checked disabled">
+                                            <input type="radio" name="radioDir" value="0" checked="" disabled="">
+                                            Sel. opción
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt1" disabled="">
+                                            Autopista
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt2" disabled="">
+                                            Avenida
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt3" disabled="">
+                                            Avenida Cll
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt4" disabled="">
+                                            Avenida Cra
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt5" disabled="">
+                                            Calle
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt6" disabled="">
+                                            Carrera
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="input__textBox " value="">
+                            <span>#</span>
+                            <input type="text" class="input__textBox" value="">
+                            <span>-</span>
+                            <input type="text" class="input__textBox" value="">
+                        </div>
+                        <!-- Helper de direccion -->
+                        <div class="helper mb-16px">
+                            <p class="helper__text">
+                                Ingrese una dirección en Colombia.
+                            </p>
+                        </div>
+                        <div class="input mb-0px">
+                            <label for="" class="input__label">Torre / Piso / Apartamento / Otro</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Complemente su dirección">
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- Input predictivo -->
+                <div class="input">
+                    <label for="" class="input__label">¿En qué ciudad está ubicado su negocio?</label>
+                    <div class="contentSearch">
+                        <input type="text" class="input__textBoxSearch" value="" placeholder="Ingrese la ciudad"
+                            onkeyup="searchCiudades(this)">
+                        <ul class="listSearch hidden"></ul>
+                    </div>
+                </div>
+                <!-- Input radio -->
+                <div class="input">
+                    <p class="input__label">¿Seleccionar como dirección principal?</p>
+                    <div class="contRadio">
+                        <label class="radio">
+                            Sí
+                            <input type="radio" value="1" name="direccion">
+                            <div class="radio__indicator"></div>
+                        </label>
+
+                        <label class="radio">
+                            No
+                            <input type="radio" value="0" name="direccion">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Input radio -->
+                <div class="input">
+                    <p class="input__label">¿El negocio cuenta con cámara de comercio?</p>
+                    <div class="contRadio">
+                        <label class="radio">
+                            Sí
+                            <input type="radio" value="1" name="comercio">
+                            <div class="radio__indicator"></div>
+                        </label>
+
+                        <label class="radio">
+                            No
+                            <input type="radio" value="0" name="comercio">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Input NIT -->
+                <fieldset class="input">
+                    <label for="" class="input__label">¿Cuál es su número de ID con dígito de verificación? (Campos 5 y
+                        6 del RUT)</label>
+                    <div class="">
+                        <div class="input__NIT mb-0px">
+                            <input type="text" class="input__textBox NIT" value="" placeholder="NIT">
+                            <span>-</span>
+                            <input type="text" class="input__textBox DV" value="" placeholder="DV">
+                        </div>
+                    </div>
+                    <!-- Helper -->
+                    <div class="boxHelper">
+                        <div class="boxHelper__header" onclick="showboxHelper(this)">
+                            <div class="boxHelper__title">
+                                <img src="../media/_defaultIcons/icon-helperRed.svg" alt="">
+                                <p>¿Dondé encuentro los campos 5 y 6 de mi RUT?</p>
+                            </div>
+                            <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="">
+                        </div>
+                        <div class="boxHelper__content hidden">
+                            <div class="boxHelper__imgContainer">
+                                <img class="rotateImg" src="../media/images/image-rutDian.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- Input con Helper -->
+                <div class="input mb-8px">
+                    <label for="" class="input__label">¿Cuál es la responsabilidad tributaria?
+                        (Campo 53 del RUT)</label>
+                    <input type="text" class="input__textBox" value="" 
+                        placeholder="Primera responsabilidad tributaria"
+                        onkeyup=" buttonCheck(this,'nextButton')">
+                </div>
+                <!-- Helper -->
+                <div id="campo53" class="boxHelper">
+                    <div class="boxHelper__header" onclick="showboxHelper(this)">
+                        <div class="boxHelper__title">
+                            <img src="../media/_defaultIcons/icon-helperRed.svg" alt="">
+                            <p>¿Dondé encuentro el campo 53 de mi RUT?</p>
+                        </div>
+                        <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="">
+                    </div>
+                    <div class="boxHelper__content hidden">
+                        <div class="boxHelper__imgContainer">
+                            <img class="rotateImg" src="../media/images/image-rutDian53.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            <button type="button" class="button--transparent mV-16px" onclick="replicate('campo53')">
+                Agregar otra responsabilidad
+            </button>
+            <div class="input">
+                <label for="" class="input__label">
+                    Ingrese el código de un asesor del Banco si esta recibiendo ayuda.
+                    <span class="optField">(Opcional)</span>
+                </label>
+                <input type="number" class="input__textBox" value="" placeholder="Código del asesor">
+            </div>
+        </form>
+        </div>
+        <!-- #endregion ContentBox -->
+
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+</body>
+
+</html>

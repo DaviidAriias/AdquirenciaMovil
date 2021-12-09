@@ -1,0 +1,10 @@
+//Labels Inputs - Dejar por fuera para evitar complicaciones con otros labels como Radiobuttons o Checkbox
+
+//label para alineacion con input
+.input{
+    &__label{
+        margin-left: 14px;
+        margin-bottom: 8px;
+        @include defaultFont(1, $fw: medium);
+    }
+}

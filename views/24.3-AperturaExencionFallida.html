@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+
+        <!--Card de apertura-->
+        <div class="contentBox--header contentBox--white pb-0px mxw-550px">
+            <!-- ContentBox header-->
+            <div class="headerVender mb-0px">
+                <div class="textoHeader">
+                    <h2 class="textoHeader__h fz-16px fw-bold pb-4px">¡Felicitaciones!</h2>
+                    <p class="textoHeader__p fz-12px pH-16px">
+                        Usted ya está listo para vender.
+                    </p>
+                </div>
+            </div>
+            <!-- ContentBox lista desplegable-->
+            <div class="contentBox--typeC ">
+                <div class="result">
+                    <div class="resultItem">
+                        <p class="resultItem__title fz-12px">
+                            Use el botón <strong class="fw-medium">“Vender”</strong> ubicado en la pantalla inicial o en
+                            la opción
+                            <strong class="fw-medium">“Mi negocio”</strong> del App Davivienda móvil, para generar QR y
+                            Link de pagos.
+                        </p>
+                    </div>
+                    <div class="resultItem">
+                        <p class="resultItem__title wh-90">Soluciones de venta habilitadas</p>
+                        <div class="logoGrid mxw-300px">
+                            <div class="logoGrid__container mt-8px">
+                                <div class="logoGrid__item">
+                                    <div class="logoContainer">
+                                        <img src="../media/extraIcons/icon-benefitQR.svg" alt="">
+                                    </div>
+                                    <span class="logoText">QR</span>
+                                </div>
+                                <div class="logoGrid__item">
+                                    <div class="logoContainer">
+                                        <img src="../media/extraIcons/icon-link.svg" alt="">
+                                    </div>
+                                    <span class="logoText">Link</span>
+                                </div>
+                                <div class="logoGrid__item">
+                                    <div class="logoContainer">
+                                        <img src="../media/extraIcons/icon-phone.svg" alt="">
+                                    </div>
+                                    <span class="logoText">Datáfono</span>
+                                </div>
+                                <div class="logoGrid__item">
+                                    <div class="logoContainer">
+                                        <img src="../media/extraIcons/icon-world.svg" alt="">
+                                    </div>
+                                    <span class="logoText">Botón</span>
+                                </div>
+                                <div class="logoGrid__item">
+                                    <div class="logoContainer">
+                                        <img src="../media/extraIcons/icon-shoppingCart.svg" alt="">
+                                    </div>
+                                    <span class="logoText">Carrito</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resultItem">
+                        <p class="resultItem__title wh-90">Código único de su negocio para venta presencial</p>
+                        <p class="resultItem__info">5461021651</p>
+                    </div>
+                    <div class="resultItem--wHelper resultItemNoBorder" onclick="actionResHelper(this)">
+                        <div class="resultItem__header">
+                            <p class="resultItem__title wh-90">Código único de su negocio para venta virtual</p>
+                            <p class="resultItem__info">5461021286</p>
+                        </div>
+                        <div class="helper--type3 hidden">
+                            <p class="helper__text">
+                                Este es el código único que necesita si desea afiliar su negocio a una pasarela de pagos
+                                diferente a nuestra pasarela aliada.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Seccion desplegable-->
+                    <div class="hidden resultContainer">
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Nombre de su negocio</p>
+                            <p class="resultItem__info">Panadería Don Juan</p>
+                        </div>
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Actividad económica (CIIU) de su negocio</p>
+                            <p class="resultItem__info">1081 Elaboración de productos de panadería</p>
+                        </div>
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Actividad comercial de su negocio</p>
+                            <p class="resultItem__info">Panaderías y pastelerías</p>
+                        </div>
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Cuenta para recibir abonos de ventas</p>
+                            <p class="resultItem__info">Cuenta Móvil Negocio ****1510</p>
+                        </div>
+                        <div class="resultItem--wHelper" onclick="actionResHelper(this)">
+                            <div class="resultItem__header">
+                                <p class="resultItem__title wh-90">Tarifas y medios de pago</p>
+                                <div class="logoGrid wh-90 mxw-250px">
+                                    <div class="logoGrid__container mt-8px">
+                                        <div class="logoGrid__item">
+                                            <div class="logoContainer">
+                                                <img src="../media/extraIcons/icon-daviplata.svg" alt="">
+                                            </div>
+                                            <span class="logoText">1.74%</span>
+                                        </div>
+                                        <div class="logoGrid__item">
+                                            <div class="logoContainer">
+                                                <img src="../media/extraIcons/icon-dinerclub.svg" alt="">
+                                            </div>
+                                            <span class="logoText">1.83%</span>
+                                        </div>
+                                        <div class="logoGrid__item">
+                                            <div class="logoContainer">
+                                                <img src="../media/extraIcons/icon-mastercard.svg" alt="">
+                                            </div>
+                                            <span class="logoText">1.93%</span>
+                                        </div>
+                                        <div class="logoGrid__item">
+                                            <div class="logoContainer">
+                                                <img src="../media/extraIcons/icon-visa.svg" alt="">
+                                            </div>
+                                            <span class="logoText">1.93%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="helper--type3 hidden">
+                                <p class="helper__text">
+                                    Si su afiliación la realizó después de las 9:00 p.m. podrá recibir sus ventas con
+                                    franquicia Visa a partir de las 8:00 a.m. del día siguiente.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Tiempo minimo de permanecia fijado</p>
+                            <p class="resultItem__info">1 año</p>
+                        </div>
+                        <div class="resultItem mb-16px">
+                            <p class="resultItem__title wh-90">Datáfonos solicitados</p>
+                            <p class="resultItem__info">Datáfono portátil X2</p>
+                        </div>
+                    </div>
+                    <!-- Boton de ver mas/menos-->
+                    <div class="seeMoreBtn" onclick="collapseCard(this)">
+                        <p class="fz-12px fw-medium ct1">Ver más</p>
+                        <img class="" src="../media/_defaultIcons/icon-arrowDown.svg" alt="flecha">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Card de apertura-->
+        <div class="contentBox--header contentBox--white pb-0px mxw-550px">
+            <!-- ContentBox header-->
+            <div class="headerApertura mb-0px">
+                <div class="textoHeader">
+                    <h2 class="textoHeader__h fz-16px fw-bold pb-4px">¡Apertura exitosa!</h2>
+                    <p class="textoHeader__p fz-12px pH-16px">
+                        Ya puede empezar a utilizar su <br><strong class="fw-black">Cuenta Móvil Negocio</strong> para
+                        recibir sus ventas.
+                    </p>
+                </div>
+            </div>
+            <!-- ContentBox lista desplegable-->
+            <div class="contentBox--typeC">
+                <div class="result">
+                    <div class="resultItem resultItemNoBorder">
+                        <p class="resultItem__title wh-90">Número de Cuenta</p>
+                        <p class="resultItem__info">5461 0216 5105 3151</p>
+                    </div>
+                    <!-- Seccion desplegable-->
+                    <div class="hidden resultContainer">
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Asignación de Clave Virtual</p>
+                            <p class="resultItem__info">Exitosa</p>
+                        </div>
+                        <div class="resultItem--wHelper" onclick="actionResHelper(this)">
+                            <div class="resultItem__header">
+                                <p class="resultItem__title">Solicitud de exención de 4 x 1000 (GMF)</p>
+                                <p class="resultItem__info">Fallida</p>
+                            </div>
+                            <div class="helper--type3 hidden">
+                                <p class="helper__text">
+                                    Para exonerar esta cuenta usted debe:<br><br>
+                                    <strong class="fw-medium">Desmarcar la exención de la otra cuenta</strong>.<br><br>
+                                    Cualquier inquietud, por favor comuníquese a través del chat en la opción "Atención en línea" ubicado en
+                                    el App Davivienda o en www.davivienda.com
+                                </p>
+                            </div>
+                        </div>
+                        <div class="resultItem--wHelper" onclick="actionResHelper(this)">
+                            <div class="resultItem__header">
+                                <p class="resultItem__title wh-90">Modalidad envío de extractos</p>
+                                <p class="resultItem__info">Correo electrónico</p>
+                            </div>
+                            <div class="helper--type3 hidden">
+                                <p class="helper__text">
+                                    Si desea cambiar la forma de envío de sus extractos, por favor comuníquese a través
+                                    del chat en la opción "Atención en línea" ubicado en el App Davivienda o en
+                                    www.davivienda.com.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="resultItem--wHelper" onclick="actionResHelper(this)">
+                            <div class="resultItem__header">
+                                <p class="resultItem__title wh-90">Asignación de Tarjeta Débito</p>
+                                <p class="resultItem__info">Exitosa</p>
+                            </div>
+                            <div class="helper--type3 hidden">
+                                <p class="helper__text">
+                                    Será entregada de 0 a 1 días.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="resultItem mb-16px">
+                            <p class="resultItem__title wh-90">Fecha y hora de aperta de la Cuenta</p>
+                            <p class="resultItem__info">15/01/2020, 9:41 a.m.</p>
+                        </div>
+                    </div>
+                    <!-- Boton de ver mas/menos-->
+                    <div class="seeMoreBtn" onclick="collapseCard(this)">
+                        <p class="fz-12px fw-medium ct1">Ver más</p>
+                        <img class="" src="../media/_defaultIcons/icon-arrowDown.svg" alt="flecha">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Card de seguro-->
+        <div class="contentBox--header contentBox--white pb-0px mxw-550px">
+            <!-- ContentBox header-->
+            <div class="headerSeguro mb-0px">
+                <div class="textoHeader">
+                    <h2 class="textoHeader__h fz-16px fw-bold pb-4px">¡Compra de Seguro exitosa!</h2>
+                    <p class="textoHeader__p fz-12px pH-16px">
+                        En estos momentos usted y su familia cuentan con la protección del
+                        <strong class="fw-black">Seguro de Vida.</strong>
+                    </p>
+                </div>
+            </div>
+            <!-- ContentBox lista desplegable -->
+            <div class="contentBox--typeC">
+                <div class="result">
+                    <div class="resultItem">
+                        <p class="resultItem__title wh-90">Número de la póliza</p>
+                        <p class="resultItem__info">1035478</p>
+                    </div>
+                    <div class="resultItem resultItemNoBorder">
+                        <p class="resultItem__title wh-90">Valor de la prima mensual</p>
+                        <p class="resultItem__info">$24.000,00</p>
+                    </div>
+                    <!-- Seccion desplegable-->
+                    <div class="resultContainer hidden">
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Valor asegurado</p>
+                            <p class="resultItem__info">$24.000.000,00</p>
+                        </div>
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Vigencia desde</p>
+                            <p class="resultItem__info">15/01/2019</p>
+                        </div>
+                        <div class="resultItem">
+                            <p class="resultItem__title wh-90">Fecha y hora</p>
+                            <p class="resultItem__info">15/01/2019, 9:41 a.m.</p>
+                        </div>
+                        <div class="resultItem mb-16px">
+                            <p class="resultItem__title ct3 fz-11px">
+                                Las condiciones de su póliza serán compartidas con usted al correo electrónico que
+                                tenemos registrado. También puede consultarlas en
+                                <a href="javascript:void(0)"
+                                    class="link mb-0px fw-bold ct3 fz-11px">www.segurosbolivar.com</a>.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Boton de ver mas/menos-->
+                    <div class="seeMoreBtn" onclick="collapseCard(this)">
+                        <p class="fz-12px fw-medium ct1">Ver más</p>
+                        <img class="" src="../media/_defaultIcons/icon-arrowDown.svg" alt="flecha">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button type="button" class="button--primary">Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

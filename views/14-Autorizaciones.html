@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- Back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Tracking -->
+            <div class="trackingMain">
+                <h2 tabindex="0" class="trackingMain__title">Autorizaciones</h2>
+                <ul class="trackingMain__dataNav">
+                    <li class="complete"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+
+            <p class="contentBox__text fw-medium ct2">
+                Marque los siguientes enunciados si está de acuerdo, así avanzará en la adquisición de su Crédito.
+            </p>
+
+            <!-- Lista de checkbox-->
+            <form action="" class="formApp">
+                <div class="input">
+                    <label class="checkbox">
+                        Deseo que esta cuenta quede exenta del 4 x 1000 (GMF) <a href="javascript:void(0)"
+                            class="fw-bold">Conozca las condiciones</a>.
+                        <span class="optField">(Opcional)</span>
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                    <div class="pl-14px">
+                        <div class="helper--long">
+                            <p class="helper__text">
+                                El gravamen a los impuestos financieros (GMF) es un impuesto indirecto de orden nacional
+                                que se aplica en las transacciones financieras realizadas por los usuarios del sistema.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="input">
+                    <label class="checkbox">
+                        Declaro que el objetivo de esta cuenta no está encaminado a manejar recursos de campañas o
+                        partidos políticos.
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                </div>
+                <div class="input">
+                    <label class="checkbox">
+                        Acepto el <a class="fw-bold" href="">Contrato de Cuenta de Ahorros y Anexo de Adquirencias,
+                            Reglamento de Afiliación Sistemas de Medios de Pago</a>.
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                </div>
+                <div class="input">
+                    <label class="checkbox">
+                        Acepto el <a class="fw-bold" href="">Formulario único de vinculación, Condiciones Pasarela de
+                            Pagos, y Condiciones de QR</a>.
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                </div>
+                <div class="input">
+                    <label class="checkbox">
+                        Autorizo a Davivienda a <a href="javascript:void(0)" class="fw-bold">debitar automáticamente</a> de la Cuenta Móvil Negocio que estoy
+                        solicitando, el pago de los productos que estoy adquiriendo.
+                        <input type="checkbox" onclick="checkBullet(this,'nextButton')">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+        <div class="contextInfo--typeB ">
+            <p class="ct1 pH-16px">Si está de acuerdo con los documentos, seleccione <strong>“Continuar”</strong>.</p>
+        </div>
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button type="button" id="nextButton" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

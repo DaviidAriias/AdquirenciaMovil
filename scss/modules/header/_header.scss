@@ -1,0 +1,498 @@
+%headerOblicuo{
+    display: flex;
+    top: 0px;
+    --height: 136px;
+    height: var(--height);
+    margin-bottom: 32px;
+    transition: 0.5s;
+    &::before{
+        content: "";
+        filter: brightness(0.7);
+        height: var(--height);
+        width: 113%;
+        border-radius: 0% 0% 93% 77px;
+        position: absolute;
+        top: 0; left: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .textoHeader{
+        position: relative;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 80px);
+        &__h{
+            @include defaultFont(1, $c: #ffffff, $fw: bold, $ta: center, $fz: $font-h, $lh: 20px);
+            margin-bottom: 4px;
+        }
+        &__p{
+            @include defaultFont(1, $c: #ffffff, $fw: medium, $ta: center, $fz: 12px, $lh: 16px);
+            a{
+                @include defaultFont(0, $fw: black);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+%headerOvalo{
+    display: flex;
+    top: 0px;
+    --height: 136px;
+    height: var(--height);
+    margin-bottom: 32px;
+    transition: 0.5s;
+    &::before{
+        content: "";
+        filter: brightness(0.7);
+        height: var(--height);
+        width: 113%;
+        border-radius: 0% 0% 55% 55%;
+        position: absolute;
+        top: 0; left: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .textoHeader{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 80px);
+        &__h{
+            @include defaultFont(1, $c: #ffffff, $fw: bold, $ta: center, $fz: $font-h, $lh: 20px);
+            margin-bottom: 4px;
+        }
+        &__p{
+            @include defaultFont(1, $c: #ffffff, $fw: medium, $ta: center, $fz: 12px, $lh: 16px);
+        }
+    }
+}
+
+%headerSquare{
+    @extend %standardContent;
+    z-index: 1;
+    height: 224px;
+    border-radius: 10px;
+    padding: 16px;
+    &::before{
+        content: "";
+        filter: brightness(0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+    }
+    .textoHeader{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100%);
+        &__h{
+            @include defaultFont(1, $c: #ffffff, $fw: bold, $ta: center, $fz: 16px, $lh: 20px);
+            margin-bottom: 4px;
+        }
+        &__p{
+            @include defaultFont(1, $c: #ffffff, $fw: medium, $ta: center, $fz: 14px);
+        }
+    }
+}
+
+
+// el Ejemplo de header se puede ver en extracomponents
+// 
+
+.headerEjemploOblicuo1{
+    @extend %headerOblicuo;
+    --height:112px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header-Ejemplo1.jpg);
+    }
+    .textoHeader{
+        width: 100%;
+        &__h{
+            @include defaultFont(0, $fw: regular, $fz: $font-h - 4);
+            margin-bottom: 0px;
+        }
+        &__p{
+            @include defaultFont(0, $fz: 14px);
+            &--bold{
+                @extend .textoHeader__p;
+                @include defaultFont(0, $fw: bold, $fz: 24px, $lh: 32px);
+            }
+        }
+    }
+}
+
+.headerEjemploOblicuoRadio1{
+    @extend %headerOblicuo;
+    --height:112px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header-Ejemplo1.jpg);
+    }
+    .textoHeader{
+        &__h{
+            @include defaultFont(0, $fw: regular, $fz: $font-h - 4);
+            margin-bottom: 0px;
+        }
+        &__p{
+            @include defaultFont(0, $fz: 14px);
+            &--bold{
+                @extend .textoHeader__p;
+                @include defaultFont(0, $fw: bold, $fz: 24px, $lh: 32px);
+            }
+        }
+    }
+}
+
+.headerEjemploOblicuo2{
+    @extend %headerOblicuo;
+    --height:112px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header-Ejemplo1.jpg);
+    }
+    .textoHeader{
+        &__h{
+            @include defaultFont(0, $fw: regular, $fz: $font-h - 4);
+            margin-bottom: 0px;
+        }
+        &__p{
+            @include defaultFont(0, $fz: 14px);
+            &--bold{
+                @extend .textoHeader__p;
+                @include defaultFont(0, $fw: bold, $fz: 24px, $lh: 32px);
+            }
+        }
+    }
+}
+
+.headerEjemploOblicuo2{
+    @extend %headerOblicuo;
+    --height:96px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header-Ejemplo2.jpg);
+        filter: initial;
+        background-position: center -120px;
+    }
+}
+
+
+.headerEjemploOvalo1{
+    @extend %headerOvalo;
+    --height:64px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header-Ejemplo1.jpg);
+        width: 100%;
+    }
+}
+
+.headerNegocio{
+    @extend %headerSquare;
+    height: 184px;
+    padding: 22px 16px;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,0.76) 79%),
+        url(../media/images/image-headerNegocio.jpg);
+        background-position: 0 0, 0 0;
+        background-size: 105%; 
+    }
+}
+
+.headerConfirmacion{
+    @extend %headerSquare;
+    height: 184px;
+    padding: 22px 16px;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 46%, rgba(0,0,0,0.76) 79%),
+        url(../media/images/image-openAccount.jpg);
+        background-position: 0 0, 0 0;
+    }
+}
+
+.headerVender{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px;
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-accountHeader2.jpg);
+        background-size: 90%;
+        background-position-x: 0, 0px;
+        background-position-y: 0, 0%;
+    }
+}
+
+.headerApertura{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px;
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-openAccountHeader.jpg);
+        background-size: 90%;
+        background-position-x: 0, 0px;
+        background-position-y: 0, 30%;
+    }
+}
+
+.headerEcard{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px;
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-ecardHeader.jpg);
+        background-size: 88%;
+        background-position-x: 0, 0px;
+        background-position-y: 0, 54%;
+    }
+}
+
+.headerEcardFallida{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px; // 152px
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-ecardFailedHeader.jpg);
+        background-position-x: -34px
+    }
+}
+
+
+
+.headerSeguro{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px;
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-insuranceHeader.jpg);
+        background-size: 90%;
+        background-position-x: 0, 0;
+        background-position-y: 0, 38%;
+    }
+}
+
+.headerNomina{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px;
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-payrollHeader.jpg);
+        background-size: 90%;
+        background-position-x: 0,0;
+    }
+}
+
+.headerProteccion{
+    @extend .headerEjemploOblicuo1;
+    --height: 136px;
+    background-color: #F0F0F3;
+    &::before{
+        filter: none;
+        background-image:
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 63%),
+        url(../media/images/image-cardInsurance.jpg);
+        background-size: 89%;
+        background-position-x: 0px;
+    }
+}
+
+.headerTarifa1{
+    @extend %headerOblicuo;
+    --height:112px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header1.jpg);
+        width: 100%;
+        background-position-y: -14px;
+        filter: brightness(0.6);
+    }
+    
+    .textoHeader{
+        margin-top: 24px;
+        &__h{
+            @include defaultFont(0, $fw: regular, $fz: $font-h - 4);
+            margin-bottom: 0px;
+        }
+        &__p{
+            @include defaultFont(0, $fz: 14px);
+            &--bold{
+                @extend .textoHeader__p;
+                @include defaultFont(0, $fw: bold, $fz: 24px, $lh: 32px);
+            }
+        }
+    }
+}
+
+.headerTarifa2{
+    @extend %headerOblicuo;
+    --height:112px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header2.jpg);
+        width: 100%;
+        filter: brightness(0.6);
+    }
+    
+    .textoHeader{
+        margin-top: 24px;
+        &__h{
+            @include defaultFont(0, $fw: regular, $fz: $font-h - 4);
+            margin-bottom: 0px;
+        }
+        &__p{
+            @include defaultFont(0, $fz: 14px);
+            &--bold{
+                @extend .textoHeader__p;
+                @include defaultFont(0, $fw: bold, $fz: 24px, $lh: 32px);
+            }
+        }
+    }
+}
+
+.headerTarifa3{
+    @extend %headerOblicuo;
+    --height:112px;
+    margin-bottom: 16px;
+    &::before{
+        background-image: url(../media/images/header3.jpg);
+        width: 100%;
+        filter: brightness(0.6);
+    }
+    
+    .textoHeader{
+        margin-top: 24px;
+        &__h{
+            @include defaultFont(0, $fw: regular, $fz: $font-h - 4);
+            margin-bottom: 0px;
+        }
+        &__p{
+            @include defaultFont(0, $fz: 14px);
+            &--bold{
+                @extend .textoHeader__p;
+                @include defaultFont(0, $fw: bold, $fz: 24px, $lh: 32px);
+            }
+        }
+    }
+}
+
+
+.contentCards{
+    width: 100%;
+    background-color: $blancoFF;
+
+    .textBenefits__p{
+        padding-bottom: 16px;
+    }
+
+    .textBenefits--slider{
+        color: $text-color;
+    
+        .listBeneficios{
+            text-align: left;
+            
+            .listBeneficios__point{
+                padding-left: 16px;
+                position: relative;
+                margin-bottom: 10px;
+                @include defaultFont(1);
+
+                &::before{
+                    content: "\2022";
+                    left: 0;
+                    top: -5px;
+                    position: absolute;
+                    //@include defaultFont(1, $fz: 2.5em, $c: $gris97, $fw: bold, $lh: initial);
+                    font-family: "Roboto", sans-serif;
+                    font-size: 25px;
+                    line-height: initial;
+                    font-weight: 700;
+                    text-align: left;
+                    font-style: normal;
+                    color: $gris97;
+                }
+            }
+        }
+    }
+}
+
+.boxGrey{
+    background-color: #F1F2F8;
+    text-align: left;
+    padding: 10px 16px;
+    @include defaultFont(1, $fz: 12px, $c: $text-enable);
+}
+
+.contentBenefits__uno{
+    width: 90%;
+    
+    .contentCards{
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48), -5px -5px 10px #fafbff;
+
+        .imageBenefits{
+            position: relative;
+            width: 100%;
+            height: 137px;
+            text-align: center;
+            z-index: -1;
+
+            &::before{
+                background-image: url(../media/images/pexels-pixabay-33129.png);
+                content: "";
+                position: absolute;
+                top: -21px;
+                background-size: cover;
+                background-position: center;
+                height: 158px;
+                width: 100%;
+                background-repeat: no-repeat;
+                left: 0;
+            }
+        }
+
+        .textBenefits--slider{
+            height: auto;
+            padding: 16px 17px;
+        }
+    }
+}
+
+.linkBold{
+    font-weight: bold;
+    &--underline{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}

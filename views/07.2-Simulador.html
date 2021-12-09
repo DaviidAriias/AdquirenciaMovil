@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <!-- #region Main Region -->
+    <section class="container">
+        <!-- #region back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+        <!-- #endregion back button -->
+
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Ejemplo de un abono</h2>
+            <p class="contentBox__text ct2">
+                Este es un ejemplo de cuánto recibiría por una venta de <strong class="fw-medium">$100.000</strong>
+                teniendo en cuenta los descuentos de
+                comisiones, IVA y retenciones si aplican.
+            </p>
+
+            <form class="formApp">
+                <div class="input">
+                    <label for="" class="input__label">Seleccione un medio de pago para ver el ejemplo:
+                    </label>
+                    <!-- Dropdown -->
+                    <div class="dropdown">
+                        <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                        <div class="options">
+                            <!-- Si un option tendría que ir disabled, este se nombra en la clase del el label -->
+                            <div class="option">
+                                <label class="clickDropdown checked disabled">
+                                    <input type="radio" name="radio1" value="0" checked="" disabled=""> Seleccione una
+                                    opción
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showSelectedItem(this)">
+                                    <input type="radio" name="radio1" value="visa" disabled=""> Visa
+                                    <img src="../media/extraIcons/icon-visa.svg" alt="">
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showSelectedItem(this)">
+                                    <input type="radio" name="radio1" value="mastercard" disabled=""> MasterCard
+                                    <img src="../media/extraIcons/icon-mastercard.svg" alt="">
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showSelectedItem(this)">
+                                    <input type="radio" name="radio1" value="diner" disabled=""> Diners Club
+                                    <img src="../media/extraIcons/icon-dinerclub.svg" alt="">
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown" onclick="showSelectedItem(this)">
+                                    <input type="radio" name="radio1" value="daviplata" disabled=""> DaviPlata
+                                    <img src="../media/extraIcons/icon-grayDaviplata.svg" alt="">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+
+        <div id="diner" class="hidden">
+            <div class="contentBox--white mxw-550px">
+                <h2 class="contentBox__title mb-0px">Detalle de venta</h2>
+                <div class="detailsList">
+                    <div class="detailsList__item">
+                        <p class="itemTitle">Valor de venta sin IVA</p>
+                        <p class="itemDetail">$84.034,00</p>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">IVA 19%</p>
+                        <p class="itemDetail">$15.966,00</p>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle fw-bold ct2">Valor total de la venta</p>
+                        <p class="itemDetail ct2">$100.000,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBox--white mxw-550px">
+                <h2 class="contentBox__title mb-0px">Descuentos a aplicar</h2>
+                <div class="detailsList">
+                    <div class="detailsList__item pb-10px">
+                        <div class="boxHelper--typeC">
+                            <div class="boxHelper__header" onclick="showboxHelper(this)">
+                                <div class="boxHelper__title ">
+                                    <p class="fz-14px ct2">Tarifas por transacción</p>
+                                </div>
+                                <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="" class="">
+                            </div>
+                            <div class="boxHelper__content hidden">
+                                <div class="helper--type3 mt-12px">
+                                    <p class="helper__text">
+                                        Se liquida sobre valor sin IVA.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">Con su tarifa preferencial 1,92%</p>
+                        <p class="itemDetail">$1.613,00</p>
+                    </div>
+                    <div class="detailsList__item pt-28px pb-10px">
+                        <div class="boxHelper--typeC">
+                            <div class="boxHelper__header" onclick="showboxHelper(this)">
+                                <div class="boxHelper__title ">
+                                    <p class="fz-14px ct2">Anticipo de impuestos de ley</p>
+                                </div>
+                                <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="" class="">
+                            </div>
+                            <div class="boxHelper__content hidden">
+                                <div class="helper--type3 mt-12px">
+                                    <p class="helper__text">
+                                        Estos valores podrán ser deducidos al momento de presentar sus impuestos.
+                                        <br><br>
+                                        Si usted pertenece al régimen simple no aplicaremos descuento por ReteFuente y
+                                        podrá
+                                        recibir un beneficio tributario de 0,5% por cada transacción recibida con
+                                        nuestros
+                                        medios de pago.
+                                        <br><br>
+                                        <strong class="fw-medium">ReteFuente:</strong> Corresponde al 1.5% sobre el
+                                        valor
+                                        base de la venta.
+                                        <br><br>
+                                        <strong class="fw-medium">ReteICA:</strong> Es un porcentaje sobre el valor base
+                                        de
+                                        la venta. Varía según el municipio
+                                        del negocio, generalmente es un valor cercano al 0.414%.
+                                        <br><br>
+                                        <strong class="fw-medium">ReteIVA:</strong> Corresponde al 15% sobre el valor
+                                        del
+                                        IVA reportado en la transacción.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">ReteIVA</p>
+                        <p class="itemDetail">$2.395,00</p>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">ReteFuente</p>
+                        <p class="itemDetail">$1.261,00</p>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">ReteICA</p>
+                        <p class="itemDetail">$370,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBox--darkBackground pV-16px mxw-550px">
+                <div class="detailsList">
+                    <div class="detailsList__item--aligned">
+                        <p class="itemTitle fw-bold ct1">Valor que se abonará a su cuenta</p>
+                        <p class="itemDetail ct1">$94.361,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contextInfo--typeB mxw-550px">
+                <p class="ta-left mH-8px">
+                    Desde su App Davivienda Móvil, podrá acceder a las certificaciones tributarias para que pueda hacer
+                    las deducciones ante la DIAN.
+                </p>
+            </div>
+        </div>
+
+        <div id="daviplata" class="hidden">
+            <div class="contentBox--white mxw-550px">
+                <h2 class="contentBox__title mb-0px">Detalle de venta</h2>
+                <div class="detailsList">
+                    <div class="detailsList__item">
+                        <p class="itemTitle">Valor de venta sin IVA</p>
+                        <p class="itemDetail">$84.034,00</p>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">IVA 19%</p>
+                        <p class="itemDetail">$15.966,00</p>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle fw-bold ct2">Valor total de la venta</p>
+                        <p class="itemDetail ct2">$100.000,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBox--white mxw-550px">
+                <h2 class="contentBox__title mb-0px">Descuentos a aplicar</h2>
+                <div class="detailsList">
+                    <div class="detailsList__item pb-10px">
+                        <div class="boxHelper--typeC">
+                            <div class="boxHelper__header" onclick="showboxHelper(this)">
+                                <div class="boxHelper__title ">
+                                    <p class="fz-14px ct2">Tarifas por transacción</p>
+                                </div>
+                                <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="" class="">
+                            </div>
+                            <div class="boxHelper__content hidden">
+                                <div class="helper--type3 mt-12px">
+                                    <p class="helper__text">
+                                        Se liquida sobre valor sin IVA.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detailsList__item">
+                        <p class="itemTitle">Con su tarifa preferencial 1,92%</p>
+                        <p class="itemDetail">$1.613,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBox--darkBackground pV-16px mxw-550px">
+                <div class="detailsList">
+                    <div class="detailsList__item--aligned">
+                        <p class="itemTitle fw-bold ct1">Valor que se abonará a su cuenta</p>
+                        <p class="itemDetail ct1">$98.387,00</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- #endregion Main Region -->
+
+    <!-- #region call script -->
+    <!--js para interacciones -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+    <!-- #endregion call script -->
+</body>
+
+</html>

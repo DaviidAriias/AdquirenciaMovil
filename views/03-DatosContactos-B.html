@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+
+        <!-- ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Datos de contacto</h2>
+            <p class="contentBox__text fw-medium ct2">
+                Para continuar con la solicitud, ingrese la siguiente información:
+            </p>
+            <!-- Formulario -->
+            <form class="formApp">
+                <div class="input">
+                    <label for="" class="input__label">¿Cuál es su correo electrónico?</label>
+                    <input type="text" class="input__textBox" value="" placeholder="Ingrese su correo electrónico">
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">¿Cuál es su número de celular?</label>
+                    <input type="number" class="input__textBox"
+                        placeholder="Ingrese su número de celular"
+                        onkeyup="buttonCheck(this,'nextButton')">
+                </div>
+            </form>
+        </div>
+
+        <div class="contentBox--typeB mxw-550px">
+            <p>
+                Recuerde tener su celular a la mano, se enviará un <strong>código de conﬁrmación</strong>.
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+</body>
+
+</html>

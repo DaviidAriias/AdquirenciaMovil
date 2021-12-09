@@ -1,0 +1,130 @@
+/* Main Styles - Generic Reset Styles */
+//Glabal styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+
+    border: 0;
+    border-width: 0;
+
+    font-family: $roboto;
+    vertical-align: baseline;
+    
+    //Resaltador de selección en el navegador
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none;
+    &::selection {
+        background: #d7d7d7;
+    }
+}
+
+/* html{
+    height: 100%;
+} */
+
+
+//Body styles
+body{
+    max-width: 100%;
+    /* height: 100%; */
+    position: relative;
+    overflow-x: hidden;
+    
+    //Deshabilitar efecto rebote navegadores en los ejes
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+    
+    //Color fondo
+    background-color: $background-body;
+
+    scroll-behavior: smooth;
+}
+
+
+//Forms elements
+button, select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+
+input { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none
+}
+
+textarea,
+input:matches(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"]
+) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none
+}
+
+//Inputs number hide-spins
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    @include prefix((
+        appearance: none
+    ), webkit moz ms o);
+    margin: 0;
+}
+
+
+//Inputs Password
+input[type="password"]{
+    text-align: center;
+}
+
+span{
+    font-size: 1em;
+}
+
+label{
+    display: inline-block;
+    width: auto;
+    position: relative;
+}
+
+
+//Init hyperlink styles
+a{
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+
+//Lists
+ol, ul {
+    list-style: none;
+}
+
+
+//Images
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

@@ -1,0 +1,23 @@
+.boxGrid{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    gap: 16px 0;
+    &__item{
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        align-items: center;
+        grid-gap: 8px;
+        width: 50%;
+        min-height: 24px;
+        img{
+            justify-self: center;
+        }
+        p{
+            @include defaultFont(1, $fz: $font-p - 2, $fw: medium, $c: $text-enable);
+        }
+        &:last-child{
+            flex: 100%;
+        }
+    }
+}

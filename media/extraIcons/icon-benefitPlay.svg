@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mask</title>
+    <g id="Adquirencia-Móvil---Flujo-Principal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="006---CM-No-Clientes-|-Beneficios---002C" transform="translate(-42.000000, -522.000000)" fill="#727171" fill-rule="nonzero">
+            <g id="Contenerdor" transform="translate(16.000000, 152.000000)">
+                <g id="Beneficio-2-Copy-2" transform="translate(24.000000, 272.000000)">
+                    <g id="Group-2-Copy-2" transform="translate(0.000000, 96.000000)">
+                        <g id="04-iconos/01-24x24_/General-icons/Concesionario-Copy-4" transform="translate(2.000000, 2.000000)">
+                            <g id="Mask" transform="translate(-0.000000, -0.000000)">
+                                <g id="reproductor-video" transform="translate(0.000000, 0.000000)">
+                                    <path d="M10,1 C14.9705627,1 19,5.02943725 19,10 C19,14.9705627 14.9705627,19 10,19 C5.02943725,19 1,14.9705627 1,10 C1,5.02943725 5.02943725,1 10,1 M10,0 C4.4771525,0 1.77635684e-15,4.4771525 1.77635684e-15,10 C1.77635684e-15,15.5228475 4.4771525,20 10,20 C15.5228475,20 20,15.5228475 20,10 C20,7.3478351 18.9464316,4.80429597 17.0710678,2.92893219 C15.195704,1.0535684 12.6521649,0 10,0 L10,0 Z" id="Shape"></path>
+                                    <path d="M14.68,9.43 L8,5.57 C7.79804714,5.44088921 7.54142732,5.43340196 7.33229043,5.55051862 C7.12315353,5.66763528 6.99544485,5.89034649 7,6.13 L7,13.87 C6.99544485,14.1096535 7.12315353,14.3323647 7.33229043,14.4494814 C7.54142732,14.566598 7.79804714,14.5591108 8,14.43 L14.7,10.57 C14.9006516,10.4481812 15.0215014,10.2289561 15.0173838,9.99425642 C15.0132663,9.75955679 14.8848011,9.54470562 14.68,9.43 Z" id="Path"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

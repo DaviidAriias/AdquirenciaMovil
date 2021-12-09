@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <!-- #region Main Region -->
+    <!-- En caso de agregar un elemento diferente se debería modificar el height con un calc(100vh - <heightNuevoElemento>); -->
+    <section class="container--sectionTyC">
+
+        <!-- back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../../media/_defaultIcons/icon-arrowBack.svg" alt="Icono atras">
+            Atrás
+        </a>
+
+        <!-- container para terminos y condiciones -->
+        <div class="ContainerMainTyC">
+            <div class="ContainerMainTyC__canvas" id="canvasContainer">
+                <canvas id="renderPDF">
+                    <!-- PDF -->
+                </canvas>
+            </div>
+
+            <div class="ContainerMainTyC__buttonsZoom">
+                <button id="zoomoutbutton" type="button">
+                    <img src="../../media/extraIcons/icon-control-less.svg" alt="">
+                </button>
+                <button id="zoominbutton" type="button">
+                    <img src="../../media/extraIcons/icon-control-more.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+
+
+        <!-- #endregion Box Container -->
+        <!-- botones -->
+        <div class="contButtons">
+            <button type="button" class="button--primary">Aceptar</button>
+        </div>
+
+    </section>
+    <!-- #endregion Main Region -->
+
+    <!--  call script -->
+    <script src="../../plugins/PDFviewer/js/build/pdf.js"></script>
+    <script type="text/javascript">
+        let source = '../../media/documents/DebitoAutomatico.pdf';
+    </script>  
+    <script src="../../js/PDFViewer.js"></script>
+</body>
+
+</html> 

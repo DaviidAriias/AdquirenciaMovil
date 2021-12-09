@@ -1,0 +1,90 @@
+.contentBoxTyc{
+    h1, h2, h3, h4{
+        @extend %h;
+        @include defaultFont(0, $lh: 20px);
+        margin-bottom: 16px;
+    }
+
+    .largeTitle{
+        @include defaultFont (0, $fz: 20px, $lh: 24px)
+    }
+
+    p{
+        @include defaultFont(1, $fz: 16px, $lh: 24px);
+        margin-bottom: 24px;
+        
+    }
+
+    .smallText {
+        @include defaultFont(1, $fz: 14px, $lh: 20px);
+        margin-bottom: 16px;
+        &--short{
+            @include defaultFont(1, $fz: 12px, $lh: 14px, $ta:center);
+            margin-bottom: 16px;
+        }
+    }
+
+
+    ul, ol{
+        @include defaultFont(1, $fz: 16px, $lh: 24px);
+        list-style-type: disc;
+        padding-left: 32px;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        li{
+            @include defaultFont(1, $fz: 16px, $lh: 24px);
+        }
+    }
+    ol{
+        list-style-type: initial;
+        &.roman{
+            list-style: lower-roman;
+        }
+    }
+    hr{
+        height: 1px;
+        width: 100%;
+        background-color: #adadad;
+        margin: 24px 0px;
+    }
+
+    .wordBreak{
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .linkBreak{
+        overflow-wrap: break-word;
+    }
+
+    /*.formFlex{
+        display: flex;
+        margin-bottom: 16px;
+        align-items: flex-end;
+
+        & > p{
+            white-space: nowrap;
+        }
+        &> *{
+            margin: 0px;
+            margin-right: 2%;
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+        & > .input__textBox{
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .input__textBox{
+            padding-right: 10px;
+        }
+
+
+        .input__label{
+            white-space: nowrap;
+            margin-right: 14px;
+        }
+    }*/
+}

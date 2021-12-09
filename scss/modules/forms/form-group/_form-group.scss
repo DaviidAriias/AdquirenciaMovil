@@ -1,0 +1,567 @@
+//Inputs
+
+.input__textBox, .input__textBoxMoney, .input__textBoxSearch, .input__textBoxDate, .input__textBoxPercentage, .input__textBoxPassword, .input__textBoxPasswordLast{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    padding: 8px 40px 8px 14px;
+    border: none;
+    @include prefix((
+        border: 1px solid #ffffff,
+        appearance: none,
+    ), webkit moz ms o);
+
+    border-radius: 20px;
+    background-color: $input-background;
+
+    
+
+    @include defaultFont(1, $c: $text-enable, $fz: 16px);
+
+    transition-duration: .2s;
+
+    &:disabled {
+        background-color: $input-background;
+        color: $text-enable;
+        cursor: not-allowed;
+        opacity: 70%;
+        -webkit-text-fill-color: $text-enable;
+        @include prefix((
+            border: 1px solid #ffffff,
+            appearance: none
+        ), webkit moz ms o);
+    }
+
+    &::placeholder{
+        color: $text-enable;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &:placeholder-shown{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    &:focus{
+        @extend .filledOut;
+    }
+}
+
+.input__textBoxDate{
+
+    background: URL('../media/_defaultIcons/icon-calendar.svg') no-repeat 100% 50% #fafafc;
+    background-size: 21px;
+    background-position: right 15px center ;
+
+    //hide-spins
+    &::-webkit-inner-spin-button{
+        //display: none; 
+        @include prefix((
+            appearance: none
+        ), webkit moz ms o);
+    }
+    &::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+    &:disabled{
+        background-size: 0px;
+    }
+}
+
+.inputIcon--numeral{
+    background: URL('../media/extraIcons/icon-numeral.svg') no-repeat 100% 50% #fafafc;
+    background-size: 21px;
+    background-position: left 15px center;
+    padding-left: px !important;
+}
+
+.inputIcon--id{
+    background: URL('../media/extraIcons/icon-idCard.svg') no-repeat 100% 50% #fafafc;
+    background-size: 21px;
+    background-position: left 15px center;
+    padding-left: 32px !important;
+}
+
+
+.input__textBoxPassword, .input__textBoxPasswordLast{
+    @include defaultFont(0, $ta: center, $fz: 14px, $c: #4E4E4E, $ff: $fontPassword);
+    padding-left: 30px; padding-right: 40px;
+	letter-spacing: 4px;
+    &--view{
+        @extend .input__textBoxPassword;
+        @include defaultFont(1, $c: $text-enable, $fz: 16px, $ta: center);
+    }
+}
+
+.input__cellphone{
+    @extend .input--fluidBigger;
+    margin-bottom: 0px !important;
+    gap: 8px;
+
+    .countryCode{
+        @include defaultFont(1, $fz: 16px);
+        text-overflow: ellipsis;
+        width: 25%;
+    }
+
+    .cellphoneNum{
+        @include defaultFont(1, $fz: 16px);
+        width: 71%;
+        text-align: start;
+    }
+
+    .phone{
+        @include defaultFont(1, $fz: 16px);
+        width: 33%;
+    }
+
+    .cityCode{
+        @include defaultFont(1, $fz: 16px);
+        width: 16%;
+    }
+
+    .ext{
+        @include defaultFont(1, $fz: 16px);
+        width: 19%;
+    }
+}
+
+.input__NIT{
+    @extend .input--fluidBigger;
+    gap: 8px;
+    .NIT{
+        @include defaultFont(1, $fz: 16px);
+        width: 65%;
+        padding-left: 16px;
+    }
+    .DV{
+        @include defaultFont(1, $fz: 16px);
+        width: 35%;
+        padding-left: 16px;
+    }
+}
+
+
+
+//Dropdown
+.dropdown {
+
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    /* padding: 8px 40px 8px 14px; */
+    border-radius: 20px;
+    background-color: $input-background;
+
+    @include prefix((
+        border: 1px solid #ffffff,
+        appearance: none
+    ), webkit moz ms o);
+
+    @include defaultFont(1, $c: $text-enable, $fz: 16px, $lh: 24px);
+    vertical-align: middle;
+    position: relative;
+
+    .options {
+        .option {
+            padding: 0px 13px;
+            &:first-of-type{
+                &::after {
+                    content: "";
+                    background-image: url(../media/_defaultIcons/icon-dorpDown.svg);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    width: 30px;
+                    height: 23px;
+                    position: absolute;
+                    top: 8px;
+                    right: 9px;
+                    pointer-events: none;
+                    transition: all 0.2s ease-out;
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+            }
+            label {
+                display: flex;
+                @include defaultFont(1, $fz: 16px, $lh: 24px, $c: $text-enable);
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                align-items: center;
+                margin: auto 0px;
+                padding-left: 0px; /* Aqui */
+                align-items: center;
+                width: 100%;
+                //importante por que me da le nivel de tapeo
+                min-height: 38px;
+                cursor: pointer;
+                word-break: break-word;
+                img{
+                    max-width: 24px;
+                    width: 100%;
+                    margin-right: 8px;
+                }
+            }
+
+            &:first-of-type{
+                label {
+                    padding-left: 0px;
+                }
+            } /* Aqui */
+
+            label {
+                display: none;
+            }
+
+            input {
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                display: none;
+                /* "hack" para que funcione en Firefox */
+                position: absolute;
+                left: -10000px;
+                pointer-events: none;
+            }
+
+            //borar
+            /*input{
+                display: inline;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                left: 0px;
+                appearance: auto;
+            }*/
+
+            .checked{
+                display: flex; /* Probando */
+                min-height: auto;
+                @include defaultFont(1, $fz: 16px, $lh: 24px, $c: $text-enable);
+                justify-content: flex-end;
+                flex-direction: row-reverse;
+                margin-left: 0px;
+                align-items: center;
+                width: 99%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-left: 0px;
+                padding-top: 8px;
+                padding-right: 17px;
+
+                input{
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+    //modificador para el despliegue del dropdown
+    &--mostrar {
+        overflow: visible;
+
+        .options {
+            background: $input-background;
+            @include prefix((
+                border: 1px solid #e5e3e3,
+                appearance: none
+            ), webkit moz ms o);
+            color: $text-color;
+
+            position: absolute;
+            max-height: 201px;
+            overflow-y: scroll;
+            top: -1px;
+            left: -1px;
+            width: 101%;
+            height: auto;
+            z-index: 10;
+            border-radius: 20px;
+
+            .option {
+                display: flex;
+                align-items: center;
+                min-height: 40px;
+                overflow: hidden;
+                /* border-bottom: 1px solid #e5e3e3; Aqui */
+                width: auto;
+                /* margin: 0px 13px; */
+                &:hover{
+                    background-color: #D9D9D9;
+                }
+                
+                &:first-of-type{
+                    &::after {
+                        transform: rotate( -180deg);
+                        z-index: 11;
+                    }
+                    /* border-bottom: 1px solid #ADADAD; */
+                    &:hover{
+                        background-color: initial;
+                    }
+                    label {
+                        padding-right: 20px;
+                    }
+                }
+                label {
+                    display: flex;
+                    color: $text-color;
+                    cursor: pointer;
+                    border-bottom: 1px solid #e5e3e3;
+                }
+
+
+                &:first-of-type{
+                    label {
+                        border-bottom: 1px solid #ADADAD;
+                    }
+                }
+            }
+            .disabled{
+                /* pointer-events: none; */
+            }
+        }
+    }
+}
+
+
+//Inputs fluid dirección
+.input--fluidBigger{
+    @include prefix((
+        display: flex,
+        flex-direction: row,
+        justify-content: space-between,
+        align-items: center,
+    ), webkit ms moz);
+    margin-bottom: 16px;
+    .dropdown{
+        width: 36%;
+        /* padding-right: 30px; */
+        border-radius: 8px;
+        @include defaultFont(1, $c: $text-enable, $fz: 14px);
+        /* padding: 8px 20px 8px 14px; */
+        .options {
+            .option {
+                padding: 0;
+                margin: 0;
+                &:first-of-type{
+                    &::after{
+                        right: -2px;
+                    }
+                    label {
+                        padding-left: 10px;
+                        padding-right: 15px;
+                    }
+                }
+                label {
+                    @include defaultFont(1, $fz: 14px, $c: $text-enable);
+                    margin-left: 8px;
+                }
+    
+                .checked{
+                    display: inline-block;
+                    @include defaultFont(1,$fz: 14px, $lh: 24px, $c: $text-enable);
+                    margin-left: 0px;
+                    padding-left: 15px;
+                }
+            }
+        }
+        //modificador para el despliegue del dropdown
+        &--mostrar {
+            .options {
+                border-radius: 8px;
+                width: 103%;
+                overflow-x: hidden;
+                .option{
+                    padding: 0px 5px;
+                    margin: 0;
+                    &:first-of-type{
+                        label {
+                            padding-left: 0px;
+                            padding-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Clase modificadora para input diligenciados
+    .filledOut{
+        @include prefix((
+            border: 1px solid #e5e3e3,
+            appearance: none
+        ), webkit moz ms o);
+        color: $text-color;
+        //clases para la flecha del dorpdown
+        .options{
+            .option{
+                &:first-of-type{
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+                .checked{
+                    color: $text-color;
+                }
+            }
+        }
+    }
+    input{
+        width: 17%;
+        text-align: center;
+        padding: 6px;
+        font-size: $font-p;
+        border-radius: 8px;
+    }
+    span{
+        color: $text-color;
+    }
+}
+
+
+//Botones de acción - Editar
+.input__buttonAction{
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    opacity: 0.8;
+    right: calc(-100% + 40px);
+    top: -40px;
+    margin-bottom: -40px;
+    /* position: absolute;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.8;
+    top: 23px; */
+
+    img{
+        display: inline-block;
+        width: auto;
+    }
+
+    &--noLabel{
+        @extend .input__buttonAction;
+        top: 0;
+    }
+}
+
+
+//Clase modificadora para input diligenciados
+.filledOut{
+    @include prefix((
+        border: 1px solid #e5e3e3,
+        appearance: none
+    ), webkit moz ms o);
+    color: $text-color;
+    //clases para la flecha del dorpdown
+    .options{
+        .option{
+            &:first-of-type{
+                &::after{
+                    opacity: 1;
+                }
+            }
+            .checked{
+                color: $text-color;
+            }
+        }
+    }
+}
+
+// funete para pasword
+@font-face {
+	font-family: 'fontello';
+	src: url('../fonts/fontello.eot?0000');
+	src: url('../fonts/fontello.eot?0000#iefix') format('embedded-opentype'),
+	     url('../fonts/fontello.woff2?0000') format('woff2'),
+	     url('../fonts/fontello.woff?0000') format('woff'),
+	     url('../fonts/fontello.ttf?0000') format('truetype'),
+	     url('../fonts/fontello.svg?0000#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+//clases para input password flex
+.input--key{
+    .input__textBox{
+        max-width: 34px;
+        height: 34px;
+        margin: 0px 1.1%;
+        padding: 0px;
+        border-radius: 6px;
+        color: #4E4E4E;
+        font-size: 14px;
+
+        font-family: "fontello";
+	    font-style: normal;
+	    font-weight: normal;
+	    //speak: none;
+	    font-variant: normal;
+	    text-transform: none;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    letter-spacing: 2px;
+    }
+}
+
+//estilos para input Buscador activo
+.input__textBoxSearch--filledOut{
+    @extend .filledOut;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    @include prefix((
+        border-bottom-style: none,
+    ), webkit moz ms o);
+
+}
+
+.contentSearch{
+    position: relative;
+}
+.listSearch{
+    position: absolute;
+    width: 100%;
+    background-color: #fafafc;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 55;
+    @include prefix((
+        border: 1px solid #e5e3e3,
+        border-top: none,
+    ), webkit moz ms o);
+    max-height: 200px;
+    overflow-y: scroll;
+    &__option{
+        min-height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top: 1px solid #e5e3e3;
+        margin: 0px 13px;
+        width: auto;
+        padding-left: 10px;
+        @include defaultFont(1, $fz: 16px);
+        &* {
+            @include defaultFont(1, $fz: 16px);
+        }
+    }
+}
+
+
+
+

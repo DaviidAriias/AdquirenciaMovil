@@ -1,0 +1,21 @@
+//Elementos anexos o decorativos a los input
+.dropInfo{
+    width: calc(100% - 27px); max-width: 650px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 11px 11px;
+    background-color: #E1E1E5;
+    &__p{
+        @include defaultFont(1, $fz: $font-p - 2);
+    }
+    &__m{
+        @include defaultFont(1, $fw: bold, $c: #000000);
+    }
+}
+
+.invalidField {
+    border: 1px solid #B70412 !important;
+}

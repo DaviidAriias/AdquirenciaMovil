@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!--  back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Información del negocio</h2>
+            <p class="contentBox__text fw-medium ct2 mb-0px">Ingrese la información de su negocio para calcular las
+                tarifas de
+                sus soluciones de venta:</p>
+            
+            <!-- Formulario -->
+            <form class="formApp mt-16px">
+                <div class="input mb-0px">
+                    <p class="input__label">¿El negocio cuenta con RUT?</p>
+                    <div class="contRadio">
+                        <label class="radio" onclick="showHiddenInput(this, 'rut'),checkRadioBtn('rut', 'nextButton')"">
+                            Sí
+                            <input type="radio" value="rut" name="rut">
+                            <div class="radio__indicator"></div>
+                        </label>
+
+                        <label class="radio" onclick="showHiddenInput(this, 'rut'), checkRadioBtn('rut', 'nextButton')">
+                            No
+                            <input type="radio" value="noRut" name="rut">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Campos ocultos -->
+                <div id="rut" class="hidden mt-16px">
+                    <!-- Campo predictivo -->
+                    <div class="input">
+                        <label for="" class="input__label">¿Cuál es la actividad económica? (CIIU)</label>
+                        <div class="contentSearch">
+                            <input type="text" class="input__textBoxSearch"
+                                value="" placeholder="Ingrese código CIIU"
+                                onkeyup="searchActivity(this), showInputInfo(this,'actividad')">
+                            <ul class="listSearch hidden"></ul>
+                        </div>
+                        <!-- Helper -->
+                        <div class="boxHelper">
+                            <div class="boxHelper__header" onclick="showboxHelper(this)">
+                                <div class="boxHelper__title">
+                                    <img src="../media/_defaultIcons/icon-helperRed.svg" alt="">
+                                    <p>¿Dondé encuentro el CIIU de mi RUT? (Campo 46)</p>
+                                </div>
+                                <img src="../media/_defaultIcons/icon-arrowDown.svg" alt="">
+                            </div>
+                            <div class="boxHelper__content hidden">
+                                <div class="boxHelper__imgContainer">
+                                    <img class="rotateImg" src="../media/images/image-codigoDian.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu desplegable oculto -->
+                    <div id="actividad" class="result hidden">
+                        <div class="resultItem--helper borderBottom pb-16px " onclick="actionHelper(this)">
+                            <p class="resultItem__title fz-12px pH-16px">Su actividad comercial es:</p>
+                            <p class="resultItem__info pH-16px">Panaderías y pastelerías</p>
+                            <!--  helper-->
+                            <div class="helper--type3 hidden">
+                                <p class="helper__text">
+                                    Esta actividad permite clasificar el sector económico al que pertenece su negocio.
+                                    <br><br>
+                                    Esta clasificación se tendrá en cuenta para calcular el valor de sus comisiones y la
+                                    liquidación del anticipo de sus impuestos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input mb-0px">
+                        <label for="" class="input__label">Ingrese el valor mensual que espera vender </label>
+                        <input type="tel" class="input__textBoxMoney" value="" placeholder="$0.00"
+                            onkeyup="buttonCheck(this,'nextButton')">
+                        <!-- helper-->
+                        <div class="helper--long">
+                            <p class="helper__text">
+                                En este campo usted deberá ingresar el valor mensual de sus ventas, de no contar con
+                                esta información deberá hacer una proyección estimada del valor de sus ventas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+        <!--  Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!--  call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- Back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <div class="contentBox mxw-550px">
+            <!-- Tracking -->
+            <div class="trackingMain">
+                <h2 tabindex="0" class="trackingMain__title">Mis Datos</h2>
+                <ul class="trackingMain__dataNav">
+                    <li class="complete"></li>
+                    <li class="complete"></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+            <!-- Nombre usuario-->
+            <h2 class="profileName ct2 mV-8px">
+                Daniela Gómez
+            </h2>
+            <p class="contentBox__text ta-center ct2 fw-medium">
+                Ingrese los siguientes datos para continuar.
+            </p>
+        </div>
+
+        <!-- #region Formulario Contenedor -->
+        <form class="formApp mb-0px">
+            <!-- #region Seccion informacion personal-->
+            <div class="cardContainer--inactive mt-16px">
+                <!--Header de informacion personal-->
+                <div class="cardHeader cardHeader--success" onclick="collapse(this)">
+                    <p>Información personal</p>
+                    <div class="cardHeader__icon">
+                        <img class="rotate" src="../media/extraIcons/icon-uparrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <!--Contenido desplegable de informacion personal-->
+                <div class="cardContent hidden">
+                    <fieldset class="input">
+                        <label for="" class="input__label">Celular</label>
+                        <div class="input__cellphone">
+                            <input type="text" class="input__textBox countryCode" value="+57 Col" disabled>
+                            <input type="text" class="input__textBox cellphoneNum" value="" placeholder="Ingrese su número">
+                        </div>
+                    </fieldset>
+                    <div class="input">
+                        <label for="" class="input__label">Correo electrónico</label>
+                        <input type="text" class="input__textBox" value="" placeholder="Ingrese su correo">
+                    </div>
+                    <div class="input">
+                        <label for="" class="input__label">Ciudad de residencia</label>
+                        <div class="contentSearch">
+                            <input type="text" class="input__textBoxSearch" value="" 
+                                placeholder="Ingrese la ciudad"
+                                onkeyup="searchCiudades(this)">
+                            <ul class="listSearch hidden"></ul>
+                        </div>
+                    </div>
+                    <fieldset class="input">
+                        <label for="" class="input__label">Dirección de residencia</label>
+                        <div class="">
+                            <div class="input--fluidBigger mb-0px">
+                                <div class="dropdown ">
+                                    <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                    <div class="options">
+                                        <div class="option">
+                                            <label class="clickDropdown checked disabled">
+                                                <input type="radio" name="radioDir" value="0" checked="" disabled="">
+                                                Sel. opción
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt1" disabled="">
+                                                Autopista
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt2" disabled="">
+                                                Avenida
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt3" disabled="">
+                                                Avenida Cll
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt4" disabled="">
+                                                Avenida Cra
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt5" disabled="">
+                                                Calle
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt6" disabled="">
+                                                Carrera
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="input__textBox " value="">
+                                <span>#</span>
+                                <input type="text" class="input__textBox" value="">
+                                <span>-</span>
+                                <input type="text" class="input__textBox" value="">
+                            </div>
+                            <div class="helper mb-16px">
+                                <p class="helper__text">
+                                    Ingrese una dirección en Colombia.
+                                </p>
+                            </div>
+                            <div class="input mb-0px">
+                                <label for="" class="input__label">Torre / Piso / Apartamento / Otro</label>
+                                <input type="text" class="input__textBox" value=""
+                                    placeholder="Complemente su dirección">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="input mb-0px">
+                        <p class="input__label">¿Seleccionar como dirección principal?</p>
+                        <div class="contRadio">
+                            <label class="radio">
+                                Sí
+                                <input type="radio" value="" name="direccion">
+                                <div class="radio__indicator"></div>
+                            </label>
+                            <label class="radio">
+                                No
+                                <input type="radio" value="" name="direccion">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #endregion Seccion informacion personal-->
+
+            <!-- #region Seccion informacion laboral-->
+            <div class="cardContainer--inactive">
+                <!--Header informacion laboral-->
+                <div class="cardHeader cardHeader--success" onclick="collapse(this)">
+                    <p>Información laboral</p>
+                    <div class="cardHeader__icon">
+                        <img class="rotate" src="../media/extraIcons/icon-uparrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <!--Contenido desplegable informacion laboral-->
+                <div class="cardContent hidden">
+                    <div class="input">
+                        <label for="" class="input__label">Actividad laboral</label>
+                        <div class="dropdown">
+                            <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                            <div class="options">
+                                <div class="option">
+                                    <label class="clickDropdown checked disabled">
+                                        <input type="radio" name="radio1" value="0" checked="" disabled="">
+                                        Seleccione una opción
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label class="clickDropdown" onclick="showHiddenInput(this, 'actividadEco')">
+                                        <input type="radio" name="radio1" value="opt1" disabled="">Empleado
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label class="clickDropdown" onclick="showHiddenInput(this, 'actividadEco')">
+                                        <input type="radio" name="radio1" value="opt2" disabled="">Pensionado
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label class="clickDropdown" onclick="showHiddenInput(this, 'actividadEco')">
+                                        <input type="radio" name="radio1" value="actividadEco" disabled="">Independiente
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label class="clickDropdown" onclick="showHiddenInput(this, 'actividadEco')">
+                                        <input type="radio" name="radio1" value="opt4" disabled="">Religioso
+                                    </label>
+                                </div>
+                                <div class="option">
+                                    <label class="clickDropdown" onclick="showHiddenInput(this, 'actividadEco')">
+                                        <input type="radio" name="radio1" value="opt5" disabled="">Servidor público
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="" class="input__label">Empresa</label>
+                        <input type="text" class="input__textBox" value="" placeholder="Ingrese la empresa">
+                    </div>
+                    <!-- #region Campos ocultos actividad economica-->
+                    <div id="actividadEco" class="input hidden">
+                        <label for="" class="input__label">Actividad económica</label>
+                        <input type="text" class="input__textBox" value="" placeholder="Ingrese su actividad económica">
+                        <div class="helper">
+                            <p class="helper__text">
+                                Ingrese el nombre de la actividad económica o el CIIU asociado.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="" class="input__label">Ciudad donde está ubicada la oficina</label>
+                        <div class="contentSearch">
+                            <input type="text" class="input__textBoxSearch" value="" placeholder="Ingrese la ciudad"
+                                onkeyup="searchCiudades(this)">
+                            <ul class="listSearch hidden"></ul>
+                        </div>
+                    </div>
+                    <!-- #endregion Campos ocultos actividad economica-->
+                    <fieldset class="input">
+                        <label for="" class="input__label">Dirección de la oficina</label>
+                        <div class="">
+                            <div class="input--fluidBigger mb-0px">
+                                <div class="dropdown">
+                                    <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                    <div class="options">
+                                        <div class="option">
+                                            <label class="clickDropdown checked disabled">
+                                                <input type="radio" name="radioDir" value="0" checked="" disabled="">
+                                                Sel. opción
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt1" disabled="">Autopista
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt2" disabled="">Avenida
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt3" disabled="">Avenida Cll
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt4" disabled="">Avenida Cra
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt5" disabled="">Calle
+                                            </label>
+                                        </div>
+                                        <div class="option">
+                                            <label class="clickDropdown">
+                                                <input type="radio" name="radioDir" value="opt6" disabled="">Carrera
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="input__textBox " value="">
+                                <span>#</span>
+                                <input type="text" class="input__textBox" value="">
+                                <span>-</span>
+                                <input type="text" class="input__textBox" value="">
+                            </div>
+                            <div class="helper mb-16px">
+                                <p class="helper__text">
+                                    Ingrese una dirección en Colombia.
+                                </p>
+                            </div>
+                            <div class="input mb-0px">
+                                <label for="" class="input__label">Torre / Piso / Apartamento / Otro</label>
+                                <input type="text" class="input__textBox" value=""
+                                    placeholder="Complemente su dirección">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="input">
+                        <p class="input__label">¿Seleccionar como dirección principal?</p>
+                        <div class="contRadio">
+                            <label class="radio">
+                                Sí
+                                <input type="radio" value="" name="direccionLaboral">
+                                <div class="radio__indicator"></div>
+                            </label>
+                            <label class="radio">
+                                No
+                                <input type="radio" value="" name="direccionLaboral">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <fieldset class="input mb-0px">
+                        <label for="" class="input__label">Teléfono de la oficina</label>
+                        <div class="input__cellphone">
+                            <input type="text" class="input__textBox countryCode" value="+57 Col" placeholder="+57 Col" disabled>
+                            <input type="text" class="input__textBox cityCode" value="" placeholder="Ind.">
+                            <input type="text" class="input__textBox phone" value="" placeholder="Teléfono">
+                            <input type="text" class="input__textBox ext" value="" placeholder="Ext.">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <!-- #endregion Seccion informacion laboral-->
+
+            <!-- #region Seccion informacion financiera-->
+            <div class="cardContainer--inactive">
+                <!-- Header informacion financiera-->
+                <div class="cardHeader cardHeader--success" onclick="collapse(this)">
+                    <p>Información financiera</p>
+                    <div class="cardHeader__icon">
+                        <img class="rotate" src="../media/extraIcons/icon-uparrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <!-- Contenido desplegable informacion financiera-->
+                <div class="cardContent hidden">
+                    <div class="input">
+                        <label for="" class="input__label">
+                            ¿Cuál es el valor de los ingresos recibidos por su actividad
+                            laboral?
+                        </label>
+                        <input type="tel" class="input__textBoxMoney" value="" placeholder="$0.00">
+                    </div>
+                    <div class="input">
+                        <p class="input__label">¿Tiene otra fuente de ingresos mensuales?</p>
+                        <div class="contRadio">
+                            <label class="radio" onclick="showHiddenInput(this, 'fuenteIngresos')">
+                                Sí
+                                <input type="radio" value="fuenteIngresos" name="ingresos">
+                                <div class="radio__indicator"></div>
+                            </label>
+
+                            <label class="radio" onclick="showHiddenInput(this, 'fuenteIngresos')">
+                                No
+                                <input type="radio" value="" name="ingresos">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- #region Seccion oculta fuente ingresos-->
+                    <div id="fuenteIngresos" class="hidden">
+                        <div class="input">
+                            <label for="" class="input__label">¿Cuánto suman esos ingresos?</label>
+                            <input type="tel" class="input__textBoxMoney" value="" placeholder="$0.00">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">¿Cuál es el origen de éstos ingresos extra?</label>
+                            <input type="text" class="input__textBox" value=""
+                                placeholder="Escriba el origen de sus ingresos">
+                        </div>
+                    </div>
+                    <!-- #endregion Seccion oculta fuente ingresos-->
+                    <div class="input">
+                        <label for="" class="input__label">¿Cuál es el valor total de sus gastos mensuales?</label>
+                        <input type="tel" class="input__textBoxMoney" value="" placeholder="$0.00">
+                    </div>
+                    <div class="input">
+                        <label for="" class="input__label">¿Cuál es el valor total de sus bienes?</label>
+                        <input type="tel" class="input__textBoxMoney" value="" placeholder="$0.00">
+                        <div class="helper ml-4px">
+                            <p class="helper__text">
+                                Incluya el valor de sus bienes, muebles, inmuebles, depósitos de ahorro e inversiones,
+                                entre otros.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="" class="input__label">¿Cuál es el valor total de sus deudas?</label>
+                        <input type="tel" class="input__textBoxMoney" value="" placeholder="$0.00">
+                    </div>
+                    <div class="input mb-0px">
+                        <p class="input__label">
+                            ¿Realiza operaciones y/o tiene productos financieros en moneda
+                            extranjera?
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio" onclick="showHiddenInput(this,'extranjero')">
+                                Sí
+                                <input type="radio" value="extranjero" name="extranjero">
+                                <div class="radio__indicator"></div>
+                            </label>
+                            <label class="radio" onclick="showHiddenInput(this,'extranjero')">
+                                No
+                                <input type="radio" value="" name="extranjero">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                        <div class="helper ml-4px">
+                            <p class="helper__text">
+                                Marque sí, si usted realiza actividades en moneda extranjera.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- #region Seccion oculta tipo transaccion-->
+                    <div id="extranjero" class="hidden mt-16px">
+                        <div class="input mb-0px">
+                            <p class="input__label">¿Qué tipo de transacciones internacionales realiza?</p>
+                            <div class="checkBoxList">
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Importación
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Exportación
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Préstamos
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Inversiones
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Remesas
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Giros
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Productos
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Pagos de servicios
+                                </label>
+                                <label class="checkbox--withHeight fw-medium">
+                                    <input type="checkbox" name="transaccion"
+                                        onclick="checkboxVerify('transaccion','tipoTransaccion')">
+                                    <div class="checkbox__indicator"></div>
+                                    Compra y venta de divisas
+                                </label>
+                            </div>
+                        </div>
+                        <!-- region Seccion oculta de acuerdo a checkbox list anterior -->
+                        <div id="tipoTransaccion" class="hidden mt-16px">
+                            <div class="input">
+                                <label for="" class="input__label">
+                                    ¿Cuál es el valor mensual aproximado (en dólares) de
+                                    dichas transacciones?
+                                </label>
+                                <input type="tel" class="input__textBoxMoney" value="" placeholder="Ingrese el valor">
+                            </div>
+                            <div class="input mb-0px">
+                                <label for="" class="input__label">
+                                    ¿Cuál es el país destino u origen de sus transacciones?
+                                </label>
+                                <div class="contentSearch">
+                                    <input type="text" class="input__textBoxSearch" value=""
+                                        placeholder="Ingrese el país" onkeyup="searchCiudades(this)">
+                                    <ul class="listSearch hidden"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #endregion Seccion oculta de acuerdo a checkbox list anterior -->
+                    </div>
+                    <!-- #endregion Seccion oculta tipo transaccion-->
+                </div>
+            </div>
+            <!-- #endregion Seccion informacion financiera-->
+
+            <!-- #region Seccion informacion tributaria-->
+            <div class="cardContainer--inactive">
+                <!--Header informacion tributaria-->
+                <div class="cardHeader cardHeader--success" onclick="collapse(this)">
+                    <p>Información tributaria</p>
+                    <div class="cardHeader__icon">
+                        <img class="rotate" src="../media/extraIcons/icon-uparrow.svg" alt="arrow">
+                    </div>
+                </div>
+                <!--Contenido desplegable informacion tributaria-->
+                <div class="cardContent hidden">
+                    <p class="input__label mb-16px ml-0px">Las siguientes respuestas serán consignadas en el formato W9.
+                    </p>
+                    <div class="input">
+                        <p class="input__label">
+                            ¿Tiene residencia fiscal en países diferentes a Colombia y Estados
+                            Unidos?
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio" onclick="showHiddenInput(this,'resFiscal')">
+                                Sí
+                                <input type="radio" value="resFiscal" name="resFiscal">
+                                <div class="radio__indicator"></div>
+                            </label>
+
+                            <label class="radio" onclick="showHiddenInput(this,'resFiscal')">
+                                No
+                                <input type="radio" value="" name="resFiscal">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- #region Seccion oculta residencia fiscal-->
+                    <div id="resFiscal" class="hidden">
+                        <div class="input">
+                            <label for="" class="input__label">¿En qué país?</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Ingrese el país">
+                            <div class="helper">
+                                <p class="helper__text">
+                                    Escriba el país donde tiene obligaciones tributarias.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">
+                                ¿Cuál es el número de identificación fiscal del país que
+                                registró (TIN)?
+                            </label>
+                            <input type="number" class="input__textBox" value="" placeholder="Número de identificación fiscal">
+                            <div class="helper--long ml-4px">
+                                <p class="helper__text">
+                                    El TIN (Tax Identification Number) es el número de identificación tributaria
+                                    del país en el cual usted tiene residencia fiscal.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #endregion Seccion oculta residencia fiscal-->
+                    <div class="input mb-0px">
+                        <p class="input__label">
+                            ¿Usted está sujeto a tributación fiscal en los Estados Unidos? Es decir,
+                            es impactado por la ley FATCA.
+                        </p>
+                        <div class="contRadio">
+                            <label class="radio" onclick="showHiddenInput(this,'tributacion')">
+                                Sí
+                                <input type="radio" value="tributacion" name="tributacion"
+                                    onclick="checkRadioBtn('tributacion', 'nextButton')">
+                                <div class="radio__indicator"></div>
+                            </label>
+
+                            <label class="radio" onclick="showHiddenInput(this,'tributacion')">
+                                No
+                                <input type="radio" value="" name="tributacion"
+                                    onclick="checkRadioBtn('tributacion', 'nextButton')">
+                                <div class="radio__indicator"></div>
+                            </label>
+                        </div>
+                        <div class="helper--longDesktop ml-4px">
+                            <p class="helper__text">
+                                Marque sí, si cumple con alguna de las siguientes condiciones: nació en Estados Unidos,
+                                tiene ciudadanía norteamericana o pasaporte norteamericano; tiene dos nacionalidades
+                                (norteamericana y otra), tiene tarjeta de residencia permanente en USA; ha estado por
+                                más de 182 días en USA durante el último año o ha estado por más de 121 días en los
+                                últimos tres años (a excepción de viajes diplomáticos, estudios o tratamiento médico).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- #region Seccion oculta tributacion fiscal-->
+                    <div id="tributacion" class="hidden mt-16px">
+                        <div class="input">
+                            <label for="" class="input__label">
+                                Verifique si su nombre aparece igual que en la declaración de impuestos.
+                            </label>
+                            <input type="text" class="input__textBox" value="Natalia Diaz" placeholder="Ingrese su nombre" disabled>
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">
+                                ¿Cuál es su clasificación tributaria federal en Estados
+                                Unidos?
+                            </label>
+                            <div class="dropdown">
+                                <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                <div class="options">
+                                    <div class="option">
+                                        <label class="clickDropdown checked disabled">
+                                            <input type="radio" name="radio1" value="0" checked="" disabled="">
+                                            Seleccione una opción
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radio1" value="opt1" disabled="">
+                                            Individuo/empresario
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">¿Cuál es su ciudad y estado?</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Ingrese la ciudad y estado">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">¿Cuál es su dirección?</label>
+                            <input type="text" class="input__textBox" value="" placeholder="Ingrese la dirección">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">¿Cuál es el código postal?</label>
+                            <input type="number" class="input__textBox" value="" placeholder="Ingrese el código postal">
+                        </div>
+                        <div class="input">
+                            <label for="" class="input__label">¿Cuál es su número de seguro social en Estados Unidos
+                                (TIN)?</label>
+                            <input type="number" class="input__textBox" value="" placeholder="Ingrese el número"
+                                onkeyup="buttonCheck(this,'nextButton') ">
+                        </div>
+                        <div class="contextInfo mt-0px">
+                            <p class="ct3">Conozca <a class="ct3" href="javascript:void(0)">aquí</a> el detalle de
+                                impacto en la ley FATCA.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- #endregion Seccion oculta tributacion fiscal-->
+                </div>
+            </div>
+            <!-- #endregion Seccion tributaria-->
+        </form>
+        <!-- #endregion Formulario Contenedor -->
+
+        <!-- Buttons -->
+        <div class="contButtons">
+            <button type="button" id="nextButton" class="button--primary">Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

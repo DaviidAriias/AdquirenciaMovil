@@ -1,0 +1,96 @@
+.contentBenefits{
+    display: inline-block;
+    width: 100%;
+    max-width: 550px;
+
+    .swiperBenefits{
+        padding: 16px;   
+        .swiper-wrapper{
+            //font-size: $font-p;
+            .swiper-slide{
+                display: inline-block;
+                width: 100%;
+                @extend %neoShadow;
+        
+                border-radius: 15px;
+                overflow: hidden;
+
+                transition-duration: .3s;
+
+                &-prev, &-next{
+                    transform: scale(0.90);
+                }
+
+                .imageBenefits{
+                    @include prefix((
+                        display: flex,
+                        align-items: flex-end,
+                        align-content: center,
+                        justify-content: center
+                    ), webkit moz ms o);
+
+                    width: 100%;
+                    height: 224px;
+                    text-align: center;
+                    background-color: #fff;
+                    img{
+                        display: inline-block;
+                        height: 90%;
+                    }
+                }
+                .textBenefits{
+                    @include prefix((
+                        display: flex,
+                        align-items: center,
+                        align-content: center,
+                        justify-content: center
+                    ), webkit moz ms o);
+
+                    height: 96px;
+                    //height: 8em;
+                    padding: 24px 20px;
+                    &__p{
+                        @include defaultFont(1, $ta: center, $c: #000000);
+                        a{
+                            font-weight: bold;
+                            text-decoration: underline;
+                        }
+                    }
+                    &--slider{
+                        height: auto;
+                        padding: 16px 17px;
+                        &__p{
+                            @include defaultFont(1, $ta: left, $c: $text-color);
+                            a{
+                                font-weight: bold;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .swiperBenefits--pagination{
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        position: relative;
+        .swiper-pagination-bullet{
+            width: 6px;
+            height: 6px;
+            background-color: #D8D8D8;
+            opacity: 100%;
+            margin: 0 3px;
+            border-radius: 30px;
+
+            transition-duration: .3s;
+            &-active{
+                width: 16px;
+                background-color: $red-primary;
+            }
+        }
+    }
+}
+    

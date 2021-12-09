@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../plugins/swiper/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!--  back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Información personal</h2>
+            <p class="contentBox__text fw-medium ct2">
+                Para continuar, ingrese los siguientes datos para brindarle la mejor asesoría en la afiliación de su
+                negocio:
+            </p>
+            <!-- Formulario -->
+            <form class="formApp">
+                <div class="input">
+                    <label for="" class="input__label">¿Cuál es su tipo de documento?</label>
+                    <!-- Dropdown -->
+                    <div class="dropdown inputIcon--id">
+                        <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                        <div class="options">
+                            <div class="option">
+                                <label class="clickDropdown disabled checked">
+                                    <input type="radio" name="documentId" value="0" checked="" disabled=""> Seleccione una
+                                    opción
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown">
+                                    <input type="radio" name="documentId" value="opt1" disabled=""> Cédula de ciudadanía
+                                </label>
+                            </div>
+                            <div class="option">
+                                <label class="clickDropdown">
+                                    <input type="radio" name="documentId" value="opt1" disabled=""> Opción 2
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="" class="input__label">¿Cuál es su número de documento?</label>
+                    <input type="number" class="input__textBox " value="" placeholder="Ingrese número de documento">
+                </div>
+            </form>
+        </div>
+        
+        <!--  Buttons -->
+        <div class="contButtons">
+            <button id="nextButton" type="button" class="button--primary" disabled>Continuar</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+
+</body>
+
+</html>

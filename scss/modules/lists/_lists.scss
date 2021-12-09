@@ -1,0 +1,21 @@
+//lista odenada
+.orderedList{
+    counter-reset: number;
+    margin-bottom: 16px;
+    li{
+        @include defaultFont(1);
+        padding-left: 24px;
+        counter-increment: number;
+        position: relative;
+        margin-bottom: 16px;
+        &::before {
+            content: counter(number) '.';
+            left: 0;
+            position: absolute;
+            @include defaultFont(1, $fz: 1em, $fw: bold, $c: inherit);
+        }
+        &:last-of-type{
+            margin-bottom: 0px;
+        }
+    }
+}

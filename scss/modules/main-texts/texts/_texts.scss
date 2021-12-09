@@ -1,0 +1,59 @@
+/* Textos de ayuda helpers 10px - 14px | Generalmemnte van fuera de los boxes o
+en algunos casos dentro de los mismos */
+// texto generico
+.contentBox{
+    &__p{
+        @include defaultFont(1, $lh: initial);
+    }
+    &__text{
+        @include defaultFont(1);
+        margin-bottom: 16px;
+        &--small{
+            @include defaultFont(1, $fz: 12px)
+        }
+    }
+}
+
+.contButtons{
+    &__title{
+        @include defaultFont(1, $fw: bold, $fz: $font-p - 2);
+        margin-bottom: 16px;
+    }
+}
+//Paragraphs
+.paragraph{
+    @include defaultFont(1);
+}
+
+//Hiperlinks
+.hyperlink{
+    display: inline-block;
+    width: auto;
+    text-decoration: underline;
+    
+    @include defaultFont(1, $fw: bold);
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.link{
+    text-decoration: underline;
+    @include defaultFont(1);
+    margin-bottom: 16px;
+    &:visited{
+        text-decoration: underline;
+    }
+    &:focus{
+        text-decoration: underline;
+    }
+}
+
+.optField{
+    @include defaultFont(1, $fz: $font-p - 3, $c: $text-enable, $lh: 14px);
+}
+
+.txtTimer{
+    @include defaultFont(1, $fw: bold, $ta: center, $fz: 34px, $c: $titles-color);
+    margin-bottom: 16px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- Back button -->
+        <a href="javascript:void(0)" class="backButton">
+            <img src="../media/_defaultIcons/icon-arrowBack.svg" alt="Icono botón atras">
+            Atrás
+        </a>
+
+        <!-- #region ContentBox -->
+        <div class="contentBox mxw-550px">
+            <!-- Titulo Principal -->
+            <h2 class="contentBox__title">Solicitud de Tarjeta Débito</h2>
+            <p class="contentBox__text fw-bold ta-center">
+                Adquiera su Tarjeta Débito Mastercard para continuar con la apertura de su Cuenta.
+            </p>
+            <div class="contentBox__img--small">
+                <img src="../media/images/image-mastercard-B.png" alt="tarjetaMastercard">
+            </div>
+            <p class="contentBox__text">
+                Con esta tarjeta usted podrá realizar <strong>compras en establecimientos</strong> y
+                <strong>retirar en cajeros</strong>.
+            </p>
+            <p class="contentBox__text">
+                Enviaremos esta <strong>Tarjeta Débito</strong> sin costo a la dirección que registró. Si desea
+                recibirla en otro lugar, puede modificar la dirección (aplica únicamente para esta entrega).
+            </p>
+            <!-- Formulario -->
+            <form action="" class="formApp">
+                <fieldset class="input">
+                    <div class="input mb-0px">
+                        <label for="" class="input__label">¿Cuál es la dirección para el envío?</label>
+                        <div class="input--fluidBigger">
+                            <div class="dropdown">
+                                <!-- Este <Div> funciona como contenedor de los <Option> | IMPORTANTE cambiar el name del <input type="radio"> al crear un nuevo Dropdown -->
+                                <div class="options">
+                                    <!-- Si un option tendría que ir disabled, este se nombra en la clase del el label -->
+                                    <div class="option">
+                                        <label class="clickDropdown  checked">
+                                            <input type="radio" name="radioDir" value="opt1" disabled=""> Sel. opción
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt1" disabled=""> Autopista
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt2" disabled=""> Avenida
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt3" disabled=""> Avenida
+                                            Cll
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt4" disabled=""> Avenida
+                                            Cra
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown ">
+                                            <input type="radio" name="radioDir" value="opt5" disabled=""> Calle
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <label class="clickDropdown">
+                                            <input type="radio" name="radioDir" value="opt6" disabled=""> Carrera
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="input__textBox" value="">
+                            <span>#</span>
+                            <input type="text" class="input__textBox" value="">
+                            <span>-</span>
+                            <input type="text" class="input__textBox" value="">
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="" class="input__label">Torre / Piso / Apartamento / Otro</label>
+                        <input type="text" class="input__textBox" value=""
+                            placeholder="Complemente su dirección ">
+                    </div>
+
+                    <div class="input mb-0px">
+                        <label for="" class="input__label">Ciudad</label>
+                        <div class="contentSearch">
+                            <input type="text" class="input__textBoxSearch" value=""
+                                placeholder="Ingrese la ciudad" onkeyup="searchCiudades(this)">
+                            <ul class="listSearch hidden"></ul>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- #endregion ContentBox -->
+
+        <!-- Buttons -->
+        <div class="contButtons mt-24px">
+            <p class="contButtons__title">¿Desea adquirir su Tarjeta Débito?</p>
+            <button type="button" class="button--primary">Adquirir</button>
+            <button type="button" class="button--secondary">Omitir</button>
+        </div>
+
+    </section>
+
+    <!-- call script -->
+    <script src="../js/main.js"></script>
+    <script src="../js/forms.js"></script>
+</body>
+
+</html>

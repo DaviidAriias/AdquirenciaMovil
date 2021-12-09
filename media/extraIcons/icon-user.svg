@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="53px" viewBox="0 0 49 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mask</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="004---Datos-Cédula-nuevo-cliente-con-seguro---002D" transform="translate(-156.000000, -278.000000)" fill="#717171" stroke="#717171" stroke-width="4.36363636">
+            <g id="Card" transform="translate(16.000000, 154.000000)">
+                <g id="Foto" transform="translate(116.000000, 102.000000)">
+                    <g id="04-iconos/01-24x24_/Mi-menú/Perfil" transform="translate(26.615385, 24.538462)">
+                        <g id="Icon" transform="translate(0.615385, 0.961538)">
+                            <g id="Mask" transform="translate(-0.000000, -0.000000)">
+                                <g id="Group-3" transform="translate(0.000000, 0.000000)">
+                                    <path d="M42.4615386,47.7692309 L42.4615386,42.4615386 C42.4615386,36.5988236 37.708869,31.846154 31.846154,31.846154 L10.6153847,31.846154 C4.7526696,31.846154 2.68708133e-13,36.5988236 2.68708133e-13,42.4615386 L2.68708133e-13,47.7692309" id="Path"></path>
+                                    <circle id="Oval" stroke-linecap="round" cx="21.2307693" cy="10.6153847" r="10.6153847"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

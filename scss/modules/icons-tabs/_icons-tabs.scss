@@ -1,0 +1,49 @@
+.iconTabs{
+    width: 100%;
+    background-color: transparent;
+
+    .tabsContainer{
+        display: flex;
+        justify-content: space-around;
+        &__item{
+            width: 50%;
+            cursor: pointer;
+            .divisor{
+                height: 4px;
+                border-radius: 2px;
+                background-color: #DD141D;
+                margin-top: 12px
+            }
+            &--inactive{
+                @extend .tabsContainer__item;
+                .divisor{
+                    height: 2px;
+                    background-color: #E1E1E5;
+                    border-radius: none;
+                    margin-top: 13px; 
+                }
+            }
+        }
+    }
+
+    .tabContent{
+        margin-top: 16px;
+        &__title{
+            @include defaultFont(1, $fz: $font-h, $fw: medium, $c: #000000)
+        }
+
+        &__text{
+            @include defaultFont(1);
+            margin-top: 16px;
+        }
+
+        &--inactive{
+            @extend .tabContent;
+            display: none;
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}

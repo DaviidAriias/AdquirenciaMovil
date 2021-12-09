@@ -1,0 +1,132 @@
+//-------------------------- Modal
+.contModal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 3, 3, 0.6);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    opacity: 0;
+
+    pointer-events: none;
+    transition-timing-function: ease-in-out;
+    transition-duration: .3s;
+
+    .modal{
+        display: flex;
+        flex-direction: column  ;
+        width: 90%;
+        --padingH: 24px;
+        padding: var(--padingH) 24px;
+        min-width: 310px;
+        max-width: 300px;
+
+        /* Se pone el max-height en caso de que el modal exceda su altura o se tome el
+        dispositivo de forma horizontal */
+        height: auto;
+        max-height: 94vh;
+
+        background: $background-body;
+        margin: 0 auto;
+        border-radius: 10px;
+        
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        transition-duration: .3s;
+
+
+        .modalHeader{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+
+            .modalIcon{
+                display: inline-block;
+                margin: 0px auto;
+                margin-bottom: 8px;
+                &__img{
+                    max-width: 60px;
+                    &--medium{
+                        width: 48px;
+                        height: 48px;
+                    }
+                    &--large{
+                        max-width: 70px;
+                    }
+                }
+                
+            }
+            .modalInfo{
+                &__title{
+                    @extend %h;
+                    margin-bottom: 14px;
+                }
+                &__text{
+                    @include defaultFont(1, $fz: $font-p - 2)
+                }
+            }
+        }
+
+        .modalBody{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+    
+            .modalInfo{
+                &__title{
+                    @extend %h;
+                    margin-bottom: 14px;
+                }
+                &__description{
+                    @include defaultFont(1, $ta: center, $fz: 12px);
+                    &--typeB{
+                        @include defaultFont(1, $ta: center, $fz:12px, $lh: 16px)
+                    }
+                }
+            }
+    
+            //quita la margen inferior al ultimo elemento hijo
+            &> *{
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        &--medium{
+            @extend .modal;
+            width: unset;
+            min-width: 280px;
+        }
+
+    }
+}
+
+.contModal--loaderLight{
+    @extend .contModal;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+//Evento mostrar Modal
+.contModal--isShow{
+    opacity: 1;
+    pointer-events: inherit;
+    .modal, .modal--medium{
+        top: 50%;
+    }
+}

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../media/_defaultIcons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+<body>
+
+    <!-- #region Modal -->
+    <section class="contModal contModal--isShow" id="modal1">
+        <div class="modal--medium pb-16px">
+            <!-- el header del modal queda fuera del scroll -->
+            <div class="modalHeader">
+                <div class="modalIcon mb-12px">
+                    <img class="modalIcon__img" src="../media/_defaultIcons/Icon-popUp-info.svg" alt="icono modal">
+                </div>
+                <!-- Titulo del modal-->
+                <h3 class="modalInfo__title mb-8px">Intente nuevamente en unos minutos</h3>
+            </div>
+
+            <!-- el body del molda posee scroll -->
+            <div class="modalBody">
+                <div class="modalInfo">
+                    <p class="modalInfo__description">
+                        Por el momento, no podemos atender su solicitud, ¡discúlpenos!
+                    </p>
+                </div>
+                <!-- #region button modal -->
+                <div class="contButtons">
+                    <button type="button" class="button--primary mb-8px" onclick="hideModal('modal1')">Aceptar</button>
+                </div>
+                <!-- #endregion button modal -->
+            </div>
+        </div>
+    </section>
+    <!-- #endregion Modal -->
+
+    <!-- #region Scripts -->
+    <!--js para interacciones en este caso desplegar popUp -->
+    <script src="../js/main.js"></script>
+    <!-- #endregion Scripts -->
+</body>
+</html>

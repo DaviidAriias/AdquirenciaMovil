@@ -1,0 +1,82 @@
+.dataphone{
+    margin-top: 16px;
+    &--wLabel{
+        @extend .dataphone;
+        position: relative;
+        margin-top: 32px;
+    }
+    &__label{
+        width: fit-content;
+        min-width: 205px;
+        position: absolute;
+        bottom: calc(100% - 12px);
+        left: 50%;
+        padding: 5px 4px 4px ;
+        border-radius: 6px ;
+        background-color: #FF5947;
+        transform: translate(-50%);
+        @include defaultFont(1, $fw: bold, $fz: 12px, $ta: center, $c: #FFFFFF)
+    }
+    &__title{
+        @include defaultFont(1, $fz: $font-h, $fw: bold);
+        padding: 0px 16px;
+    }
+    &__card{
+        @extend %neoShadow;
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 16px;
+        padding: 16px;
+        margin-top: 16px;
+        background-color: #FBFBFC;
+        border-radius: 10px;
+        &--wLabel{
+            @extend .dataphone__card;
+            padding-top: 32px;
+        }
+    }
+    &__image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        max-width: 80px;
+        max-height: 80px;
+        background-color: #EBECF0;
+        border-radius: 10px;
+        img{
+            max-width: 55px;
+            max-height: 55px;
+        }
+    }
+    &__info{
+        .title{
+            @include defaultFont(1, $fw: bold);
+            padding: 0px;
+        }
+        .description{
+            @include defaultFont(1, $fz: 11px);
+            margin-top: 8px;
+            padding: 0px;
+        }
+    }
+    &__input{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap:16px;
+        label{
+            @include defaultFont(1, $fz: 11px, $fw: medium);
+            width: 56px;
+        }
+        .input__dataphoneCard{
+            @extend .input__textBox;
+            @include defaultFont(0, $fz: $font-p - 2, $fw: bold, $c: #000000);
+            width: 72px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid #E5E3E3;
+        }
+    }
+}

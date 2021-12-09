@@ -1,0 +1,60 @@
+.boxHelper{
+    width: 100%;
+    padding: 8px 16px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid #E5E3E3;
+    background-color: #FAFAFC;
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+        img{
+            transition: all 0.2s ease-out;
+        }
+        .rotateImg{
+            transform: rotate(-180deg);
+            transition: all 0.2s ease-out;
+        }
+    }
+    &__title{
+        display: flex;
+        align-items: center;
+        padding-right: 15%;
+        p{
+            @include defaultFont(1, $fz: $font-p - 2px, $fw: medium);
+        }
+        img{
+            padding-right: 8px;
+        }
+    }
+    &__content{
+        margin-top: 8px;
+    }
+
+    &__imgContainer{
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto 8px;
+        img{
+            display: block;
+            width: 100%
+        }
+    }
+
+    &--typeB{
+        @extend .boxHelper;
+        padding: 20px 16px 16px;
+        border: none;
+        background-color: #FFFFFF;
+    }
+    
+    &--typeC{
+        @extend .boxHelper;
+        border: none;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+}
